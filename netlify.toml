@@ -1,11 +1,6 @@
+# Netlify config – static portfolio
+# Serves site from public_html (no build step)
+
 [build]
   publish = "public_html"
-
-# No build command needed for static site
-
-# Handle SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = true
+  command = "echo 'Static site – no build'"
