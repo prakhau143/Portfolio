@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "prakhar-portfolio",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server"],
+      "cwd": "public_html",
+      "port": 4200,
+      "autoPort": true
+    }
+  ]
+}
