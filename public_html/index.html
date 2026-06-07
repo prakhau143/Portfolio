@@ -1958,6 +1958,102 @@ html, body { background: #020008 !important; }
 @keyframes ft5{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes ft6{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
 
+/* ══════════════════════════════════════════════════════
+   OPTIMUS PRIME — HERO 3D GUARDIAN
+   ══════════════════════════════════════════════════════ */
+.hero-optimus-wrap {
+    position: relative;
+    width: min(540px, 88vw);
+    height: min(720px, 82vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px) translateX(40px);  /* hero column offset */
+}
+#optimus-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    pointer-events: none;
+    z-index: 2;
+}
+/* ── Energy rings ── */
+.opt-ring {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: optRingPulse 4s ease-in-out infinite;
+    z-index: 1;
+}
+.opt-ring-1 {
+    width: 280px; height: 280px;
+    border: 1.5px solid rgba(168,85,247,.45);
+    box-shadow: 0 0 24px rgba(168,85,247,.18), inset 0 0 24px rgba(168,85,247,.06);
+    animation-duration: 4s;
+}
+.opt-ring-2 {
+    width: 400px; height: 400px;
+    border: 1px solid rgba(0,200,255,.22);
+    box-shadow: 0 0 16px rgba(0,200,255,.08);
+    animation-duration: 5.8s;
+    animation-delay: 1.5s;
+}
+.opt-ring-3 {
+    width: 530px; height: 530px;
+    border: 1px solid rgba(168,85,247,.10);
+    animation-duration: 7.5s;
+    animation-delay: 3s;
+}
+@keyframes optRingPulse {
+    0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.65; }
+    50%     { transform: translate(-50%,-50%) scale(1.04); opacity:1;   }
+}
+/* ── Ground glow platform ── */
+.opt-ground-glow {
+    position: absolute;
+    bottom: 12%; left: 50%;
+    transform: translateX(-50%);
+    width: 260px; height: 36px;
+    background: radial-gradient(ellipse, rgba(168,85,247,.45) 0%, rgba(0,200,255,.15) 40%, transparent 70%);
+    filter: blur(10px);
+    pointer-events: none;
+    z-index: 1;
+    animation: groundGlowPulse 3s ease-in-out infinite;
+}
+@keyframes groundGlowPulse {
+    0%,100% { opacity:.7; transform:translateX(-50%) scaleX(1); }
+    50%     { opacity:1;  transform:translateX(-50%) scaleX(1.08); }
+}
+/* ── Cyber particles ── */
+.opt-particles {
+    position: absolute; inset: 0;
+    pointer-events: none; overflow: hidden;
+    z-index: 3;
+}
+.opt-p {
+    position: absolute;
+    border-radius: 50%;
+    animation: optParFloat linear infinite;
+}
+@keyframes optParFloat {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-260px) scale(0); opacity: 0; }
+}
+/* ── Weapon energy charge flash ── */
+@keyframes optWeaponFlash {
+    0%,100% { opacity: 0; }
+    50%     { opacity: .25; }
+}
+/* ── Mobile: hide heavy optimus on very small screens ── */
+@media (max-width: 768px) {
+    .hero-optimus-wrap { transform: none; }
+    .opt-ring-3 { display: none; }
+}
+
 /* stats bar */
 .stats-bar{background:rgba(4,8,22,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(0,200,255,.1);border-bottom:1px solid rgba(0,200,255,.1);padding:26px 0;position:relative;z-index:10;}
 .stats-inner{display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px;}
@@ -2652,12 +2748,19 @@ html, body { background: #020008 !important; }
                     </div>
                 </div>
 
-                <!-- RIGHT: hero-bg.svg -->
+                <!-- RIGHT: Optimus Prime 3D Guardian -->
                 <div class="hero-right-col">
-                    <div class="hero-svg-wrap" id="hero-orbit">
-                        <img src="assets/imgs/hero-bg.svg"
-                             class="hero-svg-img"
-                             alt="Futuristic AI Developer Illustration">
+                    <div class="hero-optimus-wrap" id="hero-orbit">
+                        <!-- Animated energy rings behind model -->
+                        <div class="opt-ring opt-ring-1" aria-hidden="true"></div>
+                        <div class="opt-ring opt-ring-2" aria-hidden="true"></div>
+                        <div class="opt-ring opt-ring-3" aria-hidden="true"></div>
+                        <!-- Cyberpunk ground glow platform -->
+                        <div class="opt-ground-glow" aria-hidden="true"></div>
+                        <!-- Three.js canvas -->
+                        <canvas id="optimus-canvas" aria-hidden="true"></canvas>
+                        <!-- Floating cyber particles -->
+                        <div class="opt-particles" id="opt-particles" aria-hidden="true"></div>
                     </div>
                 </div>
 
@@ -7842,6 +7945,224 @@ a, button, input, textarea, select,
             camera.aspect = nW / nH;
             camera.updateProjectionMatrix();
             renderer.setSize(nW, nH, false);
+        });
+    })();
+    </script>
+
+    <!-- ═══ Optimus Prime — Hero 3D Guardian ═══ -->
+    <script>
+    (function initOptimus(){
+        'use strict';
+        var canvas = document.getElementById('optimus-canvas');
+        if(!canvas || typeof THREE === 'undefined' || typeof THREE.GLTFLoader === 'undefined') return;
+
+        var W = canvas.offsetWidth  || 540;
+        var H = canvas.offsetHeight || 720;
+        var isMobile = window.innerWidth < 769;
+
+        /* ── Renderer ── */
+        var renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: !isMobile,
+            powerPreference: 'high-performance'
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+        renderer.setSize(W, H, false);
+        renderer.setClearColor(0x000000, 0);
+        renderer.shadowMap.enabled = false;
+        if(renderer.outputEncoding !== undefined) renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.5;
+
+        /* ── Scene + Camera ── */
+        var scene  = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(36, W / H, 0.1, 100);
+        camera.position.set(0, 0.5, 5.8);
+        camera.lookAt(0, 0.2, 0);
+
+        /* ── Cinematic Lights ── */
+        /* 1. Soft ambient */
+        scene.add(new THREE.AmbientLight(0xffffff, 0.28));
+
+        /* 2. White front key light */
+        var keyLight = new THREE.DirectionalLight(0xffffff, 2.8);
+        keyLight.position.set(1.5, 3.5, 4);
+        scene.add(keyLight);
+
+        /* 3. Blue rim light from left */
+        var rimLight = new THREE.DirectionalLight(0x0080ff, 3.2);
+        rimLight.position.set(-5, 1.5, -1);
+        scene.add(rimLight);
+
+        /* 4. Purple back glow */
+        var backLight = new THREE.PointLight(0xc770ff, 2.8, 18);
+        backLight.position.set(0, 1.2, -4.5);
+        scene.add(backLight);
+
+        /* 5. Cyan under-fill */
+        var fillLight = new THREE.PointLight(0x00c8ff, 1.2, 12);
+        fillLight.position.set(0.5, -3, 2);
+        scene.add(fillLight);
+
+        /* 6. Weapon emitter (boosts during pulse) */
+        var weaponLight = new THREE.PointLight(0xc770ff, 0, 8);
+        weaponLight.position.set(1.2, 0, 1.5);
+        scene.add(weaponLight);
+
+        /* ── Bloom (desktop only) ── */
+        var composer = null;
+        if(!isMobile && typeof THREE.EffectComposer !== 'undefined'
+           && typeof THREE.UnrealBloomPass !== 'undefined'){
+            try {
+                var renderTarget = new THREE.WebGLRenderTarget(W, H, {
+                    minFilter: THREE.LinearFilter,
+                    magFilter: THREE.LinearFilter,
+                    format: THREE.RGBAFormat
+                });
+                composer = new THREE.EffectComposer(renderer, renderTarget);
+                var renderPass = new THREE.RenderPass(scene, camera);
+                renderPass.clearColor = new THREE.Color(0,0,0);
+                renderPass.clearAlpha = 0;
+                composer.addPass(renderPass);
+                var bloom = new THREE.UnrealBloomPass(
+                    new THREE.Vector2(W, H),
+                    0.45,   /* strength  */
+                    0.5,    /* radius    */
+                    0.82    /* threshold */
+                );
+                composer.addPass(bloom);
+            } catch(e){ composer = null; }
+        }
+
+        /* ── Model state ── */
+        var model  = null;
+        var mixer  = null;
+        var baseY  = 0;
+        var clock  = new THREE.Clock();
+        var active = true;
+
+        /* ── Mouse parallax (smooth lerp) ── */
+        var mX = 0, mY = 0, tX = 0, tY = 0;
+        document.addEventListener('mousemove', function(e){
+            mX = (e.clientX / window.innerWidth  - 0.5) * 2;
+            mY = (e.clientY / window.innerHeight - 0.5) * 2;
+        }, { passive: true });
+
+        /* ── Load Optimus GLB ── */
+        new THREE.GLTFLoader().load(
+            'assets/imgs/transformers_war_for_cybertron_optimus_prime.glb',
+            function(gltf){
+                model = gltf.scene;
+
+                /* Auto-normalize — fill ~3.6 units */
+                var box    = new THREE.Box3().setFromObject(model);
+                var size   = box.getSize(new THREE.Vector3());
+                var center = box.getCenter(new THREE.Vector3());
+                var scale  = 3.6 / Math.max(size.x, size.y, size.z);
+                model.scale.setScalar(scale);
+                model.position.sub(center.multiplyScalar(scale));
+
+                /* Shift down slightly to show full body, feet near bottom */
+                model.position.y -= 0.35;
+                baseY = model.position.y;
+
+                /* Embedded animations */
+                if(gltf.animations && gltf.animations.length){
+                    mixer = new THREE.AnimationMixer(model);
+                    var clip = gltf.animations[0];
+                    mixer.clipAction(clip).play();
+                }
+
+                scene.add(model);
+
+                /* Generate cyber particles */
+                var pCont = document.getElementById('opt-particles');
+                if(pCont){
+                    for(var i = 0; i < 22; i++){
+                        var dot = document.createElement('div');
+                        dot.className = 'opt-p';
+                        var sz = 2 + Math.random() * 3;
+                        dot.style.cssText =
+                            'width:'+sz+'px;height:'+sz+'px;' +
+                            'left:'+(10 + Math.random()*80)+'%;' +
+                            'bottom:'+(5 + Math.random()*35)+'%;' +
+                            'background:'+(Math.random()>.5
+                                ? 'rgba(168,85,247,0.85)':'rgba(0,200,255,0.85)')+';' +
+                            'animation-duration:'+(3+Math.random()*5)+'s;' +
+                            'animation-delay:'+(-Math.random()*6)+'s;';
+                        pCont.appendChild(dot);
+                    }
+                }
+            },
+            undefined,
+            function(err){ console.warn('[Optimus] GLB load error:', err); }
+        );
+
+        /* ── Weapon energy pulse (every 8 s) ── */
+        var pulsing = false;
+        function fireWeaponPulse(){
+            if(pulsing) return;
+            pulsing = true;
+            var start = performance.now();
+            var dur   = 1400; /* ms */
+            function step(now){
+                var p   = Math.min((now - start) / dur, 1);
+                var val = Math.sin(p * Math.PI);          /* 0→1→0 bell */
+                weaponLight.intensity = val * 5.5;
+                backLight.intensity   = 2.8 + val * 3.5;
+                if(p < 1){ requestAnimationFrame(step); }
+                else {
+                    weaponLight.intensity = 0;
+                    backLight.intensity   = 2.8;
+                    pulsing = false;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+        setInterval(fireWeaponPulse, 8000);
+
+        /* ── Render loop ── */
+        function render(){
+            if(!active) return;
+            requestAnimationFrame(render);
+
+            var delta = clock.getDelta();
+            var t     = clock.elapsedTime;
+
+            if(model){
+                /* Slow float up/down */
+                model.position.y = baseY + Math.sin(t * 0.38) * 0.08;
+
+                /* Smooth mouse parallax */
+                tX += (mX * 0.14 - tX) * 0.04;
+                tY += (mY * 0.09 - tY) * 0.04;
+                model.rotation.y = tX;
+                model.rotation.x = tY * 0.45;
+            }
+
+            if(mixer) mixer.update(delta);
+
+            if(composer){ composer.render(); }
+            else         { renderer.render(scene, camera); }
+        }
+        render();
+
+        /* ── Pause when tab hidden ── */
+        document.addEventListener('visibilitychange', function(){
+            active = !document.hidden;
+            if(active) render();
+        });
+
+        /* ── Resize ── */
+        window.addEventListener('resize', function(){
+            var nW = canvas.offsetWidth;
+            var nH = canvas.offsetHeight;
+            if(!nW || !nH) return;
+            camera.aspect = nW / nH;
+            camera.updateProjectionMatrix();
+            renderer.setSize(nW, nH, false);
+            if(composer) composer.setSize(nW, nH);
         });
     })();
     </script>
