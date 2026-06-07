@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Outer circuit border -->
+  <rect x="2" y="2" width="44" height="44" rx="10" stroke="#00D4FF" stroke-width="1.8" fill="none" opacity="0.7"/>
+  <!-- Circuit corner dots -->
+  <circle cx="8" cy="8" r="2" fill="#00D4FF"/>
+  <circle cx="40" cy="8" r="2" fill="#FFFFFF"/>
+  <circle cx="8" cy="40" r="2" fill="#00D4FF"/>
+  <circle cx="40" cy="40" r="2" fill="#FFFFFF"/>
+  <!-- P letterform — left half -->
+  <path d="M10 38 L10 10 L22 10 C27.5 10 30 13 30 18 C30 23 27.5 26 22 26 L10 26"
+        stroke="#00D4FF" stroke-width="2.4" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- M letterform — right half -->
+  <path d="M31 38 L31 10 L37 22 L43 10 L43 38"
+        stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- Circuit line connecting P arc end to M base -->
+  <line x1="30" y1="26" x2="31" y2="26" stroke="#00D4FF" stroke-width="1.2" opacity="0.6"/>
+  <!-- Tick marks on P spine (neural nodes) -->
+  <line x1="10" y1="20" x2="7" y2="20" stroke="#00D4FF" stroke-width="1.2" opacity="0.5"/>
+  <line x1="10" y1="30" x2="7" y2="30" stroke="#00D4FF" stroke-width="1.2" opacity="0.5"/>
+</svg>

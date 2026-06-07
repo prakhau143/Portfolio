@@ -1,0 +1,1149 @@
+/* Custom Animations and Enhanced Styles */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Section Color Schemes */
+.about-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+}
+
+#resume {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    padding: 4rem 0;
+}
+
+#service {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+    padding: 4rem 0;
+}
+
+#portfolio {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 4rem 0;
+}
+
+#contact {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    padding: 4rem 0;
+}
+
+/* Card Enhancements */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Section Headers */
+.section h2 {
+    color: #2d3748;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a5568 0%, #718096 100%);
+}
+
+/* Progress Bars */
+.progress {
+    background-color: #edf2f7;
+    border-radius: 10px;
+    height: 8px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #4a5568 0%, #718096 100%);
+    border-radius: 10px;
+}
+
+/* Contact Form */
+.contact-form-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    border-color: #4a5568;
+    box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.1);
+}
+
+/* Footer Enhancement */
+.footer {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    color: #e2e8f0;
+}
+
+/* Dark Section Enhancement */
+.bg-dark {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+}
+
+/* Social Icons */
+.social-item .social-link {
+    color: #4a5568;
+    transition: all 0.3s ease;
+}
+
+.social-item .social-link:hover {
+    color: #2d3748;
+    transform: translateY(-3px);
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #4a5568 0%, #718096 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 55, 72, 0.2);
+}
+
+/* Portfolio Items */
+.portfolio .card {
+    transition: all 0.3s ease;
+}
+
+.portfolio .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4a5568 0%, #718096 100%);
+    border-radius: 4px;
+}
+
+/* Image Hover Effects */
+.img-fluid {
+    transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.02);
+}
+
+/* Skill Cards Animation */
+.card-body .row {
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.card-body .row:nth-child(1) { animation-delay: 0.1s; }
+.card-body .row:nth-child(2) { animation-delay: 0.2s; }
+.card-body .row:nth-child(3) { animation-delay: 0.3s; }
+
+/* Apply animations to sections */
+.about-section, .section {
+    animation: fadeIn 1s ease-out;
+}
+
+.header-content {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.navbar {
+    background: linear-gradient(45deg, #ffffff, #f8f9fa);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    animation: slideIn 0.8s ease-out;
+}
+
+/* Enhanced Card Styles */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Social Icons Animation */
+.social-item {
+    transition: transform 0.3s ease;
+}
+
+.social-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Button Hover Effects */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 75, 75, 0.3);
+}
+
+/* Portfolio Items */
+.portfolio .card-body {
+    transition: all 0.3s ease;
+}
+
+.portfolio .card-body:hover {
+    background: linear-gradient(45deg, rgba(255, 75, 75, 0.05), rgba(255, 118, 118, 0.05));
+}
+
+/* Contact Form Enhancement */
+.form-control:focus {
+    border-color: #ff4b4b;
+    box-shadow: 0 0 0 0.2rem rgba(255, 75, 75, 0.25);
+}
+
+/* Footer Enhancement */
+.footer {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    animation: gradientBG 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* Dark Section Enhancement */
+.bg-dark {
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff4b4b, #ff7676);
+    border-radius: 5px;
+}
+
+/* Image Hover Effects */
+.img-fluid {
+    transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.02);
+}
+
+/* Skill Cards Animation */
+.card-body .row {
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.card-body .row:nth-child(1) { animation-delay: 0.1s; }
+.card-body .row:nth-child(2) { animation-delay: 0.2s; }
+.card-body .row:nth-child(3) { animation-delay: 0.3s; }
+
+/* 3D Transform and Perspective */
+body {
+    perspective: 1000px;
+}
+
+/* Section Spacing and 3D Effects */
+.about-section, .section {
+    padding: 3rem 0;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.about-section:hover, .section:hover {
+    transform: translateZ(20px);
+}
+
+/* Card 3D Effects */
+.card {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Interactive Header */
+.header {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.header:hover {
+    transform: translateZ(30px);
+}
+
+.header-content {
+    transform: translateZ(20px);
+}
+
+/* 3D Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transform: translateZ(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4a5568, #718096);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Portfolio Items 3D Effect */
+.portfolio .card {
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio .card:hover {
+    transform: translateY(-15px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill Cards Animation */
+.card-body .row {
+    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+}
+
+.card-body .row:hover {
+    transform: translateZ(15px);
+}
+
+/* Progress Bars 3D Effect */
+.progress {
+    transform-style: preserve-3d;
+    transform: translateZ(5px);
+    background-color: rgba(237, 242, 247, 0.8);
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transform: translateZ(10px);
+    background: linear-gradient(90deg, #4a5568, #718096);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(74, 85, 104, 0.3);
+}
+
+/* Contact Form 3D */
+.contact-form-card {
+    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-card:hover {
+    transform: translateZ(20px);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.form-control {
+    transform: translateZ(5px);
+    transition: all 0.3s ease;
+    background-color: rgba(248, 250, 252, 0.9);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.form-control:focus {
+    transform: translateZ(10px);
+    background-color: #ffffff;
+    border-color: #4a5568;
+    box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.1);
+}
+
+/* Social Icons 3D */
+.social-item {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover {
+    transform: translateZ(15px) scale(1.1);
+}
+
+/* Button 3D Effect */
+.btn-primary {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4a5568, #718096);
+    border: none;
+    box-shadow: 0 4px 15px rgba(74, 85, 104, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateZ(10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(74, 85, 104, 0.3);
+}
+
+/* Image Hover Effects */
+.img-fluid {
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.img-fluid:hover {
+    transform: translateZ(20px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Transitions */
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optimize Spacing */
+.container {
+    padding: 2rem 1rem;
+}
+
+.row {
+    margin-bottom: 1.5rem;
+}
+
+/* Dark Section Enhancement */
+.bg-dark {
+    background: linear-gradient(135deg, #2d3748, #4a5568) !important;
+    transform-style: preserve-3d;
+}
+
+.bg-dark:hover {
+    transform: translateZ(20px);
+}
+
+/* Footer 3D Effect */
+.footer {
+    transform-style: preserve-3d;
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+    color: #e2e8f0;
+    padding: 2rem 0;
+}
+
+.footer:hover {
+    transform: translateZ(10px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4a5568, #718096);
+    border-radius: 4px;
+}
+
+/* Existing animations */
+// ... existing code ... 
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .header-content {
+        padding: 4rem 0;
+    }
+    
+    .card {
+        margin-bottom: 2rem;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .header-content {
+        padding: 3rem 0;
+    }
+    
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        transform: none !important;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px) !important;
+    }
+    
+    .social-item {
+        margin: 0.5rem;
+    }
+    
+    .form-control {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-content {
+        padding: 2rem 0;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .header-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .social-item {
+        margin: 0.3rem;
+    }
+}
+
+/* Fix for missing sections */
+.section {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Ensure all sections are visible */
+#about, #resume, #service, #portfolio, #contact {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Fix for mobile navigation */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        margin: 0.2rem 0;
+    }
+}
+
+/* Fix for images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for portfolio grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card .card-body {
+    padding: 1.5rem;
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.portfolio-card .subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.portfolio-card .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Responsive Portfolio Styles */
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-card .card-body {
+        padding: 1rem;
+    }
+    
+    .portfolio-card img {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Fix for horizontal scrolling */
+.container {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* Ensure images don't cause overflow */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for card content overflow */
+.card-body {
+    overflow: hidden;
+}
+
+/* Ensure text wraps properly */
+.subtitle {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Fix for contact form */
+.contact-form-card {
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .contact-form-card {
+        padding: 1rem;
+    }
+}
+
+/* Fix for progress bars */
+.progress {
+    height: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Fix for social icons */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Fix for section spacing */
+.section + .section {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .section + .section {
+        margin-top: 0;
+    }
+}
+
+/* About Section Styles */
+.about-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.about-flex-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.about-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h3 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.about-card .line {
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #dc3545;
+    margin-bottom: 1.5rem;
+}
+
+.about-card .info li {
+    margin-bottom: 1rem;
+    color: #4a5568;
+}
+
+.about-card .info li span {
+    font-weight: 600;
+    color: #2d3748;
+    margin-right: 0.5rem;
+}
+
+.about-card .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.about-card .social-item {
+    transition: transform 0.3s ease;
+}
+
+.about-card .social-item:hover {
+    transform: translateY(-3px);
+}
+
+.about-card .social-link {
+    color: #4a5568;
+    font-size: 1.2rem;
+}
+
+.about-card .social-link:hover {
+    color: #dc3545;
+}
+
+.about-card .row {
+    margin-bottom: 1.5rem;
+}
+
+.about-card .icon-lg {
+    font-size: 1.5rem;
+}
+
+.about-card .subtitle {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.about-card hr {
+    margin: 1rem 0;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .about-flex-container {
+        flex-wrap: wrap;
+    }
+    
+    .about-card {
+        flex: 1 1 calc(50% - 2rem);
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-flex-container {
+        flex-direction: column;
+    }
+    
+    .about-card {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 0;
+    }
+    
+    .about-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 2rem 0;
+    }
+    
+    .about-card {
+        padding: 1rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Resume Button Styles */
+.resume-btn {
+    background: linear-gradient(45deg, #2196F3, #00BCD4);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.resume-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00BCD4, #2196F3);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.resume-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+}
+
+.resume-btn:hover::before {
+    left: 0;
+}
+
+.resume-btn i {
+    position: relative;
+    z-index: 2;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.resume-btn:hover i {
+    transform: translateY(-2px);
+}
+
+.resume-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Button Click Animation */
+.resume-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+}
+
+/* Button Loading Animation */
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(33, 150, 243, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(33, 150, 243, 0);
+    }
+}
+
+.resume-btn.loading {
+    animation: buttonPulse 1.5s infinite;
+    pointer-events: none;
+}
+
+/* Add loading state to button */
+.resume-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 3;
+}
+
+/* Responsive Button Styles */
+@media (max-width: 768px) {
+    .resume-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .resume-btn {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Portfolio Container Styles */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.portfolio-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+}
+
+.portfolio-content h5 {
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.portfolio-content p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.portfolio-content .btn {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-content .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .portfolio-container {
+        gap: 1.5rem;
+    }
+    
+    .portfolio-item {
+        flex: 1 1 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        gap: 1rem;
+    }
+    
+    .portfolio-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .portfolio-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-content {
+        padding: 1rem;
+    }
+    
+    .portfolio-image {
+        height: 160px;
+    }
+}
+
+// ... existing code ... 
