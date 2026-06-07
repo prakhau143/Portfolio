@@ -5,16 +5,21 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# REQUIRED: give GITHUB_TOKEN write access so the action can push to gh-pages
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      
+        uses: actions/checkout@v4   # v3 is deprecated (Node.js 20 warning)
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}   # fixed: was missing, caused exit-128
           folder: public_html
           branch: gh-pages
           clean: true

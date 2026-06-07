@@ -4523,7 +4523,16 @@ a, button, input, textarea, select,
 </style>
     <!-- ═══ SERVICES MATRIX ═══ -->
     <section class="svc-section" id="services">
-        <!-- BG layers -->
+        <!-- ① Cinematic video background -->
+        <video class="section-video-bg" id="svc-vid"
+               autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/imgs/service_matrix.mp4" type="video/mp4">
+        </video>
+        <!-- ② Dark overlay — keeps cards readable -->
+        <div class="section-vid-overlay svc-vid-overlay" aria-hidden="true"></div>
+        <!-- ③ Animated cyan scan-lines -->
+        <div class="svc-scan-line" aria-hidden="true"></div>
+        <!-- BG layers (z:3, above overlay) -->
         <div class="svc-grid-bg"></div>
         <canvas id="svc-particles"></canvas>
         <div class="svc-float-labels" aria-hidden="true">
@@ -4544,7 +4553,7 @@ a, button, input, textarea, select,
         </div>
 
         <!-- Live indicator -->
-        <div style="text-align:center;position:relative;z-index:2;">
+        <div style="text-align:center;position:relative;z-index:4;">
             <div class="svc-live">
                 <div class="svc-live-dot"></div>
                 LIVE SERVICES AVAILABLE
@@ -5122,12 +5131,119 @@ a, button, input, textarea, select,
 </style>
 
     <!-- ═══════════════════════════════════════════════════════
+         CINEMATIC VIDEO SECTION BACKGROUNDS — CSS
+         ═══════════════════════════════════════════════════════ -->
+    <style id="section-video-css">
+    /* ── Reusable video layer ── */
+    .section-video-bg {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        z-index: 0;
+        display: block;
+    }
+    /* ── Reusable dark overlay sits above video (z:1) ── */
+    .section-vid-overlay {
+        position: absolute; inset: 0;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* ── GitHub MC: purple/cyan gradient overlay ── */
+    .ghcc-vid-overlay {
+        background:
+            linear-gradient(180deg, rgba(0,0,10,.78) 0%, rgba(5,0,22,.52) 50%, rgba(0,0,10,.78) 100%),
+            radial-gradient(ellipse 80% 55% at 50% 50%, rgba(168,85,247,.12) 0%, transparent 68%);
+    }
+    /* bump existing GitHub MC layers above overlay */
+    #ghcc-bg-canvas { z-index: 2 !important; }
+    .ghcc-container { z-index: 3 !important; }
+
+    /* ── Services Matrix: dark overlay ── */
+    .svc-vid-overlay {
+        background: rgba(0,0,0,.60);
+    }
+    /* Animated cyan scan-lines over video */
+    .svc-scan-line {
+        position: absolute; inset: 0;
+        pointer-events: none;
+        z-index: 2;
+        background: repeating-linear-gradient(
+            0deg,
+            transparent, transparent 3px,
+            rgba(0,200,255,.018) 3px, rgba(0,200,255,.018) 4px
+        );
+        animation: svcScanDrift 10s linear infinite;
+    }
+    @keyframes svcScanDrift {
+        from { background-position: 0 0; }
+        to   { background-position: 0 400px; }
+    }
+    /* bump existing Services Matrix layers above overlay */
+    .svc-grid-bg,
+    #svc-particles,
+    .svc-float-labels { z-index: 3 !important; }
+    .svc-header,
+    .svc-live,
+    .svc-live-badges,
+    .svc-row-wrap,
+    .svc-cta          { z-index: 4 !important; }
+
+    /* ── Contact: purple ambient glow tint on existing overlay ── */
+    #contact .mc-overlay {
+        background:
+            linear-gradient(180deg,
+                rgba(0,0,5,.82) 0%,
+                rgba(0,0,18,.48) 28%,
+                rgba(20,0,45,.42) 50%,
+                rgba(0,0,18,.48) 72%,
+                rgba(0,0,5,.82) 100%
+            ) !important;
+    }
+    /* Transmission scan-line animation for contact */
+    .mc-transmission-scan {
+        position: absolute; inset: 0;
+        pointer-events: none;
+        z-index: 3;
+        background: repeating-linear-gradient(
+            0deg,
+            transparent, transparent 2px,
+            rgba(0,200,255,.014) 2px, rgba(0,200,255,.014) 3px
+        );
+        animation: mcScanDrift 12s linear infinite;
+    }
+    @keyframes mcScanDrift {
+        from { background-position: 0 0; }
+        to   { background-position: 0 300px; }
+    }
+
+    /* ── Performance + a11y ── */
+    @media (prefers-reduced-motion: reduce) {
+        .section-video-bg             { display: none !important; }
+        .svc-scan-line,
+        .mc-transmission-scan         { display: none !important; }
+    }
+    @media (max-width: 768px) {
+        .svc-scan-line,
+        .mc-transmission-scan         { opacity: .4; }
+    }
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════
          GITHUB MISSION CONTROL — HTML
          ═══════════════════════════════════════════════════════ -->
     <section id="solar-system" class="ghcc-section">
+        <!-- ① Cinematic video background -->
+        <video class="section-video-bg" id="ghcc-vid"
+               autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/imgs/github.mp4" type="video/mp4">
+        </video>
+        <!-- ② Dark + purple gradient overlay over video -->
+        <div class="section-vid-overlay ghcc-vid-overlay" aria-hidden="true"></div>
         <!-- Hidden for JS compatibility -->
         <div id="ss3d-wrap" style="display:none;position:absolute;width:1px;height:1px;"></div>
-        <!-- Background canvas -->
+        <!-- Background canvas (particles — z:2, above overlay) -->
         <canvas id="ghcc-bg-canvas"></canvas>
         <!-- Heatmap tooltip -->
         <div id="ghcc-tip"></div>
@@ -5845,12 +5961,18 @@ a, button, input, textarea, select,
 
     <section class="mc-section" id="contact">
 
-        <!-- ① 3D GLB Background -->
-        <canvas id="mc-3d-canvas" class="mc-video" style="opacity:1;"></canvas>
-        <!-- ② Overlays (z:1=dark, z:2=particles, z:3=grid) -->
+        <!-- ① Cinematic video background (replaces FNAF GLB — JS guard fires cleanly via null ID) -->
+        <video class="mc-video" id="mc-vid"
+               autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+               style="z-index:0;">
+            <source src="assets/imgs/contact_panel.mp4" type="video/mp4">
+        </video>
+        <!-- ② Overlays (z:1=dark+purple, z:2=particles, z:3=grid+scan) -->
         <div class="mc-overlay"></div>
         <canvas id="mc-particles"></canvas>
         <div class="mc-grid-overlay"></div>
+        <!-- ③ Animated transmission scan-lines -->
+        <div class="mc-transmission-scan" aria-hidden="true"></div>
 
         <!-- ③ Universe Edge Banner -->
         <div class="mc-universe-edge">
@@ -10510,6 +10632,46 @@ a, button, input, textarea, select,
     /* (old snake state — removed) */
 
 
+    })();
+    </script>
+
+    <!-- ═══ Section video backgrounds — IntersectionObserver pause/play ═══ -->
+    <script>
+    (function(){
+        'use strict';
+        /* Select all cinematic section videos */
+        var vids = [
+            document.getElementById('ghcc-vid'),   /* GitHub MC      */
+            document.getElementById('svc-vid'),    /* Services Matrix */
+            document.getElementById('mc-vid')      /* Contact CC      */
+        ].filter(Boolean);
+
+        if(!vids.length) return;
+
+        /* Respect prefers-reduced-motion — keep paused */
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(prefersReduced){
+            vids.forEach(function(v){ v.pause(); v.style.display = 'none'; });
+            return;
+        }
+
+        /* IntersectionObserver — pause when off-screen, play when visible */
+        if('IntersectionObserver' in window){
+            var obs = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if(entry.isIntersecting){
+                        entry.target.play().catch(function(){});
+                    } else {
+                        entry.target.pause();
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            vids.forEach(function(v){ obs.observe(v); });
+        } else {
+            /* Fallback — just play all */
+            vids.forEach(function(v){ v.play().catch(function(){}); });
+        }
     })();
     </script>
 </body>
