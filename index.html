@@ -1959,17 +1959,30 @@ html, body { background: #020008 !important; }
 @keyframes ft6{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
 
 /* ══════════════════════════════════════════════════════
-   OPTIMUS PRIME — HERO 3D GUARDIAN
+   OPTIMUS PRIME — TRANSPARENT OVERLAY ON BLACK HOLE SVG
    ══════════════════════════════════════════════════════ */
-.hero-optimus-wrap {
-    position: relative;
-    width: min(540px, 88vw);
-    height: min(720px, 82vh);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(20px) translateX(40px);  /* hero column offset */
+
+/* hero-svg-wrap is already position:relative — just add
+   overflow:visible so Optimus can exceed the SVG bounds    */
+.hero-svg-wrap { overflow: visible; }
+
+/* Purple ambient glow BEHIND Optimus (above SVG, below canvas) */
+.hero-svg-wrap::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 56%;
+    transform: translate(-50%, -50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle,
+        rgba(170,80,255,.38) 0%,
+        rgba(100,0,255,.14) 38%,
+        transparent 65%);
+    filter: blur(60px);
+    z-index: 1;
+    pointer-events: none;
 }
+
+/* Optimus canvas — MUST be transparent */
 #optimus-canvas {
     position: absolute;
     inset: 0;
@@ -1978,57 +1991,44 @@ html, body { background: #020008 !important; }
     display: block;
     pointer-events: none;
     z-index: 2;
+    background: transparent !important; /* critical — no black fill */
 }
-/* ── Energy rings ── */
-.opt-ring {
+
+/* Soft purple portal glow (extra layer behind model) */
+.opt-portal-glow {
     position: absolute;
-    border-radius: 50%;
-    top: 50%; left: 50%;
+    top: 48%; left: 56%;
     transform: translate(-50%, -50%);
-    pointer-events: none;
-    animation: optRingPulse 4s ease-in-out infinite;
+    width: 440px; height: 440px;
+    background: radial-gradient(circle,
+        rgba(168,85,247,.35) 0%,
+        rgba(0,200,255,.10) 45%,
+        transparent 68%);
+    filter: blur(45px);
     z-index: 1;
+    pointer-events: none;
+    animation: optPortalPulse 4s ease-in-out infinite;
 }
-.opt-ring-1 {
-    width: 280px; height: 280px;
-    border: 1.5px solid rgba(168,85,247,.45);
-    box-shadow: 0 0 24px rgba(168,85,247,.18), inset 0 0 24px rgba(168,85,247,.06);
-    animation-duration: 4s;
+@keyframes optPortalPulse {
+    0%,100% { opacity:.65; transform: translate(-50%,-50%) scale(1); }
+    50%     { opacity:1;   transform: translate(-50%,-50%) scale(1.07); }
 }
-.opt-ring-2 {
-    width: 400px; height: 400px;
-    border: 1px solid rgba(0,200,255,.22);
-    box-shadow: 0 0 16px rgba(0,200,255,.08);
-    animation-duration: 5.8s;
-    animation-delay: 1.5s;
-}
-.opt-ring-3 {
-    width: 530px; height: 530px;
-    border: 1px solid rgba(168,85,247,.10);
-    animation-duration: 7.5s;
-    animation-delay: 3s;
-}
-@keyframes optRingPulse {
-    0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.65; }
-    50%     { transform: translate(-50%,-50%) scale(1.04); opacity:1;   }
-}
-/* ── Ground glow platform ── */
-.opt-ground-glow {
+
+/* Ground shadow — grounded feel */
+.optimus-shadow {
     position: absolute;
-    bottom: 12%; left: 50%;
+    bottom: 12%; left: 58%;
     transform: translateX(-50%);
-    width: 260px; height: 36px;
-    background: radial-gradient(ellipse, rgba(168,85,247,.45) 0%, rgba(0,200,255,.15) 40%, transparent 70%);
-    filter: blur(10px);
-    pointer-events: none;
+    width: 240px; height: 42px;
+    background: radial-gradient(ellipse,
+        rgba(0,0,0,.58) 0%,
+        transparent 70%);
+    filter: blur(16px);
     z-index: 1;
-    animation: groundGlowPulse 3s ease-in-out infinite;
+    pointer-events: none;
 }
-@keyframes groundGlowPulse {
-    0%,100% { opacity:.7; transform:translateX(-50%) scaleX(1); }
-    50%     { opacity:1;  transform:translateX(-50%) scaleX(1.08); }
-}
-/* ── Cyber particles ── */
+
+/* Floating cyber particles */
 .opt-particles {
     position: absolute; inset: 0;
     pointer-events: none; overflow: hidden;
@@ -2040,18 +2040,8 @@ html, body { background: #020008 !important; }
     animation: optParFloat linear infinite;
 }
 @keyframes optParFloat {
-    0%   { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-260px) scale(0); opacity: 0; }
-}
-/* ── Weapon energy charge flash ── */
-@keyframes optWeaponFlash {
-    0%,100% { opacity: 0; }
-    50%     { opacity: .25; }
-}
-/* ── Mobile: hide heavy optimus on very small screens ── */
-@media (max-width: 768px) {
-    .hero-optimus-wrap { transform: none; }
-    .opt-ring-3 { display: none; }
+    0%   { transform: translateY(0) scale(1); opacity: .9; }
+    100% { transform: translateY(-240px) scale(0.1); opacity: 0; }
 }
 
 /* stats bar */
@@ -2748,18 +2738,20 @@ html, body { background: #020008 !important; }
                     </div>
                 </div>
 
-                <!-- RIGHT: Optimus Prime 3D Guardian -->
+                <!-- RIGHT: Black hole portal + Optimus Prime overlay -->
                 <div class="hero-right-col">
-                    <div class="hero-optimus-wrap" id="hero-orbit">
-                        <!-- Animated energy rings behind model -->
-                        <div class="opt-ring opt-ring-1" aria-hidden="true"></div>
-                        <div class="opt-ring opt-ring-2" aria-hidden="true"></div>
-                        <div class="opt-ring opt-ring-3" aria-hidden="true"></div>
-                        <!-- Cyberpunk ground glow platform -->
-                        <div class="opt-ground-glow" aria-hidden="true"></div>
-                        <!-- Three.js canvas -->
+                    <div class="hero-svg-wrap" id="hero-orbit">
+                        <!-- Layer 1: Black hole SVG portal (background) -->
+                        <img src="assets/imgs/hero-bg.svg"
+                             class="hero-svg-img"
+                             alt="Futuristic AI Developer Illustration">
+                        <!-- Layer 2: Purple energy aura behind Optimus -->
+                        <div class="opt-portal-glow" aria-hidden="true"></div>
+                        <!-- Layer 3: Grounded shadow beneath feet -->
+                        <div class="optimus-shadow" aria-hidden="true"></div>
+                        <!-- Layer 4: Optimus Three.js (transparent background) -->
                         <canvas id="optimus-canvas" aria-hidden="true"></canvas>
-                        <!-- Floating cyber particles -->
+                        <!-- Layer 5: Floating cyber particles -->
                         <div class="opt-particles" id="opt-particles" aria-hidden="true"></div>
                     </div>
                 </div>
@@ -7949,174 +7941,147 @@ a, button, input, textarea, select,
     })();
     </script>
 
-    <!-- ═══ Optimus Prime — Hero 3D Guardian ═══ -->
+    <!-- ═══ Optimus Prime — Transparent Overlay on Black Hole ═══ -->
     <script>
     (function initOptimus(){
         'use strict';
         var canvas = document.getElementById('optimus-canvas');
         if(!canvas || typeof THREE === 'undefined' || typeof THREE.GLTFLoader === 'undefined') return;
 
-        var W = canvas.offsetWidth  || 540;
-        var H = canvas.offsetHeight || 720;
+        /* Force canvas transparency via DOM style (belt-and-suspenders) */
+        canvas.style.background = 'transparent';
+
+        var W = canvas.offsetWidth  || 500;
+        var H = canvas.offsetHeight || 640;
         var isMobile = window.innerWidth < 769;
 
-        /* ── Renderer ── */
+        /* ──────────────────────────────────────────────
+           RENDERER — alpha:true + clearColor alpha=0
+           NO EffectComposer: it kills the alpha channel
+           ────────────────────────────────────────────── */
         var renderer = new THREE.WebGLRenderer({
             canvas: canvas,
-            alpha: true,
+            alpha: true,                /* transparent background */
             antialias: !isMobile,
             powerPreference: 'high-performance'
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
         renderer.setSize(W, H, false);
-        renderer.setClearColor(0x000000, 0);
+        renderer.setClearColor(0x000000, 0);   /* fully transparent — critical */
+        renderer.autoClear = true;
         renderer.shadowMap.enabled = false;
-        if(renderer.outputEncoding !== undefined) renderer.outputEncoding = THREE.sRGBEncoding;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        if(renderer.outputEncoding !== undefined)
+            renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping        = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.5;
 
         /* ── Scene + Camera ── */
         var scene  = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(36, W / H, 0.1, 100);
-        camera.position.set(0, 0.5, 5.8);
+        /* scene.background must stay null for transparency */
+        var camera = new THREE.PerspectiveCamera(38, W / H, 0.1, 100);
+        camera.position.set(0, 0.3, 5.2);
         camera.lookAt(0, 0.2, 0);
 
-        /* ── Cinematic Lights ── */
-        /* 1. Soft ambient */
-        scene.add(new THREE.AmbientLight(0xffffff, 0.28));
+        /* ── 6-point Cinematic Lighting ── */
+        scene.add(new THREE.AmbientLight(0xffffff, 0.30));
 
-        /* 2. White front key light */
-        var keyLight = new THREE.DirectionalLight(0xffffff, 2.8);
-        keyLight.position.set(1.5, 3.5, 4);
+        var keyLight = new THREE.DirectionalLight(0xffffff, 3.0);
+        keyLight.position.set(1.8, 4, 4.5);
         scene.add(keyLight);
 
-        /* 3. Blue rim light from left */
-        var rimLight = new THREE.DirectionalLight(0x0080ff, 3.2);
+        var rimLight = new THREE.DirectionalLight(0x0088ff, 3.5);
         rimLight.position.set(-5, 1.5, -1);
         scene.add(rimLight);
 
-        /* 4. Purple back glow */
-        var backLight = new THREE.PointLight(0xc770ff, 2.8, 18);
-        backLight.position.set(0, 1.2, -4.5);
+        var backLight = new THREE.PointLight(0xc770ff, 3.0, 20);
+        backLight.position.set(0, 1.5, -5);
         scene.add(backLight);
 
-        /* 5. Cyan under-fill */
         var fillLight = new THREE.PointLight(0x00c8ff, 1.2, 12);
         fillLight.position.set(0.5, -3, 2);
         scene.add(fillLight);
 
-        /* 6. Weapon emitter (boosts during pulse) */
         var weaponLight = new THREE.PointLight(0xc770ff, 0, 8);
-        weaponLight.position.set(1.2, 0, 1.5);
+        weaponLight.position.set(1.5, 0.5, 1.8);
         scene.add(weaponLight);
 
-        /* ── Bloom (desktop only) ── */
-        var composer = null;
-        if(!isMobile && typeof THREE.EffectComposer !== 'undefined'
-           && typeof THREE.UnrealBloomPass !== 'undefined'){
-            try {
-                var renderTarget = new THREE.WebGLRenderTarget(W, H, {
-                    minFilter: THREE.LinearFilter,
-                    magFilter: THREE.LinearFilter,
-                    format: THREE.RGBAFormat
-                });
-                composer = new THREE.EffectComposer(renderer, renderTarget);
-                var renderPass = new THREE.RenderPass(scene, camera);
-                renderPass.clearColor = new THREE.Color(0,0,0);
-                renderPass.clearAlpha = 0;
-                composer.addPass(renderPass);
-                var bloom = new THREE.UnrealBloomPass(
-                    new THREE.Vector2(W, H),
-                    0.45,   /* strength  */
-                    0.5,    /* radius    */
-                    0.82    /* threshold */
-                );
-                composer.addPass(bloom);
-            } catch(e){ composer = null; }
-        }
-
-        /* ── Model state ── */
+        /* ── State ── */
         var model  = null;
         var mixer  = null;
         var baseY  = 0;
         var clock  = new THREE.Clock();
         var active = true;
 
-        /* ── Mouse parallax (smooth lerp) ── */
+        /* ── Mouse parallax ── */
         var mX = 0, mY = 0, tX = 0, tY = 0;
         document.addEventListener('mousemove', function(e){
             mX = (e.clientX / window.innerWidth  - 0.5) * 2;
             mY = (e.clientY / window.innerHeight - 0.5) * 2;
         }, { passive: true });
 
-        /* ── Load Optimus GLB ── */
+        /* ── Load Optimus ── */
         new THREE.GLTFLoader().load(
             'assets/imgs/transformers_war_for_cybertron_optimus_prime.glb',
             function(gltf){
                 model = gltf.scene;
 
-                /* Auto-normalize — fill ~3.6 units */
+                /* Auto-normalize to fit ~3.4 units */
                 var box    = new THREE.Box3().setFromObject(model);
                 var size   = box.getSize(new THREE.Vector3());
                 var center = box.getCenter(new THREE.Vector3());
-                var scale  = 3.6 / Math.max(size.x, size.y, size.z);
-                model.scale.setScalar(scale);
-                model.position.sub(center.multiplyScalar(scale));
+                var sc     = 3.4 / Math.max(size.x, size.y, size.z);
+                model.scale.setScalar(sc);
 
-                /* Shift down slightly to show full body, feet near bottom */
-                model.position.y -= 0.35;
+                /* Center first, then offset: slightly right + up in frame */
+                model.position.sub(center.multiplyScalar(sc));
+                model.position.x += 0.5;    /* shift right of portal center */
+                model.position.y -= 0.1;    /* feet near bottom third        */
                 baseY = model.position.y;
 
-                /* Embedded animations */
+                /* Play embedded idle animation */
                 if(gltf.animations && gltf.animations.length){
                     mixer = new THREE.AnimationMixer(model);
-                    var clip = gltf.animations[0];
-                    mixer.clipAction(clip).play();
+                    mixer.clipAction(gltf.animations[0]).play();
                 }
 
                 scene.add(model);
 
-                /* Generate cyber particles */
+                /* Spawn cyber particles */
                 var pCont = document.getElementById('opt-particles');
                 if(pCont){
-                    for(var i = 0; i < 22; i++){
+                    for(var i = 0; i < 20; i++){
                         var dot = document.createElement('div');
                         dot.className = 'opt-p';
                         var sz = 2 + Math.random() * 3;
                         dot.style.cssText =
                             'width:'+sz+'px;height:'+sz+'px;' +
-                            'left:'+(10 + Math.random()*80)+'%;' +
-                            'bottom:'+(5 + Math.random()*35)+'%;' +
+                            'left:'+(20+Math.random()*60)+'%;' +
+                            'bottom:'+(5+Math.random()*30)+'%;' +
                             'background:'+(Math.random()>.5
-                                ? 'rgba(168,85,247,0.85)':'rgba(0,200,255,0.85)')+';' +
-                            'animation-duration:'+(3+Math.random()*5)+'s;' +
+                                ? 'rgba(168,85,247,.88)':'rgba(0,200,255,.88)')+';' +
+                            'animation-duration:'+(3.5+Math.random()*5)+'s;' +
                             'animation-delay:'+(-Math.random()*6)+'s;';
                         pCont.appendChild(dot);
                     }
                 }
             },
             undefined,
-            function(err){ console.warn('[Optimus] GLB load error:', err); }
+            function(err){ console.warn('[Optimus] load error:', err); }
         );
 
-        /* ── Weapon energy pulse (every 8 s) ── */
+        /* ── Weapon pulse every 8 s ── */
         var pulsing = false;
         function fireWeaponPulse(){
             if(pulsing) return;
             pulsing = true;
-            var start = performance.now();
-            var dur   = 1400; /* ms */
+            var t0  = performance.now(), dur = 1500;
             function step(now){
-                var p   = Math.min((now - start) / dur, 1);
-                var val = Math.sin(p * Math.PI);          /* 0→1→0 bell */
-                weaponLight.intensity = val * 5.5;
-                backLight.intensity   = 2.8 + val * 3.5;
+                var p   = Math.min((now - t0) / dur, 1);
+                var val = Math.sin(p * Math.PI);
+                weaponLight.intensity = val * 5.8;
+                backLight.intensity   = 3.0 + val * 3.8;
                 if(p < 1){ requestAnimationFrame(step); }
-                else {
-                    weaponLight.intensity = 0;
-                    backLight.intensity   = 2.8;
-                    pulsing = false;
-                }
+                else { weaponLight.intensity = 0; backLight.intensity = 3.0; pulsing = false; }
             }
             requestAnimationFrame(step);
         }
@@ -8131,30 +8096,28 @@ a, button, input, textarea, select,
             var t     = clock.elapsedTime;
 
             if(model){
-                /* Slow float up/down */
-                model.position.y = baseY + Math.sin(t * 0.38) * 0.08;
-
-                /* Smooth mouse parallax */
+                model.position.y = baseY + Math.sin(t * 0.40) * 0.09; /* slow float */
+                /* smooth parallax */
                 tX += (mX * 0.14 - tX) * 0.04;
                 tY += (mY * 0.09 - tY) * 0.04;
                 model.rotation.y = tX;
                 model.rotation.x = tY * 0.45;
             }
-
             if(mixer) mixer.update(delta);
 
-            if(composer){ composer.render(); }
-            else         { renderer.render(scene, camera); }
+            /* Direct render — no EffectComposer — preserves alpha */
+            renderer.setClearColor(0x000000, 0);
+            renderer.render(scene, camera);
         }
         render();
 
-        /* ── Pause when tab hidden ── */
+        /* Pause when tab hidden */
         document.addEventListener('visibilitychange', function(){
             active = !document.hidden;
             if(active) render();
         });
 
-        /* ── Resize ── */
+        /* Resize */
         window.addEventListener('resize', function(){
             var nW = canvas.offsetWidth;
             var nH = canvas.offsetHeight;
@@ -8162,7 +8125,6 @@ a, button, input, textarea, select,
             camera.aspect = nW / nH;
             camera.updateProjectionMatrix();
             renderer.setSize(nW, nH, false);
-            if(composer) composer.setSize(nW, nH);
         });
     })();
     </script>
