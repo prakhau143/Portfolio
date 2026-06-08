@@ -4395,8 +4395,8 @@ a, button, input, textarea, select,
 
         <!-- ── Background layers ── -->
         <!-- Video is the deepest layer — everything else renders above it -->
-        <video class="sk-video-bg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-            <source src="assets/imgs/command_skills_about.mp4" type="video/mp4">
+        <video class="sk-video-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+            <source src="assets/imgs/public_videos_skills-bg.webm" type="video/webm">
         </video>
         <!-- Dark gradient overlay so text stays readable over the video -->
         <div class="sk-bg-glow"></div>
@@ -5416,27 +5416,9 @@ a, button, input, textarea, select,
     #about .about-wrap  { position: relative; z-index: 3 !important; }
 
     /* ── Skills Universe: override video to ambient level ── */
-    .sk-video-bg {
-        opacity: 0.35 !important;   /* was 0.82 */
-        filter: blur(1px);
-    }
-    /* Extend sk-bg-glow with the holographic cyan/purple tint */
-    .sk-bg-glow {
-        background:
-            linear-gradient(135deg, rgba(120,0,255,.12), rgba(0,255,255,.07)),
-            radial-gradient(ellipse 85% 80% at 50% 50%,
-                transparent 30%,
-                rgba(3,0,20,.55) 70%,
-                rgba(3,0,20,.88) 100%),
-            radial-gradient(ellipse 55% 50% at 50% 50%,
-                rgba(138,43,226,.18) 0%,
-                transparent 65%);
-    }
-
-    /* ── Mobile: drop opacity + kill blur for performance ── */
+    /* ── Mobile: drop about video opacity + kill blur for performance ── */
     @media (max-width: 768px) {
         #about .about-cmd-vid { opacity: 0.15; filter: none; }
-        .sk-video-bg          { opacity: 0.15 !important; filter: none; }
     }
     /* ── Reduced motion ── */
     @media (prefers-reduced-motion: reduce) {
@@ -7191,8 +7173,7 @@ a, button, input, textarea, select,
     padding: 80px 0 100px;
 }
 
-/* ── BACKGROUND VIDEO — deepest layer ── */
-/* NOTE: opacity overridden to 0.35 !important by #ambient-video-css above */
+/* ── BACKGROUND VIDEO — deepest layer, fully visible ── */
 .sk-video-bg {
     position: absolute;
     inset: 0;
@@ -7200,7 +7181,7 @@ a, button, input, textarea, select,
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.82;          /* overridden by ambient-video-css → 0.35 */
+    opacity: 0.82;
     z-index: 0;
     pointer-events: none;
     display: block;
@@ -11396,8 +11377,6 @@ a, button, input, textarea, select,
         }
         /* About section: slow cinematic feel (0.7x) */
         applyRate(document.querySelector('#about .about-cmd-vid'), 0.7);
-        /* Skills Universe: active command-center feel (1.2x) */
-        applyRate(document.querySelector('#tech-skills .sk-video-bg'), 1.2);
     })();
     </script>
 </body>
