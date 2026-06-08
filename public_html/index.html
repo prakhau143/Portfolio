@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Prakhar Mittal is an AI Engineer & Full Stack Developer from Bhopal, India. Explore my portfolio of AI systems, Django APIs, React apps, and cloud infrastructure projects.">
     <meta name="author" content="Prakhar Mittal">
     <meta name="keywords" content="Prakhar Mittal, AI Developer, Full Stack Developer, MERN Developer, Django Developer, Python Developer, Portfolio, VIT Bhopal">
@@ -28,6 +28,12 @@
     }
     </script>
     <title>Prakhar Mittal | AI Developer & Full Stack Engineer</title>
+    <!-- DNS preconnect for CDN domains — improves FCP/LCP -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="icon" type="image/svg+xml" href="assets/imgs/favicon.svg">
     <link rel="alternate icon" href="assets/imgs/p.png">
     <!-- font icons -->
@@ -2797,7 +2803,7 @@ html, body { background: #020008 !important; }
     <header id="home" class="hero-section">
 
         <!-- ① Blackhole video — full-section background -->
-        <video class="hero-bh-video" autoplay muted loop playsinline>
+        <video class="hero-bh-video" autoplay muted loop playsinline preload="metadata">
             <source src="assets/imgs/public_videos_blackhole.webm" type="video/webm">
         </video>
         <!-- ② Dark overlay so text stays readable -->
@@ -2900,6 +2906,7 @@ html, body { background: #020008 !important; }
             <canvas id="spaceman-canvas"></canvas>
         </div>
     </header>
+    <main id="main-content">
     <!-- ═══ FUTURISTIC GLASSMORPHISM NAVBAR ═══ -->
     <!-- ══════════════════════════════════════════════════
          PM.OS — AI OPERATING SYSTEM + COMMAND CENTER NAV
@@ -4379,8 +4386,12 @@ a, button, input, textarea, select,
     border: none;
     cursor: pointer;
     transition: all 0.35s cubic-bezier(0.23,1,0.32,1);
-    padding: 0;
+    /* Expand tap zone to 44×44px without changing visual size */
+    padding: 17px;
+    margin: -17px;
     outline: none;
+    /* Override padding for active indicator */
+    box-sizing: content-box;
 }
 .cert-dot:hover { background: rgba(255,255,255,0.3); }
 .cert-dot.active {
@@ -4569,7 +4580,7 @@ a, button, input, textarea, select,
 
         <!-- ── Background layers ── -->
         <!-- Video is the deepest layer — everything else renders above it -->
-        <video class="sk-video-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <video class="sk-video-bg" autoplay muted loop playsinline preload="none" aria-hidden="true">
             <source src="assets/imgs/public_videos_skills-bg.webm" type="video/webm">
         </video>
         <!-- Dark gradient overlay so text stays readable over the video -->
@@ -6646,6 +6657,7 @@ a, button, input, textarea, select,
 
         </div><!-- /mc-container -->
     </section>
+    </main><!-- /main-content -->
 
 	<!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
