@@ -54,9 +54,9 @@
 
 | Metric | Score | Status |
 |--------|-------|--------|
-| ⚡ Performance | **56** | 🟠 Needs Improvement |
-| ♿ Accessibility | **88** | 🟠 Good |
-| ✅ Best Practices | **96** | 🟢 Excellent |
+| ⚡ Performance | **64** | 🟠 Needs Improvement |
+| ♿ Accessibility | **100** | 🟢 Perfect |
+| ✅ Best Practices | **100** | 🟢 Perfect |
 | 🔍 SEO | **100** | 🟢 Perfect |
 
 </div>
@@ -66,11 +66,11 @@
 
 | Metric | Value | Notes |
 |--------|-------|-------|
-| First Contentful Paint | 9.4 s | Large hero video loads |
-| Largest Contentful Paint | 65.8 s | 3× HD MP4 videos + 2× GLB models |
-| Total Blocking Time | 0 ms ✅ | No long JS tasks |
-| Cumulative Layout Shift | 0.043 ✅ | Layout very stable |
-| Speed Index | 9.4 s | Heavy media assets |
+| First Contentful Paint | 1.4 s | ✅ Fast |
+| Largest Contentful Paint | 33.5 s | 3× HD MP4 videos + 2× GLB models |
+| Total Blocking Time | 10 ms ✅ | No long JS tasks |
+| Cumulative Layout Shift | 0.069 ✅ | Layout very stable |
+| Speed Index | 2.6 s | ✅ Fast |
 
 </details>
 
@@ -82,10 +82,13 @@
 > **Optimizations already applied:**
 > - IntersectionObserver — 3D renders and videos pause when off-screen
 > - `prefers-reduced-motion` — videos hidden for users who prefer less motion
-> - `preload="metadata"` on all video backgrounds
+> - `preload="metadata"` on hero video; `preload="none"` on off-screen videos
 > - `will-change: opacity, transform` only where needed
 > - WebGL renderers stopped via `IntersectionObserver` when section leaves viewport
 > - `pointer-events: none` on all decorative layers
+> - `preconnect` + `dns-prefetch` hints for all CDN domains
+> - `<main>` landmark + correct heading order (WCAG 2.5.5 compliant)
+> - All interactive targets ≥ 24×24 px (cert-dot tap zones)
 
 ---
 
