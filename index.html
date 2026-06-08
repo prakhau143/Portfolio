@@ -2827,47 +2827,87 @@ html, body { background: #020008 !important; }
         </div>
     </header>
     <!-- ═══ FUTURISTIC GLASSMORPHISM NAVBAR ═══ -->
-    <nav class="navbar-glass" id="main-navbar" role="navigation">
-        <div class="navbar-glass-inner">
+    <!-- ══════════════════════════════════════════════════
+         PM.OS — AI OPERATING SYSTEM + COMMAND CENTER NAV
+         ══════════════════════════════════════════════════ -->
+    <nav class="pm-nav" id="main-navbar" role="navigation" aria-label="PM.OS Navigation">
 
-            <!-- LEFT: Logo + Brand -->
-            <a href="#home" class="nb-brand">
-                <img src="assets/imgs/image.png" alt="Prakhar Logo" class="nb-logo">
-                <div class="nb-brand-text">
-                    <span class="nb-brand-name">Prakhar Mittal</span>
-                    <span class="nb-brand-sub">AI Developer</span>
+        <!-- ── Main row ── -->
+        <div class="pm-nav-inner">
+
+            <!-- LEFT: PM.OS Brand -->
+            <a href="#home" class="pm-brand" aria-label="Home">
+                <div class="pm-brand-logo" aria-hidden="true">
+                    <span class="pm-brand-initials">PM</span>
+                    <span class="pm-brand-dot"></span>
+                </div>
+                <div class="pm-brand-info">
+                    <span class="pm-brand-name">PM.OS</span>
+                    <span class="pm-brand-sub">AUTONOMOUS AI SYSTEM</span>
+                </div>
+                <div class="pm-status-badge" aria-hidden="true">
+                    <span class="pm-status-pulse"></span>
+                    <span class="pm-status-text">ONLINE</span>
                 </div>
             </a>
 
-            <!-- CENTER: Nav links -->
-            <ul class="nb-links">
-                <li><a href="#home"         class="nb-link active">Home</a></li>
-                <li><a href="#about"        class="nb-link">About</a></li>
-                <li><a href="#resume"       class="nb-link">Resume</a></li>
-                <li><a href="#tech-skills"  class="nb-link">Skills</a></li>
-                <li><a href="#projects"     class="nb-link">Portfolio</a></li>
-                <li><a href="#solar-system" class="nb-link">GitHub</a></li>
-                <li><a href="#contact"      class="nb-link">Contact</a></li>
+            <!-- CENTER: HUD Nav links -->
+            <ul class="nb-links pm-nav-links" role="list">
+                <li><a href="#home"         class="nb-link pm-nav-link active" data-label="HOME">HOME</a></li>
+                <li><a href="#about"        class="nb-link pm-nav-link" data-label="ABOUT">ABOUT</a></li>
+                <li><a href="#resume"       class="nb-link pm-nav-link" data-label="RESUME">RESUME</a></li>
+                <li><a href="#projects"     class="nb-link pm-nav-link" data-label="PORTFOLIO">PORTFOLIO</a></li>
+                <li><a href="#solar-system" class="nb-link pm-nav-link" data-label="GITHUB">GITHUB</a></li>
+                <li><a href="#contact"      class="nb-link pm-nav-link" data-label="CONTACT">CONTACT</a></li>
             </ul>
 
-            <!-- RIGHT: CTA + mobile toggle -->
-            <div class="nb-right">
-                <a href="#contact" class="nb-hire">Hire Me ✦</a>
-                <button class="nb-toggle" id="nb-mobile-toggle" aria-label="Menu">☰</button>
+            <!-- RIGHT: Live HUD indicators + mobile toggle -->
+            <div class="pm-hud">
+                <div class="pm-hud-item" aria-hidden="true">
+                    <span class="pm-hud-label">CPU</span>
+                    <span class="pm-hud-val" id="pm-cpu-val">92%</span>
+                </div>
+                <div class="pm-hud-sep" aria-hidden="true"></div>
+                <div class="pm-hud-item" aria-hidden="true">
+                    <span class="pm-hud-label">NET</span>
+                    <span class="pm-hud-val pm-hud-green">STABLE</span>
+                </div>
+                <div class="pm-hud-sep" aria-hidden="true"></div>
+                <div class="pm-hud-item" aria-hidden="true">
+                    <span class="pm-hud-label">SYS</span>
+                    <span class="pm-hud-val pm-hud-blue">READY</span>
+                </div>
+                <button class="pm-toggle" id="nb-mobile-toggle" aria-label="Open system menu" aria-expanded="false">◉</button>
             </div>
         </div>
 
-        <!-- Mobile drawer (hidden by default) -->
-        <div class="nb-mobile-drawer" id="nb-mobile-drawer">
-            <a href="#home"         class="nb-link">Home</a>
-            <a href="#about"        class="nb-link">About</a>
-            <a href="#resume"       class="nb-link">Resume</a>
-            <a href="#tech-skills"  class="nb-link">Skills</a>
-            <a href="#projects"     class="nb-link">Portfolio</a>
-            <a href="#solar-system" class="nb-link">GitHub</a>
-            <a href="#contact"      class="nb-link">Contact</a>
-            <a href="#contact"      class="nb-hire">Hire Me ✦</a>
+        <!-- ── Status ticker ── -->
+        <div class="pm-ticker" aria-hidden="true">
+            <span class="pm-ticker-rail"></span>
+            <span class="pm-ticker-msg" id="pm-ticker-msg">INITIALIZING...</span>
+            <span class="pm-ticker-rail"></span>
         </div>
+
+        <!-- ── Mobile holographic full-screen menu ── -->
+        <div class="pm-mobile-menu nb-mobile-drawer" id="nb-mobile-drawer" role="dialog" aria-modal="true" aria-label="System Menu">
+            <div class="pm-mm-header">
+                <span class="pm-mm-os" aria-hidden="true">╔══ PM.OS ══╗</span>
+                <button class="pm-mm-close" id="pm-mobile-close" aria-label="Close menu">◉</button>
+            </div>
+            <p class="pm-mm-label" aria-hidden="true">SYSTEM MENU</p>
+            <nav class="pm-mm-links" aria-label="Mobile navigation">
+                <a href="#home"         class="nb-link pm-mm-link"><em>01</em>HOME</a>
+                <a href="#about"        class="nb-link pm-mm-link"><em>02</em>ABOUT</a>
+                <a href="#resume"       class="nb-link pm-mm-link"><em>03</em>RESUME</a>
+                <a href="#projects"     class="nb-link pm-mm-link"><em>04</em>PORTFOLIO</a>
+                <a href="#solar-system" class="nb-link pm-mm-link"><em>05</em>GITHUB</a>
+                <a href="#contact"      class="nb-link pm-mm-link"><em>06</em>CONTACT</a>
+            </nav>
+            <div class="pm-mm-footer" aria-hidden="true">
+                <span class="pm-mm-dot"></span>STATUS ONLINE
+            </div>
+        </div>
+
     </nav>
 
     <!-- ══ STATS BAR ══ -->
@@ -6998,162 +7038,329 @@ a, button, input, textarea, select,
 /* ==========================================
    FUTURISTIC GLASSMORPHISM NAVBAR
    ========================================== */
-.navbar-glass {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
+/* ═══════════════════════════════════════════════════════════════
+   PM.OS — AI OPERATING SYSTEM + COMMAND CENTER NAVBAR
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Base ── */
+.pm-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
     z-index: 99999;
-    background: rgba(2, 8, 28, 0.68) !important;
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 200, 255, 0.14);
-    box-shadow: 0 2px 24px rgba(0,0,0,0.4), 0 1px 0 rgba(0,200,255,0.08);
-    padding: 0;
-    width: 100%;
-    /* Scroll effect: more opaque on scroll (JS adds .scrolled class) */
-    transition: background 0.35s ease, box-shadow 0.35s ease;
+    font-family: 'JetBrains Mono','Fira Code','Courier New',monospace;
+    transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    background: transparent;
+    border-bottom: 1px solid transparent;
 }
-.navbar-glass.scrolled {
-    background: rgba(2, 8, 28, 0.92) !important;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.55), 0 1px 0 rgba(0,200,255,0.12);
+.pm-nav.scrolled {
+    background: rgba(2, 5, 22, 0.85);
+    backdrop-filter: blur(28px) saturate(200%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    border-bottom-color: rgba(0,200,255,0.18);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.55), 0 1px 0 rgba(0,200,255,0.1);
 }
-.navbar-glass-inner {
+
+/* ── Main row ── */
+.pm-nav-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 9px 28px;
-    max-width: 1440px;
+    padding: 10px 36px;
+    max-width: 100%;
     margin: 0 auto;
-    gap: 16px;
+    transition: max-width 0.45s ease, padding 0.45s ease;
 }
-/* Brand / Logo */
-.nb-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.pm-nav.scrolled .pm-nav-inner {
+    max-width: 90%;
+    padding: 8px 28px;
+}
+
+/* ── LEFT: Brand ── */
+.pm-brand {
+    display: flex; align-items: center; gap: 11px;
     text-decoration: none !important;
     flex-shrink: 0;
 }
-.nb-logo {
-    width: 36px;
-    height: 36px;
+.pm-brand-logo {
+    position: relative;
+    width: 40px; height: 40px;
+    border: 1.5px solid rgba(0,200,255,0.45);
     border-radius: 9px;
-    object-fit: cover;
-    border: 1px solid rgba(0,200,255,0.32);
-    box-shadow: 0 0 12px rgba(0,200,255,0.16);
-}
-.nb-brand-text { line-height: 1.2; }
-.nb-brand-name {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-}
-.nb-brand-sub {
-    display: block;
-    font-size: 0.6rem;
-    color: rgba(0,200,255,0.65);
-    font-family: monospace;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-}
-/* Center links */
-.nb-links {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.nb-link {
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 0.84rem;
-    font-weight: 500;
-    color: rgba(200,228,255,0.76) !important;
-    text-decoration: none !important;
-    transition: all 0.24s ease;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-}
-.nb-link:hover, .nb-link.active {
-    color: #00eeff !important;
-    background: rgba(0,200,255,0.1);
-}
-/* Right side */
-.nb-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,200,255,0.05);
+    box-shadow: 0 0 18px rgba(0,200,255,0.18), inset 0 0 8px rgba(0,200,255,0.05);
     flex-shrink: 0;
 }
-.nb-hire {
-    background: linear-gradient(135deg, #00c8ff, #0050dd);
-    color: #fff !important;
-    text-decoration: none !important;
-    padding: 7px 18px;
+.pm-brand-initials {
+    font-size: 0.78rem; font-weight: 900;
+    color: #00eeff; letter-spacing: 0.02em; font-family: monospace;
+}
+.pm-brand-dot {
+    position: absolute; top: -3px; right: -3px;
+    width: 9px; height: 9px;
+    background: #00ff88; border-radius: 50%;
+    border: 1.5px solid rgba(2,5,22,0.9);
+    box-shadow: 0 0 10px rgba(0,255,136,0.9);
+    animation: pmPulse 2s ease-in-out infinite;
+}
+@keyframes pmPulse {
+    0%,100% { box-shadow: 0 0 6px rgba(0,255,136,0.6); transform: scale(1); }
+    50%      { box-shadow: 0 0 20px rgba(0,255,136,1); transform: scale(1.15); }
+}
+.pm-brand-info { line-height: 1.2; }
+.pm-brand-name {
+    display: block; font-size: 1.05rem; font-weight: 900;
+    color: #00eeff; letter-spacing: 0.12em; font-family: monospace;
+    text-shadow: 0 0 14px rgba(0,200,255,0.55);
+}
+.pm-brand-sub {
+    display: block; font-size: 0.48rem;
+    color: rgba(0,200,255,0.48); letter-spacing: 0.2em;
+    font-family: monospace; white-space: nowrap;
+}
+.pm-status-badge {
+    display: flex; align-items: center; gap: 5px;
+    padding: 3px 9px;
+    border: 1px solid rgba(0,255,136,0.28);
     border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    transition: all 0.24s ease;
-    box-shadow: 0 3px 14px rgba(0,100,255,0.3);
+    background: rgba(0,255,136,0.05);
+    flex-shrink: 0;
+}
+.pm-status-pulse {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #00ff88;
+    animation: pmPulse 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+}
+.pm-status-text {
+    font-size: 0.48rem; font-weight: 700; color: #00ff88;
+    letter-spacing: 0.2em; font-family: monospace;
+}
+
+/* ── CENTER: HUD Nav Links ── */
+.pm-nav-links {
+    display: flex; align-items: center; gap: 2px;
+    list-style: none; margin: 0; padding: 0;
+}
+/* Base state */
+.pm-nav-link {
+    position: relative;
+    padding: 6px 15px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+    color: rgba(180,220,255,0.6) !important;
+    text-decoration: none !important;
+    font-family: monospace;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: color 0.2s ease, background 0.2s ease,
+                border-color 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
     white-space: nowrap;
 }
-.nb-hire:hover {
-    background: linear-gradient(135deg, #22d4ff, #2280ff);
-    box-shadow: 0 5px 20px rgba(0,120,255,0.5);
-    transform: translateY(-1px);
+/* Scan-line sweep on hover */
+.pm-nav-link::before {
+    content: '';
+    position: absolute; left: 0; top: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg,
+        transparent 0%, rgba(0,200,255,0.12) 50%, transparent 100%);
+    transition: top 0.22s ease;
+    pointer-events: none;
+}
+.pm-nav-link:hover::before,
+.pm-nav-link.active::before { top: 0; }
+/* HUD label overlay */
+.pm-nav-link::after {
+    content: '◉ ' attr(data-label);
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+    color: #00eeff;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    font-family: monospace;
+    text-shadow: 0 0 12px rgba(0,200,255,0.9);
+    pointer-events: none;
+}
+.pm-nav-link:hover::after,
+.pm-nav-link.active::after { opacity: 1; }
+/* Hover/active state */
+.pm-nav-link:hover,
+.pm-nav-link.active {
+    color: transparent !important;
+    background: rgba(0,200,255,0.08);
+    border-color: rgba(0,200,255,0.28);
+    box-shadow: 0 0 20px rgba(0,200,255,0.15), inset 0 0 10px rgba(0,200,255,0.06);
+}
+
+/* ── RIGHT: HUD Indicators ── */
+.pm-hud {
+    display: flex; align-items: center; gap: 10px;
+    flex-shrink: 0;
+}
+.pm-hud-item {
+    display: flex; flex-direction: column; align-items: center; gap: 1px;
+}
+.pm-hud-label {
+    font-size: 0.42rem; font-weight: 700; letter-spacing: 0.2em;
+    color: rgba(0,200,255,0.4); font-family: monospace;
+}
+.pm-hud-val {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
+    color: rgba(0,200,255,0.85); font-family: monospace;
+    text-shadow: 0 0 8px rgba(0,200,255,0.5);
+}
+.pm-hud-green { color: #00ff88; text-shadow: 0 0 8px rgba(0,255,136,0.6); }
+.pm-hud-blue  { color: #88aaff; text-shadow: 0 0 8px rgba(136,170,255,0.6); }
+.pm-hud-sep {
+    width: 1px; height: 26px;
+    background: linear-gradient(180deg, transparent, rgba(0,200,255,0.28), transparent);
 }
 /* Mobile toggle */
-.nb-toggle {
+.pm-toggle {
     display: none;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.14);
-    color: #fff;
-    padding: 7px 13px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.2s;
+    background: rgba(0,200,255,0.07);
+    border: 1px solid rgba(0,200,255,0.28);
+    color: #00eeff; font-size: 1.1rem;
+    width: 38px; height: 38px;
+    border-radius: 8px; cursor: pointer;
+    align-items: center; justify-content: center;
+    transition: all 0.2s ease; font-family: monospace;
 }
-.nb-toggle:hover { background: rgba(0,200,255,0.12); }
-/* Mobile drawer */
-.nb-mobile-drawer {
-    display: none;
-    flex-direction: column;
-    background: rgba(2,8,28,0.94);
-    backdrop-filter: blur(18px);
-    border-top: 1px solid rgba(0,200,255,0.1);
-    padding: 8px 16px 16px;
+.pm-toggle:hover {
+    background: rgba(0,200,255,0.14);
+    box-shadow: 0 0 16px rgba(0,200,255,0.35);
 }
-.nb-mobile-drawer.open { display: flex; }
-.nb-mobile-drawer .nb-link {
-    padding: 11px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    border-radius: 0;
-    font-size: 0.9rem;
+
+/* ── TICKER ── */
+.pm-ticker {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    padding: 3px 36px;
+    border-top: 1px solid rgba(0,200,255,0.07);
+    background: rgba(0,0,0,0.18);
+    height: 22px;
 }
-.nb-mobile-drawer .nb-hire {
-    margin-top: 10px;
+.pm-ticker-rail {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,200,255,0.2), transparent);
+}
+.pm-ticker-msg {
+    font-size: 0.52rem; font-family: monospace; letter-spacing: 0.28em;
+    color: rgba(0,200,255,0.65); white-space: nowrap; min-width: 220px;
     text-align: center;
-    display: block;
-    border-radius: 12px;
 }
-@media (max-width: 900px) {
-    .nb-links { display: none !important; }
-    .nb-hire { display: none; }
-    .nb-toggle { display: block; }
-    .nb-brand-sub { display: none; }
-    .navbar-glass-inner { padding: 9px 16px; }
+
+/* ── MOBILE HOLOGRAPHIC MENU ── */
+.pm-mobile-menu {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0, 3, 18, 0.97);
+    backdrop-filter: blur(36px) saturate(160%);
+    -webkit-backdrop-filter: blur(36px) saturate(160%);
+    z-index: 100000;
+    flex-direction: column;
+    align-items: center; justify-content: center;
 }
-@media (min-width: 901px) {
-    .nb-mobile-drawer { display: none !important; }
+.pm-mobile-menu.open {
+    display: flex;
+    animation: pmMenuIn 0.3s cubic-bezier(0.4,0,0.2,1);
 }
+@keyframes pmMenuIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+/* Grid scan-line overlay */
+.pm-mobile-menu::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+        linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+.pm-mm-header {
+    position: absolute; top: 24px; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+}
+.pm-mm-os {
+    font-size: 0.78rem; font-family: monospace;
+    color: #00eeff; letter-spacing: 0.12em;
+    text-shadow: 0 0 12px rgba(0,200,255,0.5);
+}
+.pm-mm-close {
+    background: rgba(0,200,255,0.06);
+    border: 1px solid rgba(0,200,255,0.28);
+    color: #00eeff; font-size: 1.1rem;
+    width: 38px; height: 38px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+}
+.pm-mm-close:hover {
+    background: rgba(0,200,255,0.14);
+    box-shadow: 0 0 20px rgba(0,200,255,0.45);
+}
+.pm-mm-label {
+    font-size: 0.56rem; font-family: monospace;
+    color: rgba(0,200,255,0.4); letter-spacing: 0.4em;
+    margin-bottom: 28px; text-align: center;
+}
+.pm-mm-links {
+    display: flex; flex-direction: column; align-items: stretch;
+    gap: 6px; width: 100%; max-width: 300px;
+}
+.pm-mm-link {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 20px;
+    text-decoration: none !important;
+    color: rgba(180,220,255,0.72) !important;
+    font-size: 1.1rem; font-weight: 700; letter-spacing: 0.18em;
+    font-family: monospace;
+    border-radius: 8px;
+    border: 1px solid rgba(0,200,255,0.08);
+    background: rgba(0,200,255,0.03);
+    transition: all 0.2s ease;
+}
+.pm-mm-link em {
+    font-style: normal; font-size: 0.52rem;
+    color: rgba(0,200,255,0.35); letter-spacing: 0.04em; font-weight: 400;
+    min-width: 18px;
+}
+.pm-mm-link:hover, .pm-mm-link.active {
+    color: #00eeff !important;
+    background: rgba(0,200,255,0.09);
+    border-color: rgba(0,200,255,0.32);
+    box-shadow: 0 0 22px rgba(0,200,255,0.1);
+    padding-left: 28px;
+}
+.pm-mm-footer {
+    position: absolute; bottom: 28px; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.54rem; font-family: monospace;
+    color: rgba(0,200,255,0.45); letter-spacing: 0.22em;
+}
+.pm-mm-dot {
+    width: 6px; height: 6px; background: #00ff88; border-radius: 50%;
+    animation: pmPulse 1.8s ease-in-out infinite;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+    .pm-nav-links { display: none !important; }
+    .pm-hud-item, .pm-hud-sep { display: none; }
+    .pm-toggle { display: flex !important; }
+    .pm-brand-sub, .pm-status-badge { display: none; }
+    .pm-nav-inner { padding: 8px 18px; }
+    .pm-ticker { padding: 3px 18px; }
+}
+@media (min-width: 961px) {
+    .pm-toggle { display: none !important; }
+    .pm-mobile-menu { display: none !important; }
+}
+/* Neutralise old .nb-link styles that would bleed through */
+.pm-nav-link:not(:hover):not(.active) { background: transparent; }
+.nb-links .nb-link { border-radius: 5px; }
 
 /* ==========================================
    TECH EXPERTISE / SKILLS UNIVERSE SECTION
@@ -7759,47 +7966,106 @@ a, button, input, textarea, select,
             });
             </script>
 
-    <!-- ═══ NAVBAR: Scroll opacity + mobile toggle + active link ═══ -->
+    <!-- ═══ PM.OS NAVBAR: Scroll · Toggle · Active · Ticker · CPU ═══ -->
     <script>
     (function(){
-        // Scroll opacity — navbar gets more opaque when user scrolls
-        var nav=document.getElementById('main-navbar');
-        if(nav){
-            window.addEventListener('scroll',function(){
-                nav.classList.toggle('scrolled', window.scrollY > 40);
-            },{passive:true});
+        /* ── Scroll: glassmorphism + width shrink ── */
+        var nav = document.getElementById('main-navbar');
+        if (nav) {
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            }, { passive: true });
         }
-        var toggle=document.getElementById('nb-mobile-toggle');
-        var drawer=document.getElementById('nb-mobile-drawer');
-        if(toggle&&drawer){
-            toggle.addEventListener('click',function(){
-                drawer.classList.toggle('open');
-                toggle.textContent=drawer.classList.contains('open')?'✕':'☰';
-            });
+
+        /* ── Mobile toggle ── */
+        var toggle = document.getElementById('nb-mobile-toggle');
+        var drawer = document.getElementById('nb-mobile-drawer');
+        var closeBtn = document.getElementById('pm-mobile-close');
+
+        function openMenu(){
+            if (drawer) { drawer.classList.add('open'); document.body.style.overflow='hidden'; }
+            if (toggle) toggle.setAttribute('aria-expanded','true');
         }
-        // Close drawer on link click
-        document.querySelectorAll('.nb-mobile-drawer .nb-link, .nb-mobile-drawer .nb-hire').forEach(function(a){
-            a.addEventListener('click',function(){
-                if(drawer) drawer.classList.remove('open');
-                if(toggle) toggle.textContent='☰';
-            });
+        function closeMenu(){
+            if (drawer) { drawer.classList.remove('open'); document.body.style.overflow=''; }
+            if (toggle) toggle.setAttribute('aria-expanded','false');
+        }
+        if (toggle) toggle.addEventListener('click', function(){
+            drawer && drawer.classList.contains('open') ? closeMenu() : openMenu();
         });
-        // Active link on scroll
-        var sections=['home','about','resume','tech-skills','projects','solar-system','contact'];
-        var links=document.querySelectorAll('.nb-links .nb-link, .nb-mobile-drawer .nb-link');
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        /* Close on link click */
+        document.querySelectorAll('.nb-mobile-drawer .nb-link').forEach(function(a){
+            a.addEventListener('click', closeMenu);
+        });
+        /* Close on Escape key */
+        document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        /* ── Active link on scroll ── */
+        var sections = ['home','about','resume','tech-skills','projects','solar-system','contact'];
+        var links = document.querySelectorAll('.nb-links .nb-link, .nb-mobile-drawer .nb-link');
         function updateActive(){
-            var y=window.scrollY+80;
-            var cur='home';
+            var y = window.scrollY + 90;
+            var cur = 'home';
             sections.forEach(function(id){
-                var el=document.getElementById(id);
-                if(el&&el.offsetTop<=y) cur=id;
+                var el = document.getElementById(id);
+                if (el && el.offsetTop <= y) cur = id;
             });
             links.forEach(function(a){
-                a.classList.toggle('active', a.getAttribute('href')==='#'+cur);
+                var href = a.getAttribute('href');
+                /* Map href → section id */
+                var map = { '#home':'home','#about':'about','#resume':'resume',
+                            '#tech-skills':'tech-skills','#projects':'projects',
+                            '#solar-system':'solar-system','#contact':'contact',
+                            /* portfolio link points to projects */
+                            '#portfolio':'projects' };
+                var sid = map[href] || href.replace('#','');
+                a.classList.toggle('active', sid === cur);
             });
         }
-        window.addEventListener('scroll', updateActive, {passive:true});
+        window.addEventListener('scroll', updateActive, { passive: true });
         updateActive();
+    })();
+
+    /* ── PM.OS Ticker typewriter ── */
+    (function(){
+        var msgs = [
+            'INITIALIZING...',
+            'BOOT SEQUENCE COMPLETE',
+            'AI CORE SYNCHRONIZED',
+            'NEURAL NETWORKS ACTIVE',
+            'SYSTEM READY',
+            'MISSION SUPPORT ONLINE',
+            'ALL SYSTEMS NOMINAL',
+            'AUTONOMOUS MODE ENGAGED'
+        ];
+        var el = document.getElementById('pm-ticker-msg');
+        if (!el) return;
+        var idx = 0;
+        function typeMsg(msg, done) {
+            el.textContent = '';
+            var j = 0;
+            var t = setInterval(function(){
+                el.textContent += msg[j++];
+                if (j >= msg.length) { clearInterval(t); setTimeout(done, 2400); }
+            }, 48);
+        }
+        function next(){ typeMsg(msgs[idx++ % msgs.length], next); }
+        setTimeout(next, 1000);
+    })();
+
+    /* ── PM.OS CPU counter flicker ── */
+    (function(){
+        var el = document.getElementById('pm-cpu-val');
+        if (!el) return;
+        var vals = ['87%','91%','94%','88%','93%','96%','89%','92%'];
+        var i = 0;
+        setInterval(function(){
+            el.textContent = vals[i++ % vals.length];
+        }, 3200);
     })();
     </script>
 
