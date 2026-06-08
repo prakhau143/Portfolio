@@ -63,6 +63,39 @@
 
 ---
 
+## 📸 Portfolio Preview
+
+> Click any screenshot to visit the live portfolio →
+
+<div align="center">
+
+### 🏠 Hero Section
+<img src="public_html/assets/imgs/hero.png" width="100%" alt="Hero Section — 3D Spaceman · Blackhole Video · Command Center Navbar" />
+
+---
+
+### 💼 Resume & Experience
+<img src="public_html/assets/imgs/experience.png" width="100%" alt="Resume Section — Mission Log · Knowledge Journey · 3D Bust" />
+
+---
+
+### 🏆 Certifications & Achievements
+<img src="public_html/assets/imgs/certifications.png" width="100%" alt="Certifications — Interactive carousel with glassmorphism cards" />
+
+---
+
+### ⚡ GitHub Mission Control
+<img src="public_html/assets/imgs/github.png" width="100%" alt="GitHub Section — AI Champions League Arena · Live match simulation" />
+
+---
+
+### 📬 Contact & Footer
+<img src="public_html/assets/imgs/footer.png" width="100%" alt="Contact Section — Cyberpunk terminal · EmailJS · 3D GLB background" />
+
+</div>
+
+---
+
 ## 📊 Lighthouse Performance Scores
 
 > Measured on **local build** · headless Chrome (Lighthouse 13.3.0) · Desktop preset · June 2026
