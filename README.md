@@ -48,20 +48,38 @@
 
 ## 📊 Lighthouse Performance Scores
 
-> Measured on **GitHub Pages** deployment · Chrome DevTools · Desktop preset
+> Measured on **local build** · headless Chrome (Lighthouse 13.3.0) · Desktop preset · June 2026
 
 <div align="center">
 
 | Metric | Score | Status |
 |--------|-------|--------|
-| ⚡ Performance | **88** | 🟢 Good |
-| ♿ Accessibility | **95** | 🟢 Excellent |
-| ✅ Best Practices | **92** | 🟢 Excellent |
-| 🔍 SEO | **97** | 🟢 Excellent |
+| ⚡ Performance | **56** | 🟠 Needs Improvement |
+| ♿ Accessibility | **88** | 🟠 Good |
+| ✅ Best Practices | **96** | 🟢 Excellent |
+| 🔍 SEO | **100** | 🟢 Perfect |
 
 </div>
 
-> **Key optimizations applied:**
+<details>
+<summary><strong>📈 Core Web Vitals breakdown</strong></summary>
+
+| Metric | Value | Notes |
+|--------|-------|-------|
+| First Contentful Paint | 9.4 s | Large hero video loads |
+| Largest Contentful Paint | 65.8 s | 3× HD MP4 videos + 2× GLB models |
+| Total Blocking Time | 0 ms ✅ | No long JS tasks |
+| Cumulative Layout Shift | 0.043 ✅ | Layout very stable |
+| Speed Index | 9.4 s | Heavy media assets |
+
+</details>
+
+> **Why performance is lower than a typical site:**
+> This portfolio intentionally loads large cinematic assets (HD MP4 videos up to 97 MB,
+> Three.js GLB 3D models, WebGL canvases) to create an immersive experience.
+> Interactive 3D and cinematic visuals are prioritised over raw load-speed metrics.
+
+> **Optimizations already applied:**
 > - IntersectionObserver — 3D renders and videos pause when off-screen
 > - `prefers-reduced-motion` — videos hidden for users who prefer less motion
 > - `preload="metadata"` on all video backgrounds
