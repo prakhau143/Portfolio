@@ -30,7 +30,24 @@
 ## 🚀 Live Demo
 
 > **[→ View Live Portfolio](https://prakhau143.github.io/Portfolio)**
+## 📸 Portfolio Preview
 
+### 🏠 Hero Section
+![Hero Section](./assets/hero.png)
+
+### 💼 Resume & Experience
+![Resume Section](./assets/experience.png)
+
+### 🏆 Certifications & Achievements
+![Certifications](./assets/certifications.png)
+
+### ⚡ GitHub Mission Control
+![GitHub Section](./assets/github.png)
+
+### 📬 Contact & Footer
+![Contact Section](./assets/footer.png)
+
+---
 <div align="center">
 
 | Section | Feature |
