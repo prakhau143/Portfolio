@@ -2066,6 +2066,26 @@ html, body { background: #020008 !important; }
                 inset 0 1px 0 rgba(0,200,255,0.18);
 }
 
+/* ── Hero CTA — responsive: all 3 buttons in one row on mobile ── */
+.btn-lbl-short { display: none; }       /* hidden by default */
+@media (max-width: 520px) {
+    .hero-cta-row {
+        gap: 7px;
+        width: 100%;
+    }
+    .hero-btn {
+        flex: 1;
+        padding: 10px 8px;
+        font-size: 0.73rem;
+        height: 42px;
+        gap: 5px;
+        letter-spacing: 0.02em;
+    }
+    .hero-btn svg { width: 13px; height: 13px; }
+    .btn-lbl-full  { display: none; }   /* hide "Explore Universe" */
+    .btn-lbl-short { display: inline; } /* show "Universe"          */
+}
+
 /* avatar orbit */
 .hero-right-col{display:flex;align-items:center;justify-content:center;}
 .hero-avatar-orbit{position:relative;width:300px;height:300px;transition:transform .08s linear;}
@@ -2860,7 +2880,8 @@ html, body { background: #020008 !important; }
                         <!-- Explore Universe — purple holographic -->
                         <a href="#solar-system" class="hero-btn hero-btn-universe">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                            Explore Universe
+                            <span class="btn-lbl-full">Explore Universe</span>
+                            <span class="btn-lbl-short">Universe</span>
                         </a>
                         <!-- Contact — cyan outline -->
                         <a href="#contact" class="hero-btn hero-btn-outline">
