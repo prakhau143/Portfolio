@@ -193,7 +193,7 @@ public_html/assets/imgs/
 
 ## 📂 Project Structure
 
-```
+```          
 Portfolio/
 ├── .github/
 │   └── workflows/
