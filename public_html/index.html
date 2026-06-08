@@ -3,21 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="Start your development with JohnDoe landing page.">
-    <meta name="author" content="Devcrud">
-    <meta name="keywords" content="Prakhar Mittal, Full Stack Developer, MERN Developer, Java Developer, Python Developer, Portfolio, VIT Bhopal">
+    <meta name="description" content="Prakhar Mittal is an AI Engineer & Full Stack Developer from Bhopal, India. Explore my portfolio of AI systems, Django APIs, React apps, and cloud infrastructure projects.">
+    <meta name="author" content="Prakhar Mittal">
+    <meta name="keywords" content="Prakhar Mittal, AI Developer, Full Stack Developer, MERN Developer, Django Developer, Python Developer, Portfolio, VIT Bhopal">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Prakhar Mittal | Full Stack Developer Portfolio">
-    <meta property="og:description" content="Official portfolio of Prakhar Mittal - Software & Full Stack Developer.">
+    <meta property="og:title" content="Prakhar Mittal | AI Developer & Full Stack Engineer">
+    <meta property="og:description" content="Prakhar Mittal is an AI Engineer & Full Stack Developer from Bhopal, India. Explore my portfolio of AI systems, Django APIs, React apps, and cloud infrastructure projects.">
     <meta property="og:image" content="assets/imgs/header.jpg">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prakhau143.github.io/Portfolio">
+    <meta property="og:site_name" content="Prakhar Mittal Portfolio">
+    <link rel="canonical" href="https://prakhau143.github.io/Portfolio">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Prakhar Mittal",
-      "url": "https://yourdomain.com",
-      "jobTitle": "Full Stack Developer",
+      "url": "https://prakhau143.github.io/Portfolio",
+      "jobTitle": "AI Engineer & Full Stack Developer",
       "sameAs": [
         "https://www.linkedin.com/in/its-prakhar-mittal",
         "https://github.com/prakhau143"
@@ -1850,12 +1853,13 @@ html, body { background: #020008 !important; }
 
 /* ── SPACEMAN 3D MODEL (fixed viewport anchor — always above stats-bar) ── */
 .hero-spaceman-wrap {
+    display: none;         /* Optimus Prime is now the hero character — spaceman hidden */
     position: fixed;
     bottom: 0;
     right: 0;
     width: 430px;
     height: 600px;
-    z-index: 15;           /* above stats-bar (z-index:10), below navbar (z-index:99999) */
+    z-index: 15;
     pointer-events: none;
     overflow: visible;
     transition: opacity 0.45s ease, transform 0.45s ease;
@@ -1919,7 +1923,48 @@ html, body { background: #020008 !important; }
 .hero-svg-wrap{display:flex;align-items:center;justify-content:center;position:relative;}
 .hero-svg-img{width:min(580px,92%);height:auto;max-height:75vh;object-fit:contain;filter:drop-shadow(0 0 40px rgba(0,180,255,.25)) drop-shadow(0 0 80px rgba(100,0,255,.15));animation:svgFloat 6s ease-in-out infinite;}
 @keyframes svgFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-14px) scale(1.02)}}
-@media(max-width:768px){.hero-grid{grid-template-columns:1fr;}.hero-right-col{display:none!important;}}
+@media(max-width:768px){
+    .hero-grid { grid-template-columns: 1fr; }
+    /* Optimus Mobile: float over hero as portal-guardian overlay */
+    .hero-right-col {
+        display: flex !important;
+        position: absolute;
+        top: 110px;
+        right: -14px;
+        width: 175px;
+        height: 175px;
+        z-index: 4;
+        pointer-events: none;
+    }
+    .hero-svg-wrap {
+        width: 175px !important;
+        height: 175px !important;
+        overflow: visible;
+    }
+    .hero-svg-img {
+        width: 175px !important;
+        height: 175px !important;
+        max-height: 175px !important;
+    }
+    /* soften the portal glow on mobile */
+    .hero-svg-wrap::after { width:220px; height:220px; filter:blur(40px); }
+    .opt-portal-glow { width:200px; height:200px; }
+    .optimus-shadow { width:120px; height:22px; }
+    /* "MISSION GUARDIAN" label beneath Optimus on mobile */
+    .hero-right-col::after {
+        content: 'GUARDIAN';
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: .52rem;
+        font-family: monospace;
+        letter-spacing: .22em;
+        color: rgba(168,85,247,.6);
+        white-space: nowrap;
+        pointer-events: none;
+    }
+}
 .hero-greeting{font-size:.92rem;color:rgba(200,230,255,.55);font-family:monospace;letter-spacing:.1em;margin:0 0 6px;}
 .hero-name{font-size:clamp(3rem,7vw,6.5rem);font-weight:900;color:#fff;margin:0 0 10px;line-height:1.0;letter-spacing:-.02em;text-shadow:0 0 40px rgba(0,200,255,.3),0 0 80px rgba(0,100,255,.15);}
 .hero-name .nm-line2{display:block;}
@@ -1982,16 +2027,16 @@ html, body { background: #020008 !important; }
     pointer-events: none;
 }
 
-/* Optimus canvas — MUST be transparent */
+/* Optimus canvas — MUST be transparent — fills full hero-svg-wrap */
 #optimus-canvas {
     position: absolute;
-    inset: 0;
-    width: 497px !important;
-    height: 500px !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
     display: block;
     pointer-events: none;
     z-index: 2;
-    margin-top: 200px;
     background: transparent !important;
 }
 
@@ -2472,7 +2517,17 @@ html, body { background: #020008 !important; }
     color: rgba(168,85,247,.65); font-family: monospace;
     text-transform: uppercase; margin-bottom: 8px; display: block;
 }
-.ghcc-aicn-wrap { position: relative; }
+.ghcc-aicn-wrap {
+    position: relative;
+    overflow: hidden;    /* canvas fills wrap exactly — no scroll on any device */
+}
+/* Mobile: full pitch visible at 100% card width, 5v5 formation handled in JS */
+@media (max-width: 768px) {
+    .ghcc-arena-canvas {
+        width:  100% !important;
+        height: 320px !important;
+    }
+}
 .ghcc-aicn-status {
     position: absolute; top: 8px; right: 12px;
     font-size: .6rem; font-family: monospace;
@@ -2842,6 +2897,12 @@ html, body { background: #020008 !important; }
     </section>
 
     <section class="section section-bg about-bg" id="about">
+        <!-- Ambient holographic video — deepest layer -->
+        <video class="about-cmd-vid" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/imgs/command_skills_about.mp4" type="video/mp4">
+        </video>
+        <!-- Cyber overlay: dark + purple/cyan gradient sits above video -->
+        <div class="about-cmd-overlay" aria-hidden="true"></div>
         <canvas class="stars"></canvas>
         <div class="section-watermark">ABOUT</div>
         <div class="about-wrap">
@@ -4334,8 +4395,8 @@ a, button, input, textarea, select,
 
         <!-- ── Background layers ── -->
         <!-- Video is the deepest layer — everything else renders above it -->
-        <video class="sk-video-bg" autoplay muted loop playsinline preload="auto">
-            <source src="assets/imgs/public_videos_skills-bg.webm" type="video/webm">
+        <video class="sk-video-bg" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+            <source src="assets/imgs/command_skills_about.mp4" type="video/mp4">
         </video>
         <!-- Dark gradient overlay so text stays readable over the video -->
         <div class="sk-bg-glow"></div>
@@ -5327,6 +5388,63 @@ a, button, input, textarea, select,
     </style>
 
     <!-- ═══════════════════════════════════════════════════════
+         AMBIENT HOLOGRAPHIC VIDEO — About + Skills Sections
+         ═══════════════════════════════════════════════════════ -->
+    <style id="ambient-video-css">
+    /* ── About section video ── */
+    #about .about-cmd-vid {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0.25;
+        pointer-events: none;
+        z-index: 0;
+        filter: blur(1px);
+        display: block;
+    }
+    #about .about-cmd-overlay {
+        position: absolute; inset: 0;
+        background:
+            linear-gradient(135deg, rgba(120,0,255,.15), rgba(0,255,255,.08)),
+            rgba(2,5,20,.65);
+        pointer-events: none;
+        z-index: 1;
+    }
+    /* Stars float above the video + overlay */
+    #about canvas.stars { z-index: 2 !important; }
+    /* Content above everything */
+    #about .about-wrap  { position: relative; z-index: 3 !important; }
+
+    /* ── Skills Universe: override video to ambient level ── */
+    .sk-video-bg {
+        opacity: 0.35 !important;   /* was 0.82 */
+        filter: blur(1px);
+    }
+    /* Extend sk-bg-glow with the holographic cyan/purple tint */
+    .sk-bg-glow {
+        background:
+            linear-gradient(135deg, rgba(120,0,255,.12), rgba(0,255,255,.07)),
+            radial-gradient(ellipse 85% 80% at 50% 50%,
+                transparent 30%,
+                rgba(3,0,20,.55) 70%,
+                rgba(3,0,20,.88) 100%),
+            radial-gradient(ellipse 55% 50% at 50% 50%,
+                rgba(138,43,226,.18) 0%,
+                transparent 65%);
+    }
+
+    /* ── Mobile: drop opacity + kill blur for performance ── */
+    @media (max-width: 768px) {
+        #about .about-cmd-vid { opacity: 0.15; filter: none; }
+        .sk-video-bg          { opacity: 0.15 !important; filter: none; }
+    }
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+        #about .about-cmd-vid { display: none !important; }
+    }
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════
          GITHUB MISSION CONTROL — HTML
          ═══════════════════════════════════════════════════════ -->
     <section id="solar-system" class="ghcc-section">
@@ -5412,6 +5530,8 @@ a, button, input, textarea, select,
                     <div class="ghcc-aicn-wrap">
                         <div class="ghcc-aicn-status">LIVE &nbsp;&#183;&nbsp; MATCH IN PROGRESS</div>
                         <canvas id="ghcc-arena" class="ghcc-arena-canvas"></canvas>
+                        <!-- GOAL flash overlay — triggered by JS -->
+                        <div id="ghcc-goal-flash" style="position:absolute;inset:0;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .08s;z-index:20;"></div>
                     </div>
                 </div>
 
@@ -6050,8 +6170,133 @@ a, button, input, textarea, select,
     color: rgba(0,200,255,0.28);
 }
 @media (max-width: 768px) {
-    .mc-footer { flex-direction:column; align-items:center; text-align:center; }
-    .mc-footer-right { text-align:center; }
+    .mc-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-top: none;      /* no double line — astro-footer-zone has the border */
+        padding-top: 10px;
+        margin-top: 0;
+    }
+    .mc-footer-right { text-align: center; }
+    /* make nav links look like pill-buttons on mobile */
+    .mc-footer-center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px 0;
+    }
+    .mc-footer-link {
+        padding: 4px 12px;
+        border: 1px solid rgba(0,200,255,.18) !important;
+        border-radius: 50px;
+        font-size: .68rem !important;
+        background: rgba(0,200,255,.05);
+        transition: background .2s, border-color .2s;
+    }
+    .mc-footer-link:hover, .mc-footer-link:active {
+        background: rgba(0,200,255,.14) !important;
+        border-color: rgba(0,200,255,.45) !important;
+        color: rgba(0,220,255,.9) !important;
+    }
+    .mc-astro-wrap { width: 200px; height: 220px; }
+    .mc-astro-zone { padding: 22px 0 0; }
+}
+
+/* ── Contact Astronaut Zone ── */
+/* ── Astronaut + Footer combined zone ── */
+.mc-astro-footer-zone {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+    /* subtle dark glass base — makes footer look like the ground the astronaut stands on */
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(0,0,16,.55) 30%,
+        rgba(0,0,20,.75) 100%);
+    border-top: 1px solid rgba(0,200,255,.08);
+    border-radius: 0 0 16px 16px;
+    overflow: visible;
+}
+.mc-astro-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 0 0;       /* no bottom pad — footer is immediate base */
+    position: relative;
+    z-index: 2;
+}
+.mc-mission-status {
+    font-family: monospace;
+    font-size: .68rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: rgba(0,200,255,.75);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mc-mission-status::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #00c8ff;
+    box-shadow: 0 0 8px #00c8ff, 0 0 16px rgba(0,200,255,.4);
+    animation: msPulse 1.2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+@keyframes msPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+.mc-mission-type {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(0,200,255,.7);
+    animation: msType 2.4s steps(22, end) 0.5s forwards, msBlink 0.75s step-end infinite 2.9s;
+    width: 0;
+}
+@keyframes msType   { to { width: 22ch; } }
+@keyframes msBlink  { 0%,100%{border-color:rgba(0,200,255,.7)} 50%{border-color:transparent} }
+
+.mc-astro-wrap {
+    position: relative;
+    width: 260px;
+    height: 280px;
+}
+@media (max-width: 768px) {
+    .mc-astro-wrap { width: 180px; height: 200px; }
+    .mc-astro-zone { padding: 20px 0 14px; }
+}
+.mc-astro-glow {
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(0,200,255,.22) 0%, rgba(168,85,247,.12) 42%, transparent 68%);
+    filter: blur(24px);
+    animation: astroGlow 3.5s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: 50%;
+}
+@keyframes astroGlow { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.10)} }
+#mc-astro-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    background: transparent !important;
+}
+
+/* ── EOT scanline enhancement ── */
+.mc-eot-line {
+    animation: eotLineScan 3s ease-in-out infinite;
+}
+@keyframes eotLineScan {
+    0%,100% { opacity: .5; }
+    50%     { opacity: 1; filter: drop-shadow(0 0 4px rgba(0,200,255,.5)); }
 }
     </style>
 
@@ -6207,8 +6452,22 @@ a, button, input, textarea, select,
                 <div class="mc-eot-line"></div>
             </div>
 
-            <!-- ── Integrated Footer ── -->
-            <div class="mc-footer">
+            <!-- ── Astronaut + Footer: astronaut floats, footer is the ground ── -->
+            <div class="mc-astro-footer-zone">
+
+                <!-- Mission Guardian -->
+                <div class="mc-astro-zone" aria-hidden="true">
+                    <div class="mc-mission-status">
+                        <span class="mc-mission-type">MISSION SUPPORT ONLINE</span>
+                    </div>
+                    <div class="mc-astro-wrap">
+                        <div class="mc-astro-glow"></div>
+                        <canvas id="mc-astro-canvas" aria-hidden="true"></canvas>
+                    </div>
+                </div>
+
+                <!-- Footer sits directly below — acts as the base/ground -->
+                <div class="mc-footer">
                 <div class="mc-footer-left">
                     <span class="mc-footer-name">PRAKHAR MITTAL</span>
                     <span class="mc-footer-role">AI Developer &nbsp;·&nbsp; Full Stack Engineer &nbsp;·&nbsp; Automation Specialist</span>
@@ -6225,9 +6484,11 @@ a, button, input, textarea, select,
                     <span class="mc-footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Crafted with <span class="mc-footer-heart">♥</span> by Prakhar Mittal</span>
                     <span class="mc-footer-build">UNIVERSE OS &nbsp;·&nbsp; BUILD 2026.1</span>
                 </div>
-            </div>
+            </div><!-- /mc-footer -->
 
-        </div>
+            </div><!-- /mc-astro-footer-zone -->
+
+        </div><!-- /mc-container -->
     </section>
 
 	<!-- core  -->
@@ -6930,7 +7191,8 @@ a, button, input, textarea, select,
     padding: 80px 0 100px;
 }
 
-/* ── BACKGROUND VIDEO — deepest layer, fully visible ── */
+/* ── BACKGROUND VIDEO — deepest layer ── */
+/* NOTE: opacity overridden to 0.35 !important by #ambient-video-css above */
 .sk-video-bg {
     position: absolute;
     inset: 0;
@@ -6938,7 +7200,7 @@ a, button, input, textarea, select,
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.82;          /* high — user can clearly see it */
+    opacity: 0.82;          /* overridden by ambient-video-css → 0.35 */
     z-index: 0;
     pointer-events: none;
     display: block;
@@ -8013,6 +8275,25 @@ a, button, input, textarea, select,
         var clock  = new THREE.Clock();
         var active = true;
 
+        /* ── Eye pulse light (blue, every 4 s) ── */
+        var eyeLight = new THREE.PointLight(0x00aaff, 0, 6);
+        /* positioned at approx head height — fine-tuned after load */
+        eyeLight.position.set(0.55, 1.6, 1.4);
+        scene.add(eyeLight);
+        var eyePulsing = false;
+        function pulseEyes(){
+            if(eyePulsing) return;
+            eyePulsing = true;
+            var t0 = performance.now(), dur = 700;
+            (function step(now){
+                var p = Math.min((now - t0) / dur, 1);
+                eyeLight.intensity = Math.sin(p * Math.PI) * 5.5;
+                if(p < 1) requestAnimationFrame(step);
+                else { eyeLight.intensity = 0; eyePulsing = false; }
+            })(performance.now());
+        }
+        setInterval(pulseEyes, 4000);
+
         /* ── Mouse parallax ── */
         var mX = 0, mY = 0, tX = 0, tY = 0;
         document.addEventListener('mousemove', function(e){
@@ -8127,6 +8408,129 @@ a, button, input, textarea, select,
             camera.updateProjectionMatrix();
             renderer.setSize(nW, nH, false);
         });
+    })();
+    </script>
+
+    <!-- ═══ Contact Section — Mission Astronaut Three.js ═══ -->
+    <script>
+    (function initContactAstronaut(){
+        'use strict';
+        var canvas = document.getElementById('mc-astro-canvas');
+        if(!canvas || typeof THREE === 'undefined' || typeof THREE.GLTFLoader === 'undefined') return;
+
+        canvas.style.background = 'transparent';
+        /* Read size from the wrap (more reliable than canvas offsetWidth on mobile) */
+        var wrap = canvas.parentElement;
+        var W = (wrap ? wrap.offsetWidth  : 0) || canvas.offsetWidth  || 240;
+        var H = (wrap ? wrap.offsetHeight : 0) || canvas.offsetHeight || 260;
+        var isMob = window.innerWidth < 769;
+
+        var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMob });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
+        renderer.setSize(W, H, false);
+        renderer.setClearColor(0x000000, 0);
+        renderer.autoClear = true;
+        renderer.shadowMap.enabled = false;
+        if(renderer.outputEncoding !== undefined) renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping        = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.4;
+
+        var scene  = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 100);
+        camera.position.set(0, 0.2, 4.2);
+        camera.lookAt(0, 0.1, 0);
+
+        /* Cinematic cyberpunk lights */
+        scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+        var key = new THREE.DirectionalLight(0x00c8ff, 2.2);
+        key.position.set(1.5, 3, 3.5);
+        scene.add(key);
+        var rim = new THREE.DirectionalLight(0xa855f7, 2.8);
+        rim.position.set(-3, 1, -2);
+        scene.add(rim);
+        var fill = new THREE.PointLight(0x00ffcc, 1.0, 14);
+        fill.position.set(0, -2, 2);
+        scene.add(fill);
+        var topLight = new THREE.PointLight(0xffffff, 1.2, 10);
+        topLight.position.set(0, 4, 1);
+        scene.add(topLight);
+
+        /* Breathing glow — pulsing point light */
+        var breatheLight = new THREE.PointLight(0x00c8ff, 0.8, 8);
+        breatheLight.position.set(0, 0, 2.5);
+        scene.add(breatheLight);
+
+        var model = null, mixer = null, baseY = 0;
+        var clock = new THREE.Clock(), active = true;  /* start immediately */
+        var floatT = 0, rafId = null;
+
+        new THREE.GLTFLoader().load(
+            'assets/imgs/tenhun_falling_spaceman_fanart.glb',
+            function(gltf){
+                model = gltf.scene;
+                var box    = new THREE.Box3().setFromObject(model);
+                var size   = box.getSize(new THREE.Vector3());
+                var center = box.getCenter(new THREE.Vector3());
+                var sc     = 2.4 / Math.max(size.x, size.y, size.z);
+                model.scale.setScalar(sc);
+                model.position.sub(center.multiplyScalar(sc));
+                model.position.y -= 0.1;
+                baseY = model.position.y;
+                if(gltf.animations && gltf.animations.length){
+                    mixer = new THREE.AnimationMixer(model);
+                    mixer.clipAction(gltf.animations[0]).play();
+                }
+                scene.add(model);
+            },
+            undefined,
+            function(err){ console.warn('[AstroContact] load error:', err); }
+        );
+
+        function render(){
+            if(!active) return;
+            rafId = requestAnimationFrame(render);
+            var delta = clock.getDelta();
+            floatT += delta;
+            if(model){
+                model.position.y = baseY + Math.sin(floatT * 0.55) * 0.12;
+                model.rotation.y += delta * 0.38;
+            }
+            breatheLight.intensity = 0.6 + Math.sin(floatT * 1.1) * 0.55;
+            if(mixer) mixer.update(delta);
+            renderer.setClearColor(0x000000, 0);
+            renderer.render(scene, camera);
+        }
+        render(); /* kick off immediately */
+
+        /* Pause when contact section leaves viewport to save GPU */
+        if('IntersectionObserver' in window){
+            var io = new IntersectionObserver(function(entries){
+                if(entries[0].isIntersecting){
+                    if(!active){ active = true; render(); }
+                } else {
+                    active = false;
+                    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+                }
+            }, { threshold: 0.02, rootMargin: '200px' });
+            var sec = document.getElementById('contact');
+            io.observe(sec || canvas);
+        }
+
+        document.addEventListener('visibilitychange', function(){
+            active = !document.hidden;
+            if(active) render();
+        });
+
+        /* Re-sync canvas size when window resizes */
+        function syncSize(){
+            var nW = (wrap ? wrap.offsetWidth  : 0) || canvas.offsetWidth  || W;
+            var nH = (wrap ? wrap.offsetHeight : 0) || canvas.offsetHeight || H;
+            if(!nW || !nH) return;
+            camera.aspect = nW / nH;
+            camera.updateProjectionMatrix();
+            renderer.setSize(nW, nH, false);
+        }
+        window.addEventListener('resize', syncSize);
     })();
     </script>
 
@@ -10399,10 +10803,17 @@ a, button, input, textarea, select,
 
     function layout(){
         bP=[]; fP=[];
-        var dist=[3,3,3,2];
+        /* 5v5 on mobile viewports — full pitch visible, cleaner spacing */
+        var isMob = window.innerWidth < 769;
+        /* dist = players per column; 5v5: GK + [1,2,1] = 4 outfield = 5 total per team */
+        var dist   = isMob ? [1,2,1] : [3,3,3,2];
         var lW=PW/2;
-        var bCols=[PX+lW*0.12,PX+lW*0.37,PX+lW*0.64,PX+lW*0.89];
-        var fCols=[PX+PW-lW*0.12,PX+PW-lW*0.37,PX+PW-lW*0.64,PX+PW-lW*0.89];
+        var bCols = isMob
+            ? [PX+lW*0.22, PX+lW*0.52, PX+lW*0.82]
+            : [PX+lW*0.12, PX+lW*0.37, PX+lW*0.64, PX+lW*0.89];
+        var fCols = isMob
+            ? [PX+PW-lW*0.22, PX+PW-lW*0.52, PX+PW-lW*0.82]
+            : [PX+PW-lW*0.12, PX+PW-lW*0.37, PX+PW-lW*0.64, PX+PW-lW*0.89];
         var bi=0,fi=0;
         dist.forEach(function(cnt,ci){
             var rH=PH/(cnt+1);
@@ -10516,6 +10927,15 @@ a, button, input, textarea, select,
         commTimer=340;
         crowdEnergy=100;
         burst(ball.x,ball.y,scoringTeam==='left'?'#34d399':'#60a5fa',90);
+        /* GOAL screen flash overlay */
+        var fl=document.getElementById('ghcc-goal-flash');
+        if(fl){
+            fl.style.background = scoringTeam==='left'
+                ? 'radial-gradient(ellipse at 50% 50%,rgba(52,211,153,.35) 0%,transparent 70%)'
+                : 'radial-gradient(ellipse at 50% 50%,rgba(96,165,250,.35) 0%,transparent 70%)';
+            fl.style.opacity='1';
+            setTimeout(function(){ fl.style.opacity='0'; }, 380);
+        }
         /* Check for match winner */
         if(score[scoringTeam]>=WIN_SCORE){
             setTimeout(function(){
@@ -10906,9 +11326,12 @@ a, button, input, textarea, select,
     }
 
     var io=new IntersectionObserver(function(entries){
-        if(entries[0].isIntersecting){if(!running){running=true;startArena();}}
-        else{cancelAnimationFrame(raf);raf=null;running=false;}
-    },{threshold:0.12});
+        if(entries[0].isIntersecting){
+            /* Always resize first — ensures correct dims on mobile after first paint */
+            resize();
+            if(!running){running=true;startArena();}
+        } else {cancelAnimationFrame(raf);raf=null;running=false;}
+    },{threshold:0.05});   /* 0.05 fires sooner on mobile */
     io.observe(cv);
 
     window.addEventListener('resize',function(){if(running) resize();});
@@ -10956,6 +11379,25 @@ a, button, input, textarea, select,
             /* Fallback — just play all */
             vids.forEach(function(v){ v.play().catch(function(){}); });
         }
+    })();
+    </script>
+
+    <!-- ── Ambient video playback speeds ── -->
+    <script>
+    (function(){
+        function applyRate(el, rate){
+            if (!el) return;
+            /* Set immediately if media is ready */
+            el.playbackRate = rate;
+            /* Re-apply when data loads (autoplay can reset it) */
+            el.addEventListener('loadeddata',  function(){ el.playbackRate = rate; });
+            el.addEventListener('canplay',     function(){ el.playbackRate = rate; });
+            el.addEventListener('playing',     function(){ el.playbackRate = rate; });
+        }
+        /* About section: slow cinematic feel (0.7x) */
+        applyRate(document.querySelector('#about .about-cmd-vid'), 0.7);
+        /* Skills Universe: active command-center feel (1.2x) */
+        applyRate(document.querySelector('#tech-skills .sk-video-bg'), 1.2);
     })();
     </script>
 </body>
