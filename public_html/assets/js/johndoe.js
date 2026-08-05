@@ -50,31 +50,6 @@ handleMobileView(mobileQuery);
 // Listen for screen size changes
 mobileQuery.addEventListener('change', handleMobileView);
 
-// protfolio filters
-$(window).on("load", function() {
-    var t = $(".portfolio-container");
-    t.isotope({
-        filter: ".new",
-        animationOptions: {
-            duration: 750,
-            easing: "linear",
-            queue: !1
-        }
-    }), $(".filters a").click(function() {
-        $(".filters .active").removeClass("active"), $(this).addClass("active");
-        var i = $(this).attr("data-filter");
-        return t.isotope({
-            filter: i,
-            animationOptions: {
-                duration: 750,
-                easing: "linear",
-                queue: !1
-            }
-        }), !1
-    });
-});
-
-
 // google maps
 function initMap() {
 // Styles a map in night mode.
