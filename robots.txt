@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prakhar-portfolio.vercel.app/sitemap.xml

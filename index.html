@@ -3,31 +3,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Prakhar Mittal is an AI Engineer & Full Stack Developer from Bhopal, India. Explore my portfolio of AI systems, Django APIs, React apps, and cloud infrastructure projects.">
+    <meta name="description" content="Prakhar Mittal is a Full Stack Engineer for production software — SaaS, AI Applications, APIs, Automation, and Cloud Infrastructure. Explore my portfolio of AI systems, Django APIs, React apps, and cloud infrastructure projects.">
     <meta name="author" content="Prakhar Mittal">
-    <meta name="keywords" content="Prakhar Mittal, AI Developer, Full Stack Developer, MERN Developer, Django Developer, Python Developer, Portfolio, VIT Bhopal">
+    <meta name="keywords" content="Prakhar Mittal, Full Stack Engineer, AI Engineer, SaaS, Cloud Infrastructure, MERN Developer, Django Developer, Python Developer, Portfolio, VIT Bhopal">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Prakhar Mittal | AI Developer & Full Stack Engineer">
-    <meta property="og:description" content="Prakhar Mittal is an AI Engineer & Full Stack Developer from Bhopal, India. Explore my portfolio of AI systems, Django APIs, React apps, and cloud infrastructure projects.">
-    <meta property="og:image" content="assets/imgs/header.jpg">
+    <meta name="theme-color" content="#0d0d2b">
+    <title>Prakhar Mittal | Full Stack Engineer for Production Software</title>
+    <meta property="og:title" content="Prakhar Mittal | Full Stack Engineer for Production Software">
+    <meta property="og:description" content="Prakhar Mittal is a Full Stack Engineer for production software — SaaS, AI Applications, APIs, Automation, and Cloud Infrastructure.">
+    <meta property="og:image" content="https://prakhar-portfolio.vercel.app/assets/imgs/header.jpg">
+    <meta property="og:image:width" content="2070">
+    <meta property="og:image:height" content="1380">
+    <meta property="og:image:alt" content="Prakhar Mittal — Full Stack Engineer portfolio hero banner">
+    <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://prakhau143.github.io/Portfolio">
+    <meta property="og:url" content="https://prakhar-portfolio.vercel.app">
     <meta property="og:site_name" content="Prakhar Mittal Portfolio">
-    <link rel="canonical" href="https://prakhau143.github.io/Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prakhar Mittal | Full Stack Engineer for Production Software">
+    <meta name="twitter:description" content="Full Stack Engineer for production software — SaaS, AI Applications, APIs, Automation, Cloud Infrastructure.">
+    <meta name="twitter:image" content="https://prakhar-portfolio.vercel.app/assets/imgs/header.jpg">
+    <link rel="canonical" href="https://prakhar-portfolio.vercel.app">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Prakhar Mittal",
-      "url": "https://prakhau143.github.io/Portfolio",
-      "jobTitle": "AI Engineer & Full Stack Developer",
-      "sameAs": [
-        "https://www.linkedin.com/in/its-prakhar-mittal",
-        "https://github.com/prakhau143"
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Prakhar Mittal",
+          "url": "https://prakhar-portfolio.vercel.app",
+          "jobTitle": "Full Stack Engineer",
+          "sameAs": [
+            "https://www.linkedin.com/in/its-prakhar-mittal",
+            "https://github.com/prakhau143"
+          ]
+        },
+        {
+          "@type": "ProfilePage",
+          "url": "https://prakhar-portfolio.vercel.app",
+          "about": { "@type": "Person", "name": "Prakhar Mittal" }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "SpendWise AI",
+          "description": "AI CFO assistant that audits company AI subscriptions & identifies unnecessary spending.",
+          "url": "https://spendwise-ai-dun.vercel.app/",
+          "author": { "@type": "Person", "name": "Prakhar Mittal" }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "InventoryFlow Pro",
+          "description": "Production SaaS with analytics dashboards, JWT auth, audit logs, CSV exports, Docker deployment, and FastAPI backend.",
+          "url": "https://inventory-flow-pro.vercel.app/dashboard",
+          "author": { "@type": "Person", "name": "Prakhar Mittal" }
+        }
       ]
     }
     </script>
-    <title>Prakhar Mittal | AI Developer & Full Stack Engineer</title>
     <!-- DNS preconnect for CDN domains — improves FCP/LCP -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -62,48 +94,6 @@
     <link rel="stylesheet" href="assets/css/custom-animations.css">
     <!-- Fix for horizontal scrolling and project card styling -->
     <style>
-        /* ===== 3D SKILL PROGRESS BAR ===== */
-
-.skill-progress {
-    margin-bottom: 18px;
-}
-
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.skill-info span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-/* 3D Base */
-.progress-3d {
-    height: 12px;
-    background: #e6e6e6;
-    border-radius: 30px;
-    box-shadow:
-        inset 4px 4px 8px rgba(0,0,0,0.1),
-        inset -4px -4px 8px rgba(255,255,255,0.8);
-    overflow: hidden;
-}
-
-/* Fill */
-.progress-fill {
-    height: 100%;
-    width: 0;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #ff4d4d, #ff0000);
-    box-shadow:
-        0 4px 10px rgba(255,0,0,0.4),
-        inset -2px -2px 6px rgba(255,255,255,0.4);
-    transition: width 1.4s ease;
-}
         /* Same card styling as other resume cards */
 .skills-section {
     padding: 5px 0;
@@ -239,7 +229,7 @@
 
         .resume-bg::before,
         .service-bg::before {
-            background: rgba(40, 0, 0, 0.35);
+            background: rgba(5, 10, 30, 0.4);
         }
 
         .section-bg canvas.stars {
@@ -1138,7 +1128,6 @@ html, body {
     box-shadow: 0 16px 36px rgba(0,0,0,0.5), 0 0 20px rgba(0,200,255,0.12) !important;
 }
 .skill-card h3 { color: #ffffff !important; }
-.skill-info span { color: #e2eeff !important; }
 .skill-item {
     background: rgba(255,255,255,0.06) !important;
     border: 1px solid rgba(255,255,255,0.1) !important;
@@ -1149,14 +1138,6 @@ html, body {
     background: rgba(0,200,255,0.16) !important;
     border-color: rgba(0,200,255,0.38) !important;
     color: #00eeff !important;
-}
-.progress-3d {
-    background: rgba(255,255,255,0.07) !important;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.45) !important;
-}
-.progress-fill {
-    background: linear-gradient(135deg, #00c8ff, #0055cc) !important;
-    box-shadow: 0 3px 10px rgba(0,180,255,0.38), inset 0 1px 0 rgba(255,255,255,0.25) !important;
 }
 
 /* Navbar glassmorphism */
@@ -1320,6 +1301,147 @@ html, body { background: #020008 !important; }
 }
 
 /* ==========================================
+   FEATURED CASE STUDIES
+   ========================================== */
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 22px;
+    margin-bottom: 56px;
+}
+.case-study {
+    background: rgba(8, 16, 38, 0.58);
+    backdrop-filter: blur(18px) saturate(170%);
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    border: 1px solid rgba(255,255,255,0.11);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+.case-study:hover, .case-study:focus-visible {
+    border-color: rgba(0,200,255,0.32);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.55), 0 0 26px rgba(0,200,255,0.16), inset 0 1px 0 rgba(255,255,255,0.09);
+}
+.case-study-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+.case-study-summary-text { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; }
+.case-study-summary-text h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 6px;
+}
+.case-study-summary-text p {
+    font-size: 0.85rem;
+    color: rgba(220,238,255,0.72);
+    margin: 0 0 10px;
+    line-height: 1.5;
+    flex: 1;
+}
+.case-study-toggle {
+    font-size: 0.75rem;
+    font-family: monospace;
+    color: rgba(0,200,255,0.85);
+    letter-spacing: 0.04em;
+}
+
+/* ── Case study modal ── */
+.case-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: rgba(0,2,10,0.82);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.case-modal-overlay[hidden] { display: none; }
+.case-modal {
+    position: relative;
+    background: linear-gradient(160deg, rgba(10,20,45,0.96), rgba(6,10,26,0.98));
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(0,200,255,0.25);
+    border-radius: 18px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 86vh;
+    overflow-y: auto;
+    padding: 32px 28px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.case-modal #case-modal-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 18px;
+}
+.case-modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    margin: -8px -8px 0 0;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.2s ease;
+}
+.case-modal-close:hover { background: rgba(0,200,255,0.2); }
+.case-study-fields { margin: 0 0 18px; }
+.case-study-fields dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(0,200,255,0.85);
+    margin-top: 12px;
+}
+.case-study-fields dd {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: rgba(220,238,255,0.5);
+    font-style: italic;
+    min-height: 1.2em;
+}
+.case-study-arch-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(0,200,255,0.85);
+    margin: 0 0 8px;
+}
+.case-study-arch {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 14px;
+}
+.case-study-stack {
+    font-size: 0.8rem;
+    color: rgba(220,238,255,0.75);
+    margin: 0 0 14px;
+}
+.case-study-links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ==========================================
    BENTO PROJECT GRID  –  Masonry / Mosaic
    Matches attached image: varied sizes stacked
    ========================================== */
@@ -1328,7 +1450,7 @@ html, body { background: #020008 !important; }
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 195px 175px 200px 180px 165px 190px 185px 185px;
+    grid-template-rows: 195px 175px 200px 180px 165px 190px;
     gap: 14px;
     width: 100%;
 }
@@ -1511,7 +1633,7 @@ html, body { background: #020008 !important; }
     .bento-card:nth-child(20) { grid-column:3/5; grid-row:9/10; }
     .bento-card:nth-child(21) { grid-column:1/3; grid-row:10/11; }
     .bento-card:nth-child(22) { grid-column:3/5; grid-row:10/11; }
-    .bento-grid { grid-template-rows: 185px 170px 190px 175px 165px 185px 180px 180px 180px 180px; }
+    .bento-grid { grid-template-rows: 185px 170px 190px 175px 165px 185px 180px; }
 }
 @media (max-width: 768px) {
     .bento-grid {
@@ -2815,7 +2937,7 @@ html, body { background: #020008 !important; }
 </style>
 
 </head>
-<body  id="home">
+<body>
     <!-- <div id="dark-overlay"></div> -->
     <!-- <a href="components.html" class="btn btn-primary btn-component"><i class="ti-shift-left-alt"></i> Components</a> -->
     <!-- ═══════════════════════════════════════════
@@ -2850,7 +2972,7 @@ html, body { background: #020008 !important; }
                     </h1>
                     <div class="hero-title-wrap">
                         <span class="hero-title-prefix">&gt;&nbsp;</span>
-                        <span id="hero-rotating-title">AI Developer</span>
+                        <span id="hero-rotating-title">Full Stack Engineer for production software</span>
                     </div>
                     <!-- HUD STATUS BAR -->
                     <div class="hero-hud-bar">
@@ -2861,10 +2983,7 @@ html, body { background: #020008 !important; }
                         <span class="hud-sep">&nbsp;|&nbsp;</span>
                         <span class="hud-text">AUTOMATION&nbsp;:&nbsp;READY</span>
                     </div>
-                    <p class="hero-tagline">
-                        Building Intelligent Systems<br>For The Future.
-                    </p>
-                    <p class="hero-tagline-chips">AI &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Full Stack</p>
+                    <p class="hero-tagline-chips">SaaS &nbsp;·&nbsp; AI Applications &nbsp;·&nbsp; APIs &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Cloud Infrastructure</p>
                     <p class="hero-bio">
                         From scalable Django platforms to AI-powered automation systems,
                         I engineer digital products that solve real-world problems.
@@ -2927,6 +3046,32 @@ html, body { background: #020008 !important; }
         <div class="hero-spaceman-wrap">
             <canvas id="spaceman-canvas"></canvas>
         </div>
+
+        <!-- Proof metrics (absorbed from former standalone #stats-bar section) -->
+        <div class="stats-bar" id="stats-bar">
+            <div class="container stats-inner">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="16">0+</div>
+                    <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5">0+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0+</div>
+                    <div class="stat-label">Years Learning</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="92">0%</div>
+                    <div class="stat-label">Python Proficiency</div>
+                </div>
+            </div>
+        </div>
     </header>
     <main id="main-content">
     <!-- ═══ FUTURISTIC GLASSMORPHISM NAVBAR ═══ -->
@@ -2957,9 +3102,9 @@ html, body { background: #020008 !important; }
             <!-- CENTER: HUD Nav links -->
             <ul class="nb-links pm-nav-links" role="list">
                 <li><a href="#home"         class="nb-link pm-nav-link active" data-label="HOME">HOME</a></li>
-                <li><a href="#about"        class="nb-link pm-nav-link" data-label="ABOUT">ABOUT</a></li>
-                <li><a href="#resume"       class="nb-link pm-nav-link" data-label="RESUME">RESUME</a></li>
-                <li><a href="#projects"     class="nb-link pm-nav-link" data-label="PORTFOLIO">PORTFOLIO</a></li>
+                <li><a href="#tech-skills"  class="nb-link pm-nav-link" data-label="STACK">STACK</a></li>
+                <li><a href="#projects"     class="nb-link pm-nav-link" data-label="WORK">WORK</a></li>
+                <li><a href="#how-i-build"  class="nb-link pm-nav-link" data-label="PROCESS">PROCESS</a></li>
                 <li><a href="#solar-system" class="nb-link pm-nav-link" data-label="GITHUB">GITHUB</a></li>
                 <li><a href="#contact"      class="nb-link pm-nav-link" data-label="CONTACT">CONTACT</a></li>
             </ul>
@@ -3035,19 +3180,19 @@ html, body { background: #020008 !important; }
                         <span class="pm-mm-link-label">HOME</span>
                         <svg class="pm-mm-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                     </a>
-                    <a href="#about"        class="nb-link pm-mm-link">
+                    <a href="#tech-skills"  class="nb-link pm-mm-link">
                         <span class="pm-mm-idx">02</span>
-                        <span class="pm-mm-link-label">ABOUT</span>
-                        <svg class="pm-mm-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                    </a>
-                    <a href="#resume"       class="nb-link pm-mm-link">
-                        <span class="pm-mm-idx">03</span>
-                        <span class="pm-mm-link-label">RESUME</span>
+                        <span class="pm-mm-link-label">STACK</span>
                         <svg class="pm-mm-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                     </a>
                     <a href="#projects"     class="nb-link pm-mm-link">
+                        <span class="pm-mm-idx">03</span>
+                        <span class="pm-mm-link-label">WORK</span>
+                        <svg class="pm-mm-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </a>
+                    <a href="#how-i-build"  class="nb-link pm-mm-link">
                         <span class="pm-mm-idx">04</span>
-                        <span class="pm-mm-link-label">PORTFOLIO</span>
+                        <span class="pm-mm-link-label">PROCESS</span>
                         <svg class="pm-mm-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><line x1="2" y1="7" x2="12" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polyline points="8,3 12,7 8,11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                     </a>
                     <a href="#solar-system" class="nb-link pm-mm-link">
@@ -3073,35 +3218,11 @@ html, body { background: #020008 !important; }
 
     </nav>
 
-    <!-- ══ STATS BAR ══ -->
-    <section class="stats-bar" id="stats-bar">
-        <div class="container stats-inner">
-            <div class="stat-item">
-                <div class="stat-number" data-target="16">0+</div>
-                <div class="stat-label">Projects Built</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="5">0+</div>
-                <div class="stat-label">Certifications</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="3">0</div>
-                <div class="stat-label">Companies</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="4">0+</div>
-                <div class="stat-label">Years Learning</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="92">0%</div>
-                <div class="stat-label">Python Proficiency</div>
-            </div>
-        </div>
-    </section>
 
     <section class="section section-bg about-bg" id="about">
         <!-- Ambient holographic video — deepest layer -->
-        <video class="about-cmd-vid" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <video class="about-cmd-vid" autoplay muted loop playsinline preload="none" poster="assets/imgs/command_skills_about_poster.webp" aria-hidden="true">
+            <source src="assets/imgs/command_skills_about.webm" type="video/webm">
             <source src="assets/imgs/command_skills_about.mp4" type="video/mp4">
         </video>
         <!-- Cyber overlay: dark + purple/cyan gradient sits above video -->
@@ -3408,19 +3529,6 @@ html, body { background: #020008 !important; }
         </div><!-- /about-wrap -->
     </section>
     
-    <!-- ═══ AI SKILL STREAM ═══ -->
-    <section class="ai-skill-stream" id="skill-stream">
-        <canvas id="skill-particles-canvas"></canvas>
-        <div class="skill-stream-wrap">
-            <div class="skill-stream-header">
-                <span class="skill-stream-tag">&#9672; NEURAL INTERFACE ACTIVE</span>
-                <h2 class="skill-stream-title">TECH STACK <span class="stream-glow">STREAM</span></h2>
-            </div>
-            <div class="skill-row" id="skill-row-1"><div class="skill-track" id="track-1"></div></div>
-            <div class="skill-row skill-row-rtl" id="skill-row-2"><div class="skill-track" id="track-2"></div></div>
-            <div class="skill-row" id="skill-row-3"><div class="skill-track" id="track-3"></div></div>
-        </div>
-    </section>
     <!--Resume Section-->
     <section class="section section-bg resume-bg" id="resume">
         <canvas class="stars"></canvas>
@@ -3658,6 +3766,125 @@ html, body { background: #020008 !important; }
 .about-reveal-right { opacity:0; transform:translateX(40px);  transition:opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s; }
 .about-reveal-left.revealed,.about-reveal-bottom.revealed,.about-reveal-right.revealed{opacity:1;transform:none}
 
+/* ==========================================
+   SHARED FLOW BACKGROUND — nebula glow + dropping stars
+   (continuity across Projects + new engineering sections)
+   ========================================== */
+.flow-bg-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 85% 60% at 50% 0%,
+            rgba(138,43,226,0.12) 0%,
+            transparent 65%),
+        radial-gradient(ellipse 70% 50% at 50% 100%,
+            rgba(0,200,255,0.07) 0%,
+            transparent 70%);
+}
+.flow-shooting-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+.flow-shooting-stars span {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #fff, 0 0 16px rgba(168,85,247,.8);
+    animation: skShoot linear infinite;
+    opacity: 0;
+}
+.flow-shooting-stars span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 1.5px;
+    background: linear-gradient(to left, rgba(255,255,255,0.85), rgba(168,85,247,0.4), transparent);
+    transform-origin: right center;
+}
+
+/* ==========================================
+   NEW ENGINEERING SECTIONS (How I Build / Backend / Infra / Challenges)
+   ========================================== */
+.eng-section { padding: 70px 0; position: relative; overflow: hidden; }
+.eng-section .container { position: relative; z-index: 1; }
+.eng-h2 {
+    font-size: clamp(1.7rem,4vw,2.7rem);
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 24px rgba(0,200,255,.35);
+    letter-spacing: -0.01em;
+}
+.eng-h2 .eng-hl { color: #00c8ff; }
+.eng-panel {
+    background: linear-gradient(135deg, rgba(0,200,255,0.05), rgba(255,255,255,0.03));
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 18px;
+    padding: 28px 26px;
+    margin-top: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.eng-panel-scroll { overflow-x: auto; }
+#projects.section.section-bg { padding-bottom: 30px !important; }
+#projects::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 260px;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(ellipse 70% 100% at 50% 100%,
+        rgba(0,200,255,0.09) 0%,
+        rgba(138,43,226,0.06) 45%,
+        transparent 75%);
+}
+#how-i-build { padding-top: 10px; }
+#how-i-build .eng-section-sub { margin-bottom: 14px; }
+.eng-section-sub {
+    color: rgba(220,238,255,0.6);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+    max-width: 640px;
+}
+.eng-pipeline {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0 14px;
+}
+.eng-pipeline-loop {
+    font-size: 0.8rem;
+    color: rgba(0,200,255,0.7);
+    font-family: monospace;
+}
+.eng-capability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+.eng-capability-grid-4 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.eng-capability-grid .about-block {
+    margin-bottom: 0;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.eng-capability-grid .about-block:hover {
+    transform: translateY(-3px);
+    background: rgba(0,200,255,0.06);
+    border-color: rgba(0,200,255,0.25);
+}
+
 /* ABOUT MISSION BLOCKS */
 .about-block {
     display: flex; gap: 13px; align-items: flex-start;
@@ -3722,21 +3949,6 @@ html, body { background: #020008 !important; }
 .orbit-4 .orbit-node { animation-duration:16s; animation-direction:reverse; }
 @keyframes orbitCCW { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(-360deg)} }
 
-/* EXPERTISE BARS */
-.expertise-bars { display:flex; flex-direction:column; gap:14px; padding-top:6px; }
-.exp-bar-label {
-    display:flex; justify-content:space-between;
-    font-size:0.8rem; color:rgba(220,240,255,0.85);
-    margin-bottom:5px; font-weight:500;
-}
-.exp-pct { color:#00c8ff; font-weight:700; }
-.exp-bar-track { height:5px; background:rgba(255,255,255,0.07); border-radius:3px; overflow:hidden; }
-.exp-bar-fill {
-    height:100%; width:0%; border-radius:3px;
-    background: var(--bar-color, linear-gradient(90deg,#00c8ff,#0090ff));
-    transition: width 1.3s cubic-bezier(0.22,1,0.36,1);
-    box-shadow: 0 0 6px rgba(0,200,255,0.35);
-}
 
 /* MISSION LOG (EXPERIENCE TIMELINE) */
 .mission-log-card, .knowledge-journey-card {
@@ -3916,111 +4128,16 @@ html, body { background: #020008 !important; }
     .resume-center-col { min-height: 300px; }
 }
 
-/* ==========================================
-   AI SKILL STREAM — 3-Row Infinite Marquee
-   ========================================== */
-.ai-skill-stream {
-    position: relative;
-    padding: 68px 0 62px;
-    overflow: hidden;
-    background: linear-gradient(180deg,
-        transparent 0%,
-        rgba(168,85,247,0.07) 40%,
-        rgba(168,85,247,0.05) 60%,
-        transparent 100%);
-}
-.ai-skill-stream::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 50%,
-        rgba(168,85,247,0.1) 0%, transparent 70%);
-    pointer-events: none; z-index: 0;
-}
-#skill-particles-canvas {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    pointer-events: none; z-index: 0;
-}
-.skill-stream-wrap { position: relative; z-index: 1; }
-.skill-stream-header {
-    text-align: center; margin-bottom: 46px;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-}
-.skill-stream-tag {
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-size: 0.67rem; letter-spacing: 0.24em;
-    color: rgba(168,85,247,0.88);
-    border: 1px solid rgba(168,85,247,0.3);
-    padding: 5px 18px; border-radius: 999px;
-    animation: ssTagPulse 3.2s ease-in-out infinite;
-}
-@keyframes ssTagPulse {
-    0%,100% { opacity:0.65; border-color:rgba(168,85,247,0.25); }
-    50%     { opacity:1;    border-color:rgba(168,85,247,0.6); box-shadow:0 0 14px rgba(168,85,247,0.22); }
-}
-.skill-stream-title {
-    font-size: clamp(1.3rem,3vw,2.1rem); font-weight:800; color:#fff;
-    letter-spacing:0.12em; text-transform:uppercase; margin:0;
-}
-.stream-glow {
-    color:#c084fc;
-    text-shadow:0 0 24px rgba(168,85,247,0.8),0 0 48px rgba(168,85,247,0.4);
-    animation: glowBreath 3s ease-in-out infinite;
-}
-@keyframes glowBreath {
-    0%,100%{text-shadow:0 0 20px rgba(168,85,247,0.7),0 0 40px rgba(168,85,247,0.35);}
-    50%    {text-shadow:0 0 32px rgba(168,85,247,1),0 0 60px rgba(168,85,247,0.5);}
-}
-.skill-row {
-    overflow: hidden; padding: 9px 0; margin: 4px 0;
-    -webkit-mask-image: linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
-    mask-image: linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
-    opacity: 0; transform: translateX(-80px);
-    transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22,1,0.36,1);
-}
-.skill-row.skill-row-rtl { transform: translateX(80px); }
-.skill-row.stream-visible { opacity:1 !important; transform:translateX(0) !important; }
-.skill-track {
-    display:flex; gap:13px; width:max-content; will-change:transform;
-}
-@keyframes skillScrollLTR { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-@keyframes skillScrollRTL { from{transform:translateX(-50%)} to{transform:translateX(0)} }
-#track-1 { animation: skillScrollLTR 38s linear infinite; }
-#track-2 { animation: skillScrollRTL 29s linear infinite; }
-#track-3 { animation: skillScrollLTR 45s linear infinite; }
-.skill-pill {
-    display:inline-flex; align-items:center; gap:8px;
-    padding:9px 19px;
-    background:rgba(255,255,255,0.04);
-    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-    border:1px solid rgba(255,255,255,0.09); border-radius:999px;
-    white-space:nowrap; cursor:pointer; flex-shrink:0; user-select:none;
-    position:relative; overflow:hidden; transform-style:preserve-3d;
-    transition: transform 0.28s cubic-bezier(0.22,1,0.36,1),
-                box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-}
-.skill-pill::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,0.07) 50%,transparent 75%);
-    border-radius:inherit; opacity:0; transition:opacity 0.3s; pointer-events:none;
-}
-.skill-pill:hover::after { opacity:1; }
-.skill-icon {
-    font-size:1.05rem; line-height:1; display:inline-block;
-    transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
-}
-.skill-name {
-    font-size:0.79rem; font-weight:600; letter-spacing:0.05em;
-    color:rgba(220,238,255,0.88); transition:color 0.25s;
-}
-.skill-pill:hover .skill-icon { transform:rotate(14deg) scale(1.28); }
-.skill-pill:hover .skill-name { color:#fff; }
-@media(max-width:768px){
-    .ai-skill-stream{padding:46px 0;}
-    .skill-pill{padding:7px 14px;}
-    .skill-name{font-size:0.72rem;}
-    .skill-stream-title{font-size:1.15rem;}
+/* ══ GLOBAL KEYBOARD FOCUS STATES (a11y) ══ */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #00c8ff;
+    outline-offset: 3px;
+    border-radius: 2px;
 }
 
 /* ══ GLOBAL CUSTOM CURSOR ══
@@ -4051,7 +4168,7 @@ a, button, input, textarea, select,
     transition: width 0.18s ease, height 0.18s ease,
                 border-color 0.22s ease, border-width 0.18s ease,
                 opacity 0.2s ease;
-    mix-blend-mode: screen;
+    mix-blend-mode: difference;
     will-change: left, top;
     backface-visibility: hidden;
 }
@@ -4060,11 +4177,12 @@ a, button, input, textarea, select,
     top: 0; left: 0;
     width: 5px; height: 5px;
     border-radius: 50%;
-    background: #00c8ff;
+    background: #fff;
     pointer-events: none !important;
     z-index: 999999 !important;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 8px rgba(0,200,255,0.95);
+    box-shadow: 0 0 8px rgba(255,255,255,0.95);
+    mix-blend-mode: difference;
     will-change: left, top;
     transition: opacity 0.2s ease;
     backface-visibility: hidden;
@@ -4485,7 +4603,7 @@ a, button, input, textarea, select,
                 <!-- Card 1: Robothon -->
                 <div class="cert-card">
                     <div class="cert-img-top">
-                        <img src="assets/imgs/robothon.png" alt="Robothon Certificate" loading="lazy">
+                        <img src="assets/imgs/robothon.webp" alt="Robothon Certificate" loading="lazy" decoding="async" width="1770" height="1242">
                     </div>
                     <div class="cert-body">
                         <div class="cert-tags">
@@ -4504,7 +4622,7 @@ a, button, input, textarea, select,
                 <!-- Card 2: MERN -->
                 <div class="cert-card">
                     <div class="cert-img-top">
-                        <img src="assets/imgs/mern_full%20stack%20.png" alt="MERN Full Stack Certificate" loading="lazy">
+                        <img src="assets/imgs/mern_full%20stack%20.webp" alt="MERN Full Stack Certificate" loading="lazy" decoding="async" width="1194" height="834">
                     </div>
                     <div class="cert-body">
                         <div class="cert-tags">
@@ -4523,7 +4641,7 @@ a, button, input, textarea, select,
                 <!-- Card 3: NPTEL -->
                 <div class="cert-card">
                     <div class="cert-img-top">
-                        <img src="assets/imgs/nptel.png" alt="NPTEL Cloud Computing Certificate" loading="lazy">
+                        <img src="assets/imgs/nptel.webp" alt="NPTEL Cloud Computing Certificate" loading="lazy" decoding="async" width="1578" height="1124">
                     </div>
                     <div class="cert-body">
                         <div class="cert-tags">
@@ -4542,7 +4660,7 @@ a, button, input, textarea, select,
                 <!-- Card 4: AWS -->
                 <div class="cert-card">
                     <div class="cert-img-top">
-                        <img src="assets/imgs/aws.png" alt="AWS Cloud Practitioner Certificate" loading="lazy">
+                        <img src="assets/imgs/aws.webp" alt="AWS Cloud Practitioner Certificate" loading="lazy" decoding="async" width="1584" height="1234">
                     </div>
                     <div class="cert-body">
                         <div class="cert-tags">
@@ -4561,7 +4679,7 @@ a, button, input, textarea, select,
                 <!-- Card 5: Machine Learning -->
                 <div class="cert-card">
                     <div class="cert-img-top">
-                        <img src="assets/imgs/apploed_machine_learning_python.png" alt="Applied Machine Learning Certificate" loading="lazy">
+                        <img src="assets/imgs/apploed_machine_learning_python.webp" alt="Applied Machine Learning Certificate" loading="lazy" decoding="async" width="1186" height="868">
                     </div>
                     <div class="cert-body">
                         <div class="cert-tags">
@@ -4580,7 +4698,7 @@ a, button, input, textarea, select,
                 <!-- Card 6: Frontend -->
                 <div class="cert-card">
                     <div class="cert-img-top">
-                        <img src="assets/imgs/junior%20frontend%20deveeloper.png" alt="Junior Frontend Developer Certificate" loading="lazy">
+                        <img src="assets/imgs/junior%20frontend%20deveeloper.webp" alt="Junior Frontend Developer Certificate" loading="lazy" decoding="async" width="818" height="1130">
                     </div>
                     <div class="cert-body">
                         <div class="cert-tags">
@@ -4656,15 +4774,16 @@ a, button, input, textarea, select,
             </div>
 
             <!-- Header -->
-            <p class="skills-sup">Think Better With</p>
-            <h2 class="skills-title">AI &amp; Automation</h2>
-            <p class="skills-sub">Building Intelligent Systems with Modern Technologies</p>
-            <div class="skills-badge">Automation · AI · Full Stack</div>
+            <p class="skills-sup">Technical Snapshot</p>
+            <h2 class="skills-title">Full Stack, Not Frontend-Only</h2>
+            <p class="skills-sub">Breadth across frontend, backend, database, cloud, and AI</p>
+            <div class="skills-badge">Frontend · Backend · Database · Cloud · AI</div>
 
-            <!-- ══ PYRAMID: 10 → 8 → 6 → 4 → 2 ══ -->
+            <!-- ══ TECHNICAL SNAPSHOT — grouped by category ══ -->
             <div class="sk-pyramid" id="sk-pyramid">
 
-                <!-- Row 1 — 10 (Frontend) -->
+                <!-- Frontend -->
+                <h3 class="sk-group-label">Frontend</h3>
                 <div class="sk-row" data-delay="0">
                     <div class="skill-card" data-name="HTML5" style="--si:0"><i class="devicon-html5-plain colored"></i></div>
                     <div class="skill-card" data-name="CSS3" style="--si:1"><i class="devicon-css3-plain colored"></i></div>
@@ -4678,20 +4797,31 @@ a, button, input, textarea, select,
                     <div class="skill-card" data-name="Figma" style="--si:9"><i class="devicon-figma-plain colored"></i></div>
                 </div>
 
-                <!-- Row 2 — 8 (Backend) -->
+                <!-- Backend -->
+                <h3 class="sk-group-label">Backend</h3>
                 <div class="sk-row" data-delay="120">
                     <div class="skill-card" data-name="Node.js" style="--si:0"><i class="devicon-nodejs-plain colored"></i></div>
                     <div class="skill-card" data-name="Express.js" style="--si:1"><i class="devicon-express-original" style="color:#ccc"></i></div>
                     <div class="skill-card" data-name="Python" style="--si:2"><i class="devicon-python-plain colored"></i></div>
                     <div class="skill-card" data-name="Django" style="--si:3"><i class="devicon-django-plain colored"></i></div>
-                    <div class="skill-card" data-name="MongoDB" style="--si:4"><i class="devicon-mongodb-plain colored"></i></div>
-                    <div class="skill-card" data-name="PostgreSQL" style="--si:5"><i class="devicon-postgresql-plain colored"></i></div>
-                    <div class="skill-card" data-name="MySQL" style="--si:6"><i class="devicon-mysql-plain colored"></i></div>
-                    <div class="skill-card" data-name="Firebase" style="--si:7"><i class="devicon-firebase-plain colored"></i></div>
+                    <div class="skill-card" data-name="FastAPI" style="--si:4"><i class="devicon-fastapi-plain colored"></i></div>
+                    <div class="skill-card" data-name="GraphQL" style="--si:5"><i class="devicon-graphql-plain colored"></i></div>
+                    <div class="skill-card" data-name="Java" style="--si:6"><i class="devicon-java-plain colored"></i></div>
+                    <div class="skill-card" data-name="Spring Boot" style="--si:7"><i class="devicon-spring-plain colored"></i></div>
                 </div>
 
-                <!-- Row 3 — 6 (Cloud + DevOps) -->
+                <!-- Database -->
+                <h3 class="sk-group-label">Database</h3>
                 <div class="sk-row" data-delay="240">
+                    <div class="skill-card" data-name="MongoDB" style="--si:0"><i class="devicon-mongodb-plain colored"></i></div>
+                    <div class="skill-card" data-name="PostgreSQL" style="--si:1"><i class="devicon-postgresql-plain colored"></i></div>
+                    <div class="skill-card" data-name="MySQL" style="--si:2"><i class="devicon-mysql-plain colored"></i></div>
+                    <div class="skill-card" data-name="Firebase" style="--si:3"><i class="devicon-firebase-plain colored"></i></div>
+                </div>
+
+                <!-- Cloud -->
+                <h3 class="sk-group-label">Cloud</h3>
+                <div class="sk-row" data-delay="360">
                     <div class="skill-card" data-name="AWS" style="--si:0"><i class="devicon-amazonwebservices-original colored" style="filter:none!important;opacity:1!important"></i></div>
                     <div class="skill-card" data-name="Docker" style="--si:1"><i class="devicon-docker-plain colored"></i></div>
                     <div class="skill-card" data-name="Kubernetes" style="--si:2"><i class="devicon-kubernetes-plain colored"></i></div>
@@ -4700,18 +4830,11 @@ a, button, input, textarea, select,
                     <div class="skill-card" data-name="Linux" style="--si:5"><i class="devicon-linux-plain" style="color:#fbbf24"></i></div>
                 </div>
 
-                <!-- Row 4 — 4 (AI / ML) -->
-                <div class="sk-row" data-delay="360">
+                <!-- AI -->
+                <h3 class="sk-group-label">AI</h3>
+                <div class="sk-row" data-delay="480">
                     <div class="skill-card" data-name="TensorFlow" style="--si:0"><i class="devicon-tensorflow-original colored"></i></div>
                     <div class="skill-card" data-name="PyTorch" style="--si:1"><i class="devicon-pytorch-original colored"></i></div>
-                    <div class="skill-card" data-name="FastAPI" style="--si:2"><i class="devicon-fastapi-plain colored"></i></div>
-                    <div class="skill-card" data-name="GraphQL" style="--si:3"><i class="devicon-graphql-plain colored"></i></div>
-                </div>
-
-                <!-- Row 5 — 2 (Tools) -->
-                <div class="sk-row" data-delay="480">
-                    <div class="skill-card" data-name="Java" style="--si:0"><i class="devicon-java-plain colored"></i></div>
-                    <div class="skill-card" data-name="Spring Boot" style="--si:1"><i class="devicon-spring-plain colored"></i></div>
                 </div>
 
             </div><!-- /sk-pyramid -->
@@ -4719,262 +4842,85 @@ a, button, input, textarea, select,
     </section>
 
 
-<style id="services-matrix-css">
-/* ══════════════════════════════════════
-   SERVICES MATRIX SECTION
-   ══════════════════════════════════════ */
-.svc-section {
-    position: relative;
-    padding: 80px 0 90px;
-    overflow: hidden;
-    background: linear-gradient(180deg,
-        transparent 0%, rgba(168,85,247,.05) 30%,
-        rgba(168,85,247,.04) 70%, transparent 100%);
-}
-/* Neural grid bg */
-.svc-grid-bg {
-    position: absolute; inset: 0;
-    background-image:
-        linear-gradient(rgba(168,85,247,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(168,85,247,.05) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none; z-index: 0;
-}
-/* Particles canvas */
-#svc-particles {
-    position: absolute; inset: 0;
-    pointer-events: none; z-index: 0;
-}
-/* Floating tech labels */
-.svc-float-labels {
-    position: absolute; inset: 0;
-    pointer-events: none; z-index: 0; overflow: hidden;
-}
-.svc-float-lbl {
-    position: absolute; font-family: monospace; font-size: .72rem;
-    color: rgba(168,85,247,.09); font-weight: 700; letter-spacing: .1em;
-    animation: svcFloat linear infinite;
-}
-@keyframes svcFloat {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-18px); }
-    100% { transform: translateY(0); }
-}
-
-/* ── Header ── */
-.svc-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 2; }
-.svc-htag {
-    font-size: .7rem; letter-spacing: .22em; color: rgba(168,85,247,.75);
-    font-family: monospace; text-transform: uppercase; display: block; margin-bottom: 10px;
-}
-.svc-htitle {
-    font-size: clamp(1.8rem,4vw,3rem); font-weight: 900; color: #fff;
-    letter-spacing: -.01em; text-shadow: 0 0 36px rgba(168,85,247,.45);
-    margin: 0 0 8px;
-}
-.svc-hsub { font-size: .85rem; color: rgba(200,185,255,.45); font-family: monospace; }
-
-/* ── Live indicator ── */
-.svc-live {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.22);
-    border-radius: 50px; padding: 6px 18px; margin-bottom: 32px;
-    font-size: .72rem; font-family: monospace; color: rgba(16,185,129,.9);
-    letter-spacing: .1em; position: relative; z-index: 2;
-}
-.svc-live-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: #10b981; box-shadow: 0 0 8px rgba(16,185,129,.8);
-    animation: svcLivePulse 1.6s ease-in-out infinite;
-}
-@keyframes svcLivePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
-.svc-live-badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; position: relative; z-index: 2; }
-.svc-live-badge {
-    padding: 3px 13px; border-radius: 20px;
-    background: rgba(16,185,129,.07); border: 1px solid rgba(16,185,129,.2);
-    color: rgba(16,185,129,.8); font-size: .68rem; font-family: monospace;
-}
-
-/* ── Marquee rows ── */
-.svc-row-wrap {
-    overflow: hidden; padding: 10px 0; margin: 6px 0;
-    -webkit-mask-image: linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
-    mask-image: linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);
-    position: relative; z-index: 2;
-    transition: opacity .3s;
-}
-.svc-track {
-    display: flex; gap: 12px; width: max-content;
-    will-change: transform;
-}
-.svc-row-wrap.row-ltr .svc-track { animation: svcScrollLTR 35s linear infinite; }
-.svc-row-wrap.row-rtl .svc-track { animation: svcScrollRTL 28s linear infinite; }
-.svc-row-wrap:hover .svc-track { animation-play-state: paused; }
-/* Slow on hover (via CSS var override in JS) */
-@keyframes svcScrollLTR { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-@keyframes svcScrollRTL { from{transform:translateX(-50%)} to{transform:translateX(0)} }
-
-/* ── Service pill card ── */
-.svc-pill {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 10px 20px;
-    background: rgba(255,255,255,.04);
-    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,.09);
-    border-radius: 999px;
-    white-space: nowrap;
-    cursor: default;
-    position: relative; overflow: hidden;
-    transform-style: preserve-3d;
-    transition: transform .3s cubic-bezier(.22,1,.36,1),
-                box-shadow .3s, border-color .3s;
-    flex-shrink: 0;
-}
-.svc-pill:hover {
-    transform: translateY(-8px) scale(1.05) perspective(600px) rotateX(4deg);
-    box-shadow: 0 0 28px rgba(168,85,247,.5), 0 14px 32px rgba(0,0,0,.55);
-    border-color: rgba(168,85,247,.45);
-}
-/* Spotlight on hover */
-.svc-pill::before {
-    content: ''; position: absolute; inset: 0; border-radius: 999px;
-    background: radial-gradient(circle at var(--px,50%) var(--py,50%),
-        rgba(168,85,247,.18) 0%, transparent 60%);
-    pointer-events: none; opacity: 0;
-    transition: opacity .25s;
-}
-.svc-pill:hover::before { opacity: 1; }
-.svc-pill-icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 28px; height: 28px; border-radius: 7px;
-    background: rgba(0,0,20,.75);
-    border: 1.5px solid rgba(168,85,247,.4);
-    font-size: .6rem; font-weight: 900;
-    font-family: 'JetBrains Mono','Courier New',monospace;
-    letter-spacing: -.01em; color: rgba(168,85,247,.9);
-    flex-shrink: 0;
-    box-shadow: 0 0 6px rgba(168,85,247,.2);
-    transition: box-shadow .3s;
-}
-.svc-pill-name {
-    font-size: .82rem; font-weight: 700; color: #fff;
-    letter-spacing: .03em;
-}
-
-/* ── CTA section ── */
-.svc-cta {
-    text-align: center; padding: 56px 20px 0;
-    position: relative; z-index: 2;
-}
-.svc-cta-h {
-    font-size: clamp(1.2rem,3vw,2rem); font-weight: 800;
-    color: #fff; margin: 0 0 10px;
-    text-shadow: 0 0 24px rgba(168,85,247,.35);
-    max-width: 640px; margin-left: auto; margin-right: auto;
-}
-.svc-cta-sub {
-    font-size: .9rem; color: rgba(200,185,255,.5);
-    font-family: monospace; margin-bottom: 30px;
-}
-.svc-cta-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 14px 34px;
-    background: linear-gradient(135deg, rgba(168,85,247,.22), rgba(100,50,200,.22));
-    border: 1px solid rgba(168,85,247,.4);
-    border-radius: 50px; color: #fff !important; text-decoration: none !important;
-    font-size: .9rem; font-weight: 700; letter-spacing: .04em;
-    transition: all .3s cubic-bezier(.22,1,.36,1);
-    box-shadow: 0 0 20px rgba(168,85,247,.15);
-    position: relative; overflow: hidden;
-}
-.svc-cta-btn::after {
-    content: '↗'; margin-left: -4px; opacity: 0;
-    transform: translateX(-8px);
-    transition: opacity .3s, transform .3s;
-}
-.svc-cta-btn:hover {
-    background: linear-gradient(135deg, rgba(168,85,247,.4), rgba(100,50,200,.4));
-    border-color: rgba(168,85,247,.7);
-    box-shadow: 0 0 40px rgba(168,85,247,.4), 0 10px 32px rgba(0,0,0,.4);
-    transform: translateY(-3px) scale(1.03);
-    color: #fff !important;
-}
-.svc-cta-btn:hover::after { opacity: 1; transform: translateX(4px); }
-</style>
-    <!-- ═══ SERVICES MATRIX ═══ -->
-    <section class="svc-section" id="services">
-        <!-- ① Cinematic video background -->
-        <video class="section-video-bg" id="svc-vid"
-               autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-            <source src="assets/imgs/service_matrix.mp4" type="video/mp4">
-        </video>
-        <!-- ② Dark overlay — keeps cards readable -->
-        <div class="section-vid-overlay svc-vid-overlay" aria-hidden="true"></div>
-        <!-- ③ Animated cyan scan-lines -->
-        <div class="svc-scan-line" aria-hidden="true"></div>
-        <!-- BG layers (z:3, above overlay) -->
-        <div class="svc-grid-bg"></div>
-        <canvas id="svc-particles"></canvas>
-        <div class="svc-float-labels" aria-hidden="true">
-            <span class="svc-float-lbl" style="left:4%;top:18%;animation-duration:9s;">PYTHON</span>
-            <span class="svc-float-lbl" style="left:18%;top:65%;animation-duration:11s;animation-delay:-3s;">REACT</span>
-            <span class="svc-float-lbl" style="left:42%;top:12%;animation-duration:13s;animation-delay:-5s;">DJANGO</span>
-            <span class="svc-float-lbl" style="left:65%;top:70%;animation-duration:8s;animation-delay:-2s;">DOCKER</span>
-            <span class="svc-float-lbl" style="left:82%;top:30%;animation-duration:10s;animation-delay:-7s;">FASTAPI</span>
-            <span class="svc-float-lbl" style="left:55%;top:85%;animation-duration:12s;animation-delay:-4s;">AI</span>
-            <span class="svc-float-lbl" style="left:28%;top:40%;animation-duration:9.5s;animation-delay:-1s;">NEXT.JS</span>
-            <span class="svc-float-lbl" style="left:75%;top:50%;animation-duration:14s;animation-delay:-6s;">LANGCHAIN</span>
-        </div>
-
-        <div class="svc-header">
-            <span class="svc-htag">&#9672; WHAT I BUILD</span>
-            <h2 class="svc-htitle">SERVICES MATRIX</h2>
-            <p class="svc-hsub">Full-spectrum engineering &mdash; from AI agents to production SaaS</p>
-        </div>
-
-        <!-- Live indicator -->
-        <div style="text-align:center;position:relative;z-index:4;">
-            <div class="svc-live">
-                <div class="svc-live-dot"></div>
-                LIVE SERVICES AVAILABLE
-            </div>
-        </div>
-        <div class="svc-live-badges">
-            <span class="svc-live-badge">&#9679; Freelance</span>
-            <span class="svc-live-badge">&#9679; Remote</span>
-            <span class="svc-live-badge">&#9679; Contract</span>
-            <span class="svc-live-badge">&#9679; Full Time</span>
-        </div>
-
-        <!-- Row 1 — LTR -->
-        <div class="svc-row-wrap row-ltr" id="svc-row-1">
-            <div class="svc-track" id="svc-track-1"></div>
-        </div>
-
-        <!-- Row 2 — RTL -->
-        <div class="svc-row-wrap row-rtl" id="svc-row-2">
-            <div class="svc-track" id="svc-track-2"></div>
-        </div>
-
-        <!-- CTA -->
-        <div class="svc-cta">
-            <h3 class="svc-cta-h">Need an AI System, Automation Workflow,<br>or Full Stack Product?</h3>
-            <p class="svc-cta-sub">Let&rsquo;s build something powerful together.</p>
-            <a href="https://calendly.com/mittalprakhar504" target="_blank" rel="noopener" class="svc-cta-btn">
-                &#128197; Schedule a Call
-            </a>
-        </div>
-    </section>
 
     <!-- Projects Section -->
     <section class="section section-bg projects-bg" id="projects">
         <canvas class="stars"></canvas>
-        <div class="container">
-            <h2 class="mb-5"><span class="text-danger">My</span><span style="color: #ff0000;"> Projects</span></h2>
+        <div class="flow-bg-glow" aria-hidden="true"></div>
+        <div class="flow-shooting-stars" aria-hidden="true">
+            <span style="top:8%;left:78%;animation-delay:0s;animation-duration:7s"></span>
+            <span style="top:22%;left:60%;animation-delay:2.2s;animation-duration:8.5s"></span>
+            <span style="top:5%;left:35%;animation-delay:4.5s;animation-duration:6.5s"></span>
+            <span style="top:35%;left:88%;animation-delay:1.2s;animation-duration:9s"></span>
+            <span style="top:15%;left:12%;animation-delay:6s;animation-duration:7.5s"></span>
+        </div>
+        <div class="container" style="position:relative;z-index:1;">
+            <h2 class="mb-5 eng-h2">Featured <span class="eng-hl">Engineering Projects</span></h2>
+
+            <!-- ══ Featured case studies — full engineering depth ══ -->
+            <div class="case-study-grid">
+
+                <div class="case-study" data-case="spendwise" role="button" tabindex="0" aria-haspopup="dialog">
+                    <img src="assets/imgs/spendwise-ai.webp" class="case-study-img" alt="SpendWise AI" loading="lazy" decoding="async" width="2936" height="1648">
+                    <div class="case-study-summary-text">
+                        <h3>SpendWise AI</h3>
+                        <p>AI CFO assistant that audits company AI subscriptions &amp; identifies unnecessary spending. Groq AI &middot; Lighthouse 95.</p>
+                        <span class="case-study-toggle">View case study →</span>
+                    </div>
+                </div>
+
+                <div class="case-study" data-case="inventoryflow" role="button" tabindex="0" aria-haspopup="dialog">
+                    <img src="assets/imgs/inventory-ai-flow.webp" class="case-study-img" alt="InventoryFlow Pro" loading="lazy" decoding="async" width="1280" height="730">
+                    <div class="case-study-summary-text">
+                        <h3>InventoryFlow Pro</h3>
+                        <p>Production SaaS with analytics dashboards, JWT auth, audit logs, CSV exports, Docker deployment, and FastAPI backend.</p>
+                        <span class="case-study-toggle">View case study →</span>
+                    </div>
+                </div>
+
+                <div class="case-study" data-case="kyc" role="button" tabindex="0" aria-haspopup="dialog">
+                    <img src="assets/imgs/kyc-image.webp" class="case-study-img" alt="KYC Verification Platform" loading="lazy" decoding="async" width="275" height="183">
+                    <div class="case-study-summary-text">
+                        <h3>KYC Verification Platform</h3>
+                        <p>Production-ready KYC onboarding with reviewer queues, SLA monitoring, document verification workflows, and strict state machine architecture.</p>
+                        <span class="case-study-toggle">View case study →</span>
+                    </div>
+                </div>
+
+                <div class="case-study" data-case="ainews" role="button" tabindex="0" aria-haspopup="dialog">
+                    <img src="assets/imgs/ai-news.webp" class="case-study-img" alt="AI News Platform" loading="lazy" decoding="async" width="2940" height="1316">
+                    <div class="case-study-summary-text">
+                        <h3>AI News Platform</h3>
+                        <p>AI-powered news aggregation platform that collects, filters, and presents trending technology updates with automated content workflows.</p>
+                        <span class="case-study-toggle">View case study →</span>
+                    </div>
+                </div>
+
+                <div class="case-study" data-case="binance" role="button" tabindex="0" aria-haspopup="dialog">
+                    <img src="assets/imgs/trading-bot.webp" class="case-study-img" alt="Binance Futures Trading Bot" loading="lazy" decoding="async" width="5184" height="2916">
+                    <div class="case-study-summary-text">
+                        <h3>Binance Futures Bot</h3>
+                        <p>Production-grade bot with bracket orders, risk management, SQLite persistence, structured logging, and 32 automated tests.</p>
+                        <span class="case-study-toggle">View case study →</span>
+                    </div>
+                </div>
+
+                <div class="case-study" data-case="dialer" role="button" tabindex="0" aria-haspopup="dialog">
+                    <img src="assets/imgs/autodialer.avif" class="case-study-img" alt="AI Auto Dialer" loading="lazy" decoding="async" width="3200" height="1800">
+                    <div class="case-study-summary-text">
+                        <h3>AI Auto Dialer</h3>
+                        <p>AI-powered automated calling system with smart lead routing and voice interaction.</p>
+                        <span class="case-study-toggle">View case study →</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <h2 class="mb-5 mt-5 eng-h2">Project <span class="eng-hl">Archive</span></h2>
             <div class="bento-grid">
                 <!-- Featured: Food YumYum -->
                 <div class="bento-card">
-                    <img src="assets/imgs/web-1.jpeg" class="bento-img" alt="Food-YUm-YUm">
+                    <img src="assets/imgs/web-1.webp" class="bento-img" alt="Food-YUm-YUm" loading="lazy" decoding="async" width="901" height="448">
                     <div class="bento-title-bar">Food-YUm-YUm</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Food-YUm-YUm</div>
@@ -4984,7 +4930,7 @@ a, button, input, textarea, select,
                 </div>
                 <!-- Featured: On-doc -->
                 <div class="bento-card">
-                    <img src="assets/imgs/web-2.png" class="bento-img" alt="On-doc">
+                    <img src="assets/imgs/web-2.webp" class="bento-img" alt="On-doc" loading="lazy" decoding="async" width="1920" height="1000">
                     <div class="bento-title-bar">On-doc</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">On-doc</div>
@@ -4994,7 +4940,7 @@ a, button, input, textarea, select,
                 </div>
                 <!-- Regular cards -->
                 <div class="bento-card">
-                    <img src="assets/imgs/web-3.png" class="bento-img" alt="Ecommerce">
+                    <img src="assets/imgs/web-3.webp" class="bento-img" alt="Ecommerce" loading="lazy" decoding="async" width="1684" height="911">
                     <div class="bento-title-bar">Ecommerce Website</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Ecommerce Website</div>
@@ -5003,7 +4949,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/web-4.png" class="bento-img" alt="Coffee Shop">
+                    <img src="assets/imgs/web-4.webp" class="bento-img" alt="Coffee Shop" loading="lazy" decoding="async" width="1536" height="864">
                     <div class="bento-title-bar">Corvo Coffee Shop</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Corvo Coffee Shop</div>
@@ -5012,16 +4958,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/autodialer.avif" class="bento-img" alt="AI Auto Dialer">
-                    <div class="bento-title-bar">AI Auto Dialer</div>
-                    <div class="bento-overlay">
-                        <div class="bento-ov-title">AI Auto Dialer</div>
-                        <div class="bento-ov-desc">AI-powered automated calling system with smart lead routing and voice interaction.</div>
-                        <a href="https://github.com/prakhau143/auto-dialer.git" target="_blank" class="bento-view-btn">View →</a>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <img src="assets/imgs/hiring.png" class="bento-img" alt="AI KwikHire">
+                    <img src="assets/imgs/hiring.webp" class="bento-img" alt="AI KwikHire" loading="lazy" decoding="async" width="1920" height="1080">
                     <div class="bento-title-bar">AI KwikHire</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">AI KwikHire Test</div>
@@ -5030,7 +4967,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/ems.jpeg" class="bento-img" alt="EMS">
+                    <img src="assets/imgs/ems.webp" class="bento-img" alt="EMS" loading="lazy" decoding="async" width="300" height="168">
                     <div class="bento-title-bar">EMS</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Employee Management System</div>
@@ -5039,7 +4976,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/email_marketer.avif" class="bento-img" alt="AI Email Marketing">
+                    <img src="assets/imgs/email_marketer.avif" class="bento-img" alt="AI Email Marketing" loading="lazy" decoding="async" width="1292" height="564">
                     <div class="bento-title-bar">AI Email Marketing</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">AI Email Marketing</div>
@@ -5048,7 +4985,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/detect.png" class="bento-img" alt="AI Language Detection">
+                    <img src="assets/imgs/detect.webp" class="bento-img" alt="AI Language Detection" loading="lazy" decoding="async" width="224" height="225">
                     <div class="bento-title-bar">AI Language Detection</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">AI Smart Language Detection</div>
@@ -5057,7 +4994,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/web-5.png" class="bento-img" alt="Spotify Podcast">
+                    <img src="assets/imgs/web-5.webp" class="bento-img" alt="Spotify Podcast" loading="lazy" decoding="async" width="2940" height="1680">
                     <div class="bento-title-bar">Spotify Podcast</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Spotify Podcast</div>
@@ -5066,7 +5003,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/whatsapp-bulk-sender-screenshot.avif" class="bento-img" alt="WhatsApp Bot">
+                    <img src="assets/imgs/whatsapp-bulk-sender-screenshot.avif" class="bento-img" alt="WhatsApp Bot" loading="lazy" decoding="async" width="340" height="191">
                     <div class="bento-title-bar">WhatsApp Bulk Sender</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">WhatsApp Bulk Sender</div>
@@ -5075,7 +5012,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/web-7.png" class="bento-img" alt="Indoor Games">
+                    <img src="assets/imgs/web-7.webp" class="bento-img" alt="Indoor Games" loading="lazy" decoding="async" width="2940" height="1680">
                     <div class="bento-title-bar">Indoor Games Website</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">PEds Play – Indoor Games</div>
@@ -5084,7 +5021,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/web-8.png" class="bento-img" alt="Yoga Website">
+                    <img src="assets/imgs/web-8.webp" class="bento-img" alt="Yoga Website" loading="lazy" decoding="async" width="2940" height="1680">
                     <div class="bento-title-bar">Yoga &amp; Meditation</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Yoga &amp; Meditation Website</div>
@@ -5093,7 +5030,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/web-6.png" class="bento-img" alt="Website Analyzer">
+                    <img src="assets/imgs/web-6.webp" class="bento-img" alt="Website Analyzer" loading="lazy" decoding="async" width="2940" height="1680">
                     <div class="bento-title-bar">Website Analyzer</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Website Analyzer</div>
@@ -5102,7 +5039,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/4in1row.webp" class="bento-img" alt="4 in a Row">
+                    <img src="assets/imgs/4in1row.webp" class="bento-img" alt="4 in a Row" loading="lazy" decoding="async" width="526" height="296">
                     <div class="bento-title-bar">4 in a Row Game</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">4 in a Row Game</div>
@@ -5111,7 +5048,7 @@ a, button, input, textarea, select,
                     </div>
                 </div>
                 <div class="bento-card">
-                    <img src="assets/imgs/princess.jpg" class="bento-img" alt="Jewellery Store">
+                    <img src="assets/imgs/princess.webp" class="bento-img" alt="Jewellery Store" loading="lazy" decoding="async" width="768" height="459">
                     <div class="bento-title-bar">Jewellery Ecommerce</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Jewellery Ecommerce Platform</div>
@@ -5119,62 +5056,13 @@ a, button, input, textarea, select,
                         <a href="https://github.com/prakhau143/Princesss.git" target="_blank" class="bento-view-btn">View →</a>
                     </div>
                 </div>
-
-                <!-- ─── New Production Projects (17–22) ─── -->
                 <div class="bento-card">
-                    <img src="assets/imgs/kyc-image.jpeg" class="bento-img" alt="KYC Verification Platform">
-                    <div class="bento-title-bar">KYC Verification Platform</div>
-                    <div class="bento-overlay">
-                        <div class="bento-ov-title">KYC Verification Platform</div>
-                        <div class="bento-ov-desc">Production-ready KYC onboarding with reviewer queues, SLA monitoring, document verification workflows, and strict state machine architecture.</div>
-                        <a href="https://github.com/prakhau143" target="_blank" class="bento-view-btn">GitHub Repository →</a>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <img src="assets/imgs/ai-news.png" class="bento-img" alt="AI News Platform">
-                    <div class="bento-title-bar">AI News Platform</div>
-                    <div class="bento-overlay">
-                        <div class="bento-ov-title">AI News Platform</div>
-                        <div class="bento-ov-desc">AI-powered news aggregation platform that collects, filters, and presents trending technology updates with automated content workflows.</div>
-                        <a href="https://github.com/prakhau143" target="_blank" class="bento-view-btn">GitHub Repository →</a>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <img src="assets/imgs/algorthmic-trading.jpg" class="bento-img" alt="Algorithmic Trading Strategy">
+                    <img src="assets/imgs/algorthmic-trading.webp" class="bento-img" alt="Algorithmic Trading Strategy" loading="lazy" decoding="async" width="6000" height="4000">
                     <div class="bento-title-bar">Algorithmic Trading Strategy</div>
                     <div class="bento-overlay">
                         <div class="bento-ov-title">Algorithmic Trading Strategy</div>
                         <div class="bento-ov-desc">EMA + RSI based AAPL strategy with walk-forward validation &mdash; Robustness 75.9 &middot; 5.6% Return &middot; 4.6% Max Drawdown.</div>
                         <a href="https://github.com/prakhau143/algorithmic-trading-strategy-backtrader" target="_blank" class="bento-view-btn">GitHub Repository →</a>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <img src="assets/imgs/spendwise-ai.png" class="bento-img" alt="SpendWise AI">
-                    <div class="bento-title-bar">SpendWise AI</div>
-                    <div class="bento-overlay">
-                        <div class="bento-ov-title">SpendWise AI</div>
-                        <div class="bento-ov-desc">AI CFO assistant that audits company AI subscriptions &amp; identifies unnecessary spending. Lighthouse 95 &middot; Groq AI &middot; Cost-saving reports.</div>
-                        <a href="https://spendwise-ai-dun.vercel.app/" target="_blank" class="bento-view-btn">View Project →</a>
-                        <a href="https://github.com/prakhau143/ai_native" target="_blank" class="bento-view-btn bento-view-btn-gh">GitHub Repository →</a>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <img src="assets/imgs/inventory-ai-flow.jpeg" class="bento-img" alt="InventoryFlow Pro">
-                    <div class="bento-title-bar">InventoryFlow Pro</div>
-                    <div class="bento-overlay">
-                        <div class="bento-ov-title">InventoryFlow Pro</div>
-                        <div class="bento-ov-desc">Production SaaS with analytics dashboards, JWT auth, audit logs, CSV exports, Docker deployment, and FastAPI backend.</div>
-                        <a href="https://inventory-flow-pro.vercel.app/dashboard" target="_blank" class="bento-view-btn">View Project →</a>
-                        <a href="https://github.com/prakhau143/InventoryFlow-Pro" target="_blank" class="bento-view-btn bento-view-btn-gh">GitHub Repository →</a>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <img src="assets/imgs/trading-bot.jpg" class="bento-img" alt="Binance Futures Trading Bot">
-                    <div class="bento-title-bar">Binance Futures Bot</div>
-                    <div class="bento-overlay">
-                        <div class="bento-ov-title">Binance Futures Trading Bot</div>
-                        <div class="bento-ov-desc">Production-grade bot with bracket orders, risk management, SQLite persistence, structured logging, and 32 automated tests.</div>
-                        <a href="https://github.com/prakhau143/Trading-bot-" target="_blank" class="bento-view-btn">GitHub Repository →</a>
                     </div>
                 </div>
             </div>
@@ -5188,7 +5076,6 @@ a, button, input, textarea, select,
 /* ── Section shell ── */
 .ghcc-section {
     position: relative;
-    min-height: 100vh;
     overflow: hidden;
     background: linear-gradient(180deg,#000008 0%,#050012 50%,#000008 100%);
     padding: 90px 0 100px;
@@ -5540,36 +5427,6 @@ a, button, input, textarea, select,
     #ghcc-bg-canvas { z-index: 2 !important; }
     .ghcc-container { z-index: 3 !important; }
 
-    /* ── Services Matrix: dark overlay ── */
-    .svc-vid-overlay {
-        background: rgba(0,0,0,.60);
-    }
-    /* Animated cyan scan-lines over video */
-    .svc-scan-line {
-        position: absolute; inset: 0;
-        pointer-events: none;
-        z-index: 2;
-        background: repeating-linear-gradient(
-            0deg,
-            transparent, transparent 3px,
-            rgba(0,200,255,.018) 3px, rgba(0,200,255,.018) 4px
-        );
-        animation: svcScanDrift 10s linear infinite;
-    }
-    @keyframes svcScanDrift {
-        from { background-position: 0 0; }
-        to   { background-position: 0 400px; }
-    }
-    /* bump existing Services Matrix layers above overlay */
-    .svc-grid-bg,
-    #svc-particles,
-    .svc-float-labels { z-index: 3 !important; }
-    .svc-header,
-    .svc-live,
-    .svc-live-badges,
-    .svc-row-wrap,
-    .svc-cta          { z-index: 4 !important; }
-
     /* ── Contact: purple ambient glow tint on existing overlay ── */
     #contact .mc-overlay {
         background:
@@ -5601,11 +5458,9 @@ a, button, input, textarea, select,
     /* ── Performance + a11y ── */
     @media (prefers-reduced-motion: reduce) {
         .section-video-bg             { display: none !important; }
-        .svc-scan-line,
         .mc-transmission-scan         { display: none !important; }
     }
     @media (max-width: 768px) {
-        .svc-scan-line,
         .mc-transmission-scan         { opacity: .4; }
     }
     </style>
@@ -5650,12 +5505,162 @@ a, button, input, textarea, select,
     </style>
 
     <!-- ═══════════════════════════════════════════════════════
+         HOW I BUILD SOFTWARE
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section eng-section" id="how-i-build">
+        <div class="flow-bg-glow" aria-hidden="true"></div>
+        <div class="flow-shooting-stars" aria-hidden="true">
+            <span style="top:10%;left:20%;animation-delay:1s;animation-duration:7.5s"></span>
+            <span style="top:25%;left:70%;animation-delay:3.5s;animation-duration:6.8s"></span>
+            <span style="top:8%;left:85%;animation-delay:5.5s;animation-duration:8s"></span>
+        </div>
+        <div class="container">
+            <h2 class="mb-3 eng-h2">How I <span class="eng-hl">Build Software</span></h2>
+            <p class="eng-section-sub">Idea to iteration — the same process every time, not ad-hoc.</p>
+            <div class="eng-panel">
+                <div class="eng-panel-scroll">
+                <svg class="eng-pipeline" viewBox="0 0 980 70" role="img" aria-labelledby="pipeline-build-title pipeline-build-desc">
+                    <title id="pipeline-build-title">Software build process pipeline</title>
+                    <desc id="pipeline-build-desc">Idea leads to Requirements, then Architecture, Database Design, Backend, Frontend, Testing, Deployment, Monitoring, and Iteration, which feeds back into Idea.</desc>
+                    <g font-family="monospace" font-size="11" fill="#dff" stroke="#00c8ff" stroke-width="1.1">
+                        <!-- 10 stages -->
+                        <rect x="4"   y="18" width="86" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="47"  y="39" text-anchor="middle" stroke="none" fill="#dff">Idea</text>
+                        <line x1="90" y1="35" x2="112" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="112" y="18" width="86" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="155" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="9">Requirements</text>
+                        <line x1="198" y1="35" x2="220" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="220" y="18" width="86" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="263" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="9">Architecture</text>
+                        <line x1="306" y1="35" x2="328" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="328" y="18" width="86" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="371" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="9">DB Design</text>
+                        <line x1="414" y1="35" x2="436" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="436" y="18" width="86" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="479" y="39" text-anchor="middle" stroke="none" fill="#dff">Backend</text>
+                        <line x1="522" y1="35" x2="544" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="544" y="18" width="86" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="587" y="39" text-anchor="middle" stroke="none" fill="#dff">Frontend</text>
+                        <line x1="630" y1="35" x2="652" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="652" y="18" width="86" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="695" y="39" text-anchor="middle" stroke="none" fill="#dff">Testing</text>
+                        <line x1="738" y1="35" x2="760" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="760" y="18" width="86" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="803" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="9">Deployment</text>
+                        <line x1="846" y1="35" x2="868" y2="35" marker-end="url(#pbarrow)"/>
+                        <rect x="868" y="18" width="108" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="922" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="9">Monitoring</text>
+                    </g>
+                    <defs><marker id="pbarrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                </div>
+                <p class="eng-pipeline-loop">Monitoring feeds back into Iteration → Idea. The loop repeats every release.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         BACKEND ENGINEERING
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section eng-section" id="backend-engineering">
+        <div class="flow-bg-glow" aria-hidden="true"></div>
+        <div class="flow-shooting-stars" aria-hidden="true">
+            <span style="top:12%;left:15%;animation-delay:2s;animation-duration:7.2s"></span>
+            <span style="top:30%;left:65%;animation-delay:4.8s;animation-duration:8.2s"></span>
+            <span style="top:6%;left:90%;animation-delay:0.5s;animation-duration:6.9s"></span>
+        </div>
+        <div class="container">
+            <h2 class="mb-3 eng-h2">Backend <span class="eng-hl">Engineering</span></h2>
+            <p class="eng-section-sub">Systems engineer, not a UI dev — server-side credibility across the full request lifecycle.</p>
+            <div class="eng-panel">
+                <div class="eng-capability-grid">
+                    <div class="about-block"><span class="about-block-icon">🔌</span><div><h6>REST APIs</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🔐</span><div><h6>Authentication &amp; Authorization</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🗄️</span><div><h6>Database Design</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">⚡</span><div><h6>Redis Caching</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">📬</span><div><h6>Queues</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">⚙️</span><div><h6>Background Jobs</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">💳</span><div><h6>Payments</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🔍</span><div><h6>Search</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">📝</span><div><h6>Logging</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">📈</span><div><h6>Monitoring</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🛡️</span><div><h6>Security</h6></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         INFRASTRUCTURE & DEVOPS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section eng-section" id="infra-devops">
+        <div class="flow-bg-glow" aria-hidden="true"></div>
+        <div class="flow-shooting-stars" aria-hidden="true">
+            <span style="top:9%;left:25%;animation-delay:1.5s;animation-duration:7.8s"></span>
+            <span style="top:28%;left:78%;animation-delay:3.2s;animation-duration:6.5s"></span>
+            <span style="top:5%;left:55%;animation-delay:5.8s;animation-duration:8.5s"></span>
+        </div>
+        <div class="container">
+            <h2 class="mb-3 eng-h2">Infrastructure <span class="eng-hl">&amp; DevOps</span></h2>
+            <p class="eng-section-sub">Owns production, not just code — ship and operate.</p>
+            <div class="eng-panel">
+                <div class="eng-panel-scroll">
+                <svg class="eng-pipeline" viewBox="0 0 780 70" role="img" aria-labelledby="pipeline-infra-title pipeline-infra-desc">
+                    <title id="pipeline-infra-title">Infrastructure deployment pipeline</title>
+                    <desc id="pipeline-infra-desc">GitHub triggers CI/CD, which builds a Docker image, deploys to Cloud, connects to the Database, serves through a CDN, and reports to Monitoring.</desc>
+                    <g font-family="monospace" font-size="11" fill="#dff" stroke="#00c8ff" stroke-width="1.1">
+                        <rect x="4"   y="18" width="96" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="52"  y="39" text-anchor="middle" stroke="none" fill="#dff">GitHub</text>
+                        <line x1="100" y1="35" x2="122" y2="35" marker-end="url(#piarrow)"/>
+                        <rect x="122" y="18" width="96" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="170" y="39" text-anchor="middle" stroke="none" fill="#dff">CI/CD</text>
+                        <line x1="218" y1="35" x2="240" y2="35" marker-end="url(#piarrow)"/>
+                        <rect x="240" y="18" width="96" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="288" y="39" text-anchor="middle" stroke="none" fill="#dff">Docker</text>
+                        <line x1="336" y1="35" x2="358" y2="35" marker-end="url(#piarrow)"/>
+                        <rect x="358" y="18" width="96" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="406" y="39" text-anchor="middle" stroke="none" fill="#dff">Cloud</text>
+                        <line x1="454" y1="35" x2="476" y2="35" marker-end="url(#piarrow)"/>
+                        <rect x="476" y="18" width="96" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="524" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="9">Database</text>
+                        <line x1="572" y1="35" x2="594" y2="35" marker-end="url(#piarrow)"/>
+                        <rect x="594" y="18" width="86" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="637" y="39" text-anchor="middle" stroke="none" fill="#dff">CDN</text>
+                        <line x1="680" y1="35" x2="702" y2="35" marker-end="url(#piarrow)"/>
+                        <rect x="702" y="18" width="76" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="740" y="39" text-anchor="middle" stroke="none" fill="#dff" font-size="8">Monitoring</text>
+                    </g>
+                    <defs><marker id="piarrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                </div>
+                <div class="eng-capability-grid eng-capability-grid-4">
+                    <div class="about-block"><span class="about-block-icon">🌎</span><div><h6>Environment Management</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🔑</span><div><h6>Secrets</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">📦</span><div><h6>Containers</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🚀</span><div><h6>Automated Deployments</h6></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         ENGINEERING CHALLENGES SOLVED
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section eng-section" id="eng-challenges">
+        <div class="flow-bg-glow" aria-hidden="true"></div>
+        <div class="flow-shooting-stars" aria-hidden="true">
+            <span style="top:14%;left:18%;animation-delay:2.8s;animation-duration:7.1s"></span>
+            <span style="top:24%;left:82%;animation-delay:0.8s;animation-duration:8.8s"></span>
+            <span style="top:6%;left:45%;animation-delay:4.2s;animation-duration:6.6s"></span>
+        </div>
+        <div class="container">
+            <h2 class="mb-3 eng-h2">Engineering <span class="eng-hl">Challenges Solved</span></h2>
+            <p class="eng-section-sub">Debugs and optimizes for real — concrete problems, not claimed skills.</p>
+            <div class="eng-panel">
+                <div class="eng-capability-grid">
+                    <div class="about-block"><span class="about-block-icon">⚡</span><div><h6>Query Optimization</h6><p class="subtitle"><!-- TODO: PRAKHAR TO DRAFT --></p></div></div>
+                    <div class="about-block"><span class="about-block-icon">🗃️</span><div><h6>Caching Strategy</h6><p class="subtitle"><!-- TODO: PRAKHAR TO DRAFT --></p></div></div>
+                    <div class="about-block"><span class="about-block-icon">🚦</span><div><h6>Rate Limiting</h6><p class="subtitle"><!-- TODO: PRAKHAR TO DRAFT --></p></div></div>
+                    <div class="about-block"><span class="about-block-icon">🔁</span><div><h6>Retry Systems</h6><p class="subtitle"><!-- TODO: PRAKHAR TO DRAFT --></p></div></div>
+                    <div class="about-block"><span class="about-block-icon">📁</span><div><h6>File Uploads</h6><p class="subtitle"><!-- TODO: PRAKHAR TO DRAFT --></p></div></div>
+                    <div class="about-block"><span class="about-block-icon">⚙️</span><div><h6>Background Processing</h6><p class="subtitle"><!-- TODO: PRAKHAR TO DRAFT --></p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
          GITHUB MISSION CONTROL — HTML
          ═══════════════════════════════════════════════════════ -->
     <section id="solar-system" class="ghcc-section">
         <!-- ① Cinematic video background -->
         <video class="section-video-bg" id="ghcc-vid"
-               autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+               autoplay muted loop playsinline preload="none" poster="assets/imgs/github_poster.webp" aria-hidden="true">
+            <source src="assets/imgs/github.webm" type="video/webm">
             <source src="assets/imgs/github.mp4" type="video/mp4">
         </video>
         <!-- ② Dark + purple gradient overlay over video -->
@@ -5700,7 +5705,7 @@ a, button, input, textarea, select,
                     <span class="ghcc-sec-lbl">&#9672; GITHUB IDENTITY</span>
                     <div class="ghcc-avatar-wrap">
                         <img src="https://github.com/prakhau143.png"
-                             onerror="this.src='assets/imgs/person.png'"
+                             onerror="this.src='assets/imgs/image.png'"
                              class="ghcc-avatar" alt="Prakhar Mittal">
                         <div class="ghcc-av-ring r1"></div>
                         <div class="ghcc-av-ring r2"></div>
@@ -6505,12 +6510,37 @@ a, button, input, textarea, select,
 }
     </style>
 
+    <!-- ═══════════════════════════════════════════════════════
+         ENGINEERING PHILOSOPHY
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section eng-section" id="philosophy">
+        <div class="flow-bg-glow" aria-hidden="true"></div>
+        <div class="flow-shooting-stars" aria-hidden="true">
+            <span style="top:11%;left:30%;animation-delay:1.8s;animation-duration:7.4s"></span>
+            <span style="top:22%;left:72%;animation-delay:4s;animation-duration:8.1s"></span>
+        </div>
+        <div class="container">
+            <h2 class="mb-3 eng-h2">Engineering <span class="eng-hl">Philosophy</span></h2>
+            <p class="eng-section-sub">How I think about trade-offs — five one-line principles.</p>
+            <div class="eng-panel">
+                <div class="eng-capability-grid">
+                    <div class="about-block"><span class="about-block-icon">🧱</span><div><h6>Build maintainable software.</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">✂️</span><div><h6>Prefer simplicity over complexity.</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">📊</span><div><h6>Optimize after measuring.</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">📐</span><div><h6>Design for scale.</h6></div></div>
+                    <div class="about-block"><span class="about-block-icon">🤖</span><div><h6>Automate repetitive work.</h6></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="mc-section" id="contact">
 
         <!-- ① Cinematic video background (replaces FNAF GLB — JS guard fires cleanly via null ID) -->
         <video class="mc-video" id="mc-vid"
-               autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+               autoplay muted loop playsinline preload="none" poster="assets/imgs/contact_panel_poster.webp" aria-hidden="true"
                style="z-index:0;">
+            <source src="assets/imgs/contact_panel.webm" type="video/webm">
             <source src="assets/imgs/contact_panel.mp4" type="video/mp4">
         </video>
         <!-- ② Overlays (z:1=dark+purple, z:2=particles, z:3=grid+scan) -->
@@ -6532,10 +6562,9 @@ a, button, input, textarea, select,
 
             <!-- Header -->
             <div class="mc-header">
-                <p class="mc-edge-hint">You have reached the edge of my universe. Let's connect and build the future.</p>
                 <div class="mc-subtitle-tag">MISSION CONTROL CENTER</div>
-                <h2 class="mc-title">INITIATE COMMUNICATION</h2>
-                <p class="mc-desc">Looking for an AI Engineer, Automation Specialist,<br>or Full Stack Developer?<br><strong style="color:rgba(0,200,255,.75);">Let's build something extraordinary.</strong></p>
+                <h2 class="mc-title">Looking for a Full Stack Engineer?</h2>
+                <p class="mc-desc">Building a SaaS product, an AI application, or need someone who can own the system end-to-end?<br><strong style="color:rgba(0,200,255,.75);">Let's talk about what you're building.</strong></p>
             </div>
 
             <!-- Main Grid -->
@@ -6672,16 +6701,16 @@ a, button, input, textarea, select,
                 </div>
 
                 <!-- Footer sits directly below — acts as the base/ground -->
-                <div class="mc-footer">
+                <footer class="mc-footer">
                 <div class="mc-footer-left">
                     <span class="mc-footer-name">PRAKHAR MITTAL</span>
                     <span class="mc-footer-role">AI Developer &nbsp;·&nbsp; Full Stack Engineer &nbsp;·&nbsp; Automation Specialist</span>
                 </div>
                 <div class="mc-footer-center">
                     <a href="#home"         class="mc-footer-link">Home</a>
-                    <a href="#about"        class="mc-footer-link">About</a>
-                    <a href="#resume"       class="mc-footer-link">Resume</a>
-                    <a href="#projects"     class="mc-footer-link">Portfolio</a>
+                    <a href="#tech-skills"  class="mc-footer-link">Stack</a>
+                    <a href="#projects"     class="mc-footer-link">Work</a>
+                    <a href="#how-i-build"  class="mc-footer-link">Process</a>
                     <a href="#solar-system" class="mc-footer-link">GitHub</a>
                     <a href="#contact"      class="mc-footer-link">Contact</a>
                 </div>
@@ -6689,7 +6718,7 @@ a, button, input, textarea, select,
                     <span class="mc-footer-copy">&copy; <script>document.write(new Date().getFullYear())</script> Crafted with <span class="mc-footer-heart">♥</span> by Prakhar Mittal</span>
                     <span class="mc-footer-build">UNIVERSE OS &nbsp;·&nbsp; BUILD 2026.1</span>
                 </div>
-            </div><!-- /mc-footer -->
+            </footer><!-- /mc-footer -->
 
             </div><!-- /mc-astro-footer-zone -->
 
@@ -6698,10 +6727,9 @@ a, button, input, textarea, select,
     </main><!-- /main-content -->
 
 	<!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
     <!-- Map is embedded as an iframe -->
     
     <!-- JohnDoe js -->
@@ -7197,27 +7225,6 @@ a, button, input, textarea, select,
         // Apply to all star canvases
         document.querySelectorAll("canvas.stars").forEach(createStars);
     </script>
-    <!-- Sparkle Cursor Effect -->
-<style>
-  .sparkle {
-    position: fixed;
-    pointer-events: none;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 0 8px 2px #fff, 0 0 16px 4px #ffd700;
-    opacity: 0.8;
-    z-index: 9999; /* ensures it's above everything */
-    animation: sparkle-fade 0.0007s linear forwards;
-  }
-  @keyframes sparkle-fade {
-    to {
-      opacity: 0;
-      transform: scale(1.8) translateY(-10px);
-    }
-  }
-</style>
 <style>
 /* ==========================================
    FUTURISTIC GLASSMORPHISM NAVBAR
@@ -7901,6 +7908,17 @@ a, button, input, textarea, select,
     margin: 0 auto;
 }
 
+.sk-group-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(0,200,255,0.75);
+    margin: 8px 0 2px;
+    text-align: center;
+}
+.sk-pyramid > .sk-group-label:first-child { margin-top: 0; }
+
 /* Each row is a horizontal flex line */
 .sk-row {
     display: flex;
@@ -8024,16 +8042,6 @@ a, button, input, textarea, select,
     opacity: 0.35;
 }
 </style>
-<script>
-  document.addEventListener('mousemove', function(e) {
-    const sparkle = document.createElement('div');
-    sparkle.className = 'sparkle';
-    sparkle.style.left = (e.clientX - 4) + 'px';
-    sparkle.style.top = (e.clientY - 4) + 'px';
-    document.body.appendChild(sparkle);
-    setTimeout(() => sparkle.remove(), 0.0070);
-  });
-</script>
 <script>
     (function () {
         const canvas = document.getElementById("navbar-electric");
@@ -8185,60 +8193,6 @@ a, button, input, textarea, select,
             });
         })();
         </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const bars = document.querySelectorAll(".progress-fill");
-            
-                bars.forEach(bar => {
-                    const width = bar.getAttribute("data-width");
-                    setTimeout(() => {
-                        bar.style.width = width + "%";
-                    }, 300);
-                });
-            });
-        </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            
-                const skillSection = document.querySelector("#resume");
-                const bars = document.querySelectorAll(".progress-fill");
-                let animated = false;
-            
-                function animateSkills() {
-                    if (animated) return;
-            
-                    const sectionTop = skillSection.getBoundingClientRect().top;
-                    const trigger = window.innerHeight - 100;
-            
-                    if (sectionTop < trigger) {
-                        bars.forEach(bar => {
-                            const target = parseInt(bar.dataset.width);
-                            const skillProgress = bar.closest(".skill-progress");
-                            const percentEl = skillProgress
-                                ? skillProgress.querySelector(".skill-percent")
-                                : null;
-
-                            bar.style.width = target + "%";
-
-                            let count = 0;
-                            const counter = setInterval(() => {
-                                if (count >= target) {
-                                    clearInterval(counter);
-                                } else {
-                                    count++;
-                                    if (percentEl) percentEl.textContent = count + "%";
-                                }
-                            }, 15);
-                        });
-            
-                        animated = true;
-                    }
-                }
-            
-                window.addEventListener("scroll", animateSkills);
-            });
-            </script>
-
     <!-- ═══ PM.OS NAVBAR: Scroll · Toggle · Active · Ticker · CPU ═══ -->
     <script>
     (function(){
@@ -8278,7 +8232,7 @@ a, button, input, textarea, select,
         });
 
         /* ── Active link on scroll ── */
-        var sections = ['home','about','resume','tech-skills','projects','solar-system','contact'];
+        var sections = ['home','tech-skills','projects','how-i-build','solar-system','contact'];
         var links = document.querySelectorAll('.nb-links .nb-link, .nb-mobile-drawer .nb-link');
         function updateActive(){
             var y = window.scrollY + 90;
@@ -8448,50 +8402,6 @@ a, button, input, textarea, select,
             }
         }
 
-    })();
-    </script>
-
-    <!-- ═══ HERO: Rotating Titles — Hacker Scramble Effect ═══ -->
-    <script>
-    (function(){
-        var titles=['AI Developer','Automation Engineer','Full Stack Engineer','Django Architect','Cloud & AI Specialist'];
-        var chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$!&%^';
-        var idx=0, running=false;
-        var el=document.getElementById('hero-rotating-title');
-        if(!el) return;
-
-        function scramble(target, cb){
-            if(running) return;
-            running=true;
-            var total=Math.round(target.length*4.5);
-            var frame=0;
-            var iv=setInterval(function(){
-                frame++;
-                var settled=Math.floor((frame/total)*target.length);
-                var out='';
-                for(var i=0;i<target.length;i++){
-                    out += i<settled
-                        ? target[i]
-                        : chars[Math.floor(Math.random()*chars.length)];
-                }
-                el.textContent=out;
-                if(frame>=total){
-                    clearInterval(iv);
-                    el.textContent=target;
-                    running=false;
-                    if(cb) cb();
-                }
-            }, 38);
-        }
-
-        function cycle(){
-            idx=(idx+1)%titles.length;
-            scramble(titles[idx], function(){
-                setTimeout(cycle, 2800);
-            });
-        }
-
-        setTimeout(cycle, 3000);
     })();
     </script>
 
@@ -8737,6 +8647,9 @@ a, button, input, textarea, select,
         var W = canvas.offsetWidth  || 500;
         var H = canvas.offsetHeight || 640;
         var isMobile = window.innerWidth < 769;
+        /* Skip the 15MB Optimus Prime model entirely on mobile — saves data + battery.
+           Hero still has the blackhole video, constellation canvas, and spaceman GLB. */
+        if(isMobile){ canvas.style.display = 'none'; return; }
 
         /* ──────────────────────────────────────────────
            RENDERER — alpha:true + clearColor alpha=0
@@ -9324,16 +9237,6 @@ a, button, input, textarea, select,
         }
     }, {passive: true});
 
-    /* ── Hide cursor when pointer leaves the window ── */
-    document.documentElement.addEventListener('mouseleave', function(){
-        ring.style.opacity = '0';
-        dot.style.opacity  = '0';
-    });
-    document.documentElement.addEventListener('mouseenter', function(){
-        ring.style.opacity = '1';
-        dot.style.opacity  = '1';
-    });
-
     /* ── ABOUT CARD REVEAL ── */
     var reveals = document.querySelectorAll('.about-reveal-left,.about-reveal-bottom,.about-reveal-right');
     if(reveals.length && 'IntersectionObserver' in window){
@@ -9343,30 +9246,6 @@ a, button, input, textarea, select,
             });
         },{threshold:0.12});
         reveals.forEach(function(el){ rObs.observe(el); });
-    }
-
-    /* ── EXPERTISE BARS ── */
-    var fills = document.querySelectorAll('.exp-bar-fill');
-    if(fills.length && 'IntersectionObserver' in window){
-        var bObs = new IntersectionObserver(function(entries){
-            entries.forEach(function(e){
-                if(!e.isIntersecting) return;
-                var fill = e.target;
-                var w    = parseInt(fill.getAttribute('data-width'));
-                var pct  = fill.closest('.exp-bar-item').querySelector('.exp-pct');
-                fill.style.width = w + '%';
-                if(pct){
-                    var t0 = Date.now(), dur = 1300;
-                    (function tick(){
-                        var p = Math.min((Date.now()-t0)/dur, 1);
-                        pct.textContent = Math.round(p * w) + '%';
-                        if(p < 1) requestAnimationFrame(tick);
-                    })();
-                }
-                bObs.unobserve(fill);
-            });
-        },{threshold:0.25});
-        fills.forEach(function(f){ bObs.observe(f); });
     }
 
     /* ── MISSION LOG + KNOWLEDGE JOURNEY: spine draw + entry reveal ── */
@@ -9399,6 +9278,8 @@ a, button, input, textarea, select,
     ════════════════════════════════════════════════════════════ */
     var canvas = document.getElementById('bust-canvas');
     if (!canvas || typeof THREE === 'undefined' || !THREE.GLTFLoader) return;
+    /* Skip the 3MB globe GLB on mobile — ambient decoration, not core content */
+    if (window.innerWidth < 769) { canvas.style.display = 'none'; return; }
 
     /* ── Size ── */
     function measure() {
@@ -9843,167 +9724,6 @@ a, button, input, textarea, select,
 })();
     </script>
 
-    <!-- ═══ AI SKILL STREAM — Interactive JS ═══ -->
-    <script>
-    (function(){
-    var R1=[
-        {icon:'RE',name:'React',c:'#61dafb'},
-        {icon:'NX',name:'Next.js',c:'#e2e8f0'},
-        {icon:'TS',name:'TypeScript',c:'#3178c6'},
-        {icon:'TW',name:'Tailwind',c:'#38bdf8'},
-        {icon:'RX',name:'Redux',c:'#764abc'},
-        {icon:'H5',name:'HTML5',c:'#e34f26'},
-        {icon:'C3',name:'CSS3',c:'#4dabcf'},
-        {icon:'VU',name:'Vue.js',c:'#4fc08d'},
-        {icon:'VT',name:'Vite',c:'#a78bfa'},
-        {icon:'GQ',name:'GraphQL',c:'#e535ab'},
-        {icon:'AP',name:'REST API',c:'#00c8ff'},
-        {icon:'GS',name:'GSAP',c:'#88ce02'},
-        {icon:'3J',name:'Three.js',c:'#e2e8f0'},
-        {icon:'WP',name:'Webpack',c:'#8dd6f9'},
-    ];
-    var R2=[
-        {icon:'PY',name:'Python',c:'#ffd43b'},
-        {icon:'DJ',name:'Django',c:'#44b78b'},
-        {icon:'FL',name:'Flask',c:'#ff6b6b'},
-        {icon:'FA',name:'FastAPI',c:'#00bfa5'},
-        {icon:'NJ',name:'Node.js',c:'#6dbf67'},
-        {icon:'EX',name:'Express',c:'#aaaaaa'},
-        {icon:'PG',name:'PostgreSQL',c:'#336791'},
-        {icon:'MG',name:'MongoDB',c:'#47a248'},
-        {icon:'MY',name:'MySQL',c:'#f29111'},
-        {icon:'RD',name:'Redis',c:'#dc382d'},
-        {icon:'DK',name:'Docker',c:'#2496ed'},
-        {icon:'K8',name:'Kubernetes',c:'#326ce5'},
-        {icon:'MQ',name:'RabbitMQ',c:'#ff6600'},
-        {icon:'FB',name:'Firebase',c:'#ffca28'},
-    ];
-    var R3=[
-        {icon:'LC',name:'LangChain',c:'#1db954'},
-        {icon:'AI',name:'OpenAI',c:'#10a37f'},
-        {icon:'AW',name:'AWS',c:'#ff9900'},
-        {icon:'GT',name:'Git',c:'#f05032'},
-        {icon:'GH',name:'GitHub',c:'#e2e8f0'},
-        {icon:'LX',name:'Linux',c:'#ffd700'},
-        {icon:'CI',name:'CI/CD',c:'#00c8ff'},
-        {icon:'NG',name:'Nginx',c:'#009900'},
-        {icon:'VC',name:'Vercel',c:'#e2e8f0'},
-        {icon:'HF',name:'HuggingFace',c:'#ff9d00'},
-        {icon:'TF',name:'TensorFlow',c:'#ff6f00'},
-        {icon:'OL',name:'Ollama',c:'#a78bfa'},
-        {icon:'PD',name:'Pandas',c:'#e2a0ff'},
-        {icon:'NP',name:'NumPy',c:'#4dabcf'},
-    ];
-
-    function buildTrack(id, skills){
-        var el=document.getElementById(id);
-        if(!el) return;
-        var all=[].concat(skills,skills);
-        all.forEach(function(sk){
-            var p=document.createElement('div');
-            p.className='skill-pill';
-            p.dataset.color=sk.c;
-            /* Build holographic monogram chip styled with tech color */
-            var borderCol = sk.c.replace('#','');
-            p.style.setProperty('--pill-c', sk.c);
-            p.innerHTML='<span class="skill-icon" style="border-color:'+sk.c+';color:'+sk.c+';box-shadow:0 0 6px '+sk.c+'33;">'+sk.icon+'</span>'
-                       +'<span class="skill-name">'+sk.name+'</span>';
-            el.appendChild(p);
-        });
-    }
-    buildTrack('track-1',R1);
-    buildTrack('track-2',R2);
-    buildTrack('track-3',R3);
-
-    // ── Scroll reveal ──
-    var rows=document.querySelectorAll('.skill-row');
-    var revealObs=new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-            if(e.isIntersecting){
-                var idx=Array.from(rows).indexOf(e.target);
-                setTimeout(function(){ e.target.classList.add('stream-visible'); }, 80+idx*130);
-                revealObs.unobserve(e.target);
-            }
-        });
-    },{threshold:0.15});
-    rows.forEach(function(r){ revealObs.observe(r); });
-
-    // ── Row slow-down on hover ──
-    var SPD={'track-1':'38s','track-2':'29s','track-3':'45s'};
-    var SLOW={'track-1':'95s','track-2':'75s','track-3':'115s'};
-    rows.forEach(function(row){
-        var track=row.querySelector('.skill-track');
-        if(!track) return;
-        row.addEventListener('mouseenter',function(){ track.style.animationDuration=SLOW[track.id]||'95s'; });
-        row.addEventListener('mouseleave',function(){ track.style.animationDuration=SPD[track.id]||'38s'; });
-    });
-
-    // ── Magnetic + glow hover on each pill ──
-    function attachPillFX(){
-        document.querySelectorAll('.skill-pill').forEach(function(pill){
-            var col=pill.dataset.color||'#00c8ff';
-            pill.addEventListener('mouseenter',function(){
-                // blur siblings
-                var sibs=pill.closest('.skill-track').querySelectorAll('.skill-pill');
-                sibs.forEach(function(s){ if(s!==pill){ s.style.filter='blur(1.5px) brightness(0.45)'; } });
-                pill.style.borderColor=col+'70';
-                pill.style.boxShadow='0 0 22px '+col+'55, 0 0 44px '+col+'22, inset 0 0 14px '+col+'14';
-                pill.style.background='rgba(255,255,255,0.08)';
-            });
-            pill.addEventListener('mouseleave',function(){
-                var sibs=pill.closest('.skill-track').querySelectorAll('.skill-pill');
-                sibs.forEach(function(s){ s.style.filter=''; });
-                pill.style.borderColor='';
-                pill.style.boxShadow='';
-                pill.style.background='';
-                pill.style.transform='';
-            });
-            pill.addEventListener('mousemove',function(e){
-                var r=pill.getBoundingClientRect();
-                var dx=(e.clientX-r.left-r.width/2)/(r.width/2);
-                var dy=(e.clientY-r.top-r.height/2)/(r.height/2);
-                pill.style.transform='scale(1.1) translateX('+(dx*5)+'px) translateY('+(dy*3-5)+'px) rotateX('+(-dy*7)+'deg) rotateY('+(dx*9)+'deg)';
-            });
-        });
-    }
-    attachPillFX();
-
-    // ── Background particles ──
-    var pc=document.getElementById('skill-particles-canvas');
-    if(pc){
-        var ctx=pc.getContext('2d');
-        var pts=[];
-        function sizeCanvas(){ pc.width=pc.offsetWidth; pc.height=pc.offsetHeight||200; }
-        sizeCanvas();
-        window.addEventListener('resize',sizeCanvas);
-        for(var i=0;i<55;i++){
-            pts.push({
-                x:Math.random()*(pc.width||800),
-                y:Math.random()*(pc.height||200),
-                r:Math.random()*1.4+0.3,
-                vx:(Math.random()-0.5)*0.22,
-                vy:(Math.random()-0.5)*0.22,
-                a:Math.random()*0.5+0.1
-            });
-        }
-        function drawPts(){
-            if(!pc.width||!pc.height) return requestAnimationFrame(drawPts);
-            ctx.clearRect(0,0,pc.width,pc.height);
-            pts.forEach(function(p){
-                p.x+=p.vx; p.y+=p.vy;
-                if(p.x<0)p.x=pc.width; if(p.x>pc.width)p.x=0;
-                if(p.y<0)p.y=pc.height; if(p.y>pc.height)p.y=0;
-                ctx.beginPath();
-                ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-                ctx.fillStyle='rgba(168,85,247,'+p.a+')';
-                ctx.fill();
-            });
-            requestAnimationFrame(drawPts);
-        }
-        drawPts();
-    }
-    })();
-    </script>
 
 
     <!-- ═══════════════════════════════════════════════════════
@@ -10359,87 +10079,6 @@ a, button, input, textarea, select,
     })();
 
     /* ══════════════════════════════════════════════
-       7. CANVAS SNAKE FALLBACK (legacy — disabled, replaced by AI CONTRIBUTION NETWORK)
-       ══════════════════════════════════════════════ */
-    (function initSnakeFallback(){
-        var cv = document.getElementById('ghcc-snake-fallback');
-        if(!cv) return; /* element replaced — safe exit */
-        /* Only show if img failed (onerror handler shows cv) */
-        var observer = new MutationObserver(function(){
-            if(cv.style.display !== 'none') startSnake();
-        });
-        observer.observe(cv, {attributes:true, attributeFilter:['style']});
-
-        function startSnake(){
-            cv.width  = cv.offsetWidth  || 600;
-            cv.height = cv.offsetHeight || 160;
-            var ctx = cv.getContext('2d');
-            var W=cv.width, H=cv.height;
-            var CELL=14, COLS=Math.floor(W/CELL), ROWS=Math.floor(H/CELL);
-            /* Contribution grid */
-            var grid=[];
-            var s=99;
-            function rng(){s=(s*6364136223846793005n?s:s);return Math.random();}
-            for(var r=0;r<ROWS;r++){
-                grid[r]=[];
-                for(var c=0;c<COLS;c++){
-                    var v=Math.random();
-                    grid[r][c]=v<.55?0:v<.72?1:v<.86?2:v<.94?3:4;
-                }
-            }
-            /* Snake body */
-            var snk=[], maxLen=20, dir={x:1,y:0};
-            for(var i=0;i<10;i++) snk.push({x:i,y:Math.floor(ROWS/2)});
-            /* Food = bright cells */
-            var food=[];
-            for(var r=0;r<ROWS;r++) for(var c=0;c<COLS;c++) if(grid[r][c]>0) food.push({x:c,y:r});
-
-            var eatIdx=0;
-            function nextTarget(){ if(eatIdx<food.length) return food[eatIdx++]; return {x:Math.floor(Math.random()*COLS),y:Math.floor(Math.random()*ROWS)}; }
-            var target=nextTarget();
-
-            function tick(){
-                /* Steer toward target */
-                var head=snk[snk.length-1];
-                var dx=target.x-head.x, dy=target.y-head.y;
-                if(Math.abs(dx)>=Math.abs(dy)){ dir={x:dx>0?1:-1,y:0}; } else { dir={x:0,y:dy>0?1:-1}; }
-                var nx=head.x+dir.x, ny=head.y+dir.y;
-                nx=(nx+COLS)%COLS; ny=(ny+ROWS)%ROWS;
-                snk.push({x:nx,y:ny});
-                if(snk.length>maxLen) snk.shift();
-                if(nx===target.x&&ny===target.y){ grid[target.y][target.x]=0; target=nextTarget(); }
-
-                /* Draw */
-                ctx.clearRect(0,0,W,H);
-                var colors=['rgba(255,255,255,.05)','rgba(168,85,247,.18)','rgba(168,85,247,.40)','rgba(168,85,247,.62)','rgba(168,85,247,.90)'];
-                for(var r=0;r<ROWS;r++) for(var c=0;c<COLS;c++){
-                    var lv=grid[r][c];
-                    ctx.fillStyle=colors[lv];
-                    ctx.fillRect(c*CELL+1,r*CELL+1,CELL-2,CELL-2);
-                }
-                /* Snake */
-                snk.forEach(function(seg,i){
-                    var alpha=.3+.7*(i/snk.length);
-                    ctx.fillStyle='rgba(168,85,247,'+alpha+')';
-                    ctx.beginPath();
-                    ctx.roundRect(seg.x*CELL+1,seg.y*CELL+1,CELL-2,CELL-2,3);
-                    ctx.fill();
-                });
-                /* Head glow */
-                var h=snk[snk.length-1];
-                ctx.shadowColor='rgba(168,85,247,.9)'; ctx.shadowBlur=14;
-                ctx.fillStyle='#c084fc';
-                ctx.beginPath();
-                ctx.roundRect(h.x*CELL+1,h.y*CELL+1,CELL-2,CELL-2,4);
-                ctx.fill();
-                ctx.shadowBlur=0;
-                setTimeout(function(){ requestAnimationFrame(tick); }, 120);
-            }
-            requestAnimationFrame(tick);
-        }
-    })();
-
-    /* ══════════════════════════════════════════════
        8. 3D TILT + CURSOR SPOTLIGHT on GHCC cards
        ══════════════════════════════════════════════ */
     (function initTilt(){
@@ -10732,334 +10371,7 @@ a, button, input, textarea, select,
     })();
     </script>
 
-    <!-- ═══════════════════════════════════════════
-         SERVICES MATRIX — JS
-    ═══════════════════════════════════════════ -->
-    <script>
-    (function(){
-    /* ── Pill data ── */
-    var ROW1 = [
-        {icon:'AI', name:'AI Engineer'},
-        {icon:'⚙', name:'Workflow Automation'},
-        {icon:'NN', name:'AI Agents'},
-        {icon:'FS', name:'Full Stack Dev'},
-        {icon:'SX', name:'SaaS Development'},
-        {icon:'DJ', name:'Django Backend'},
-        {icon:'AP', name:'API Development'},
-        {icon:'DA', name:'Analytics Dashboards'}
-    ];
-    var ROW2 = [
-        {icon:'ML', name:'ML Solutions'},
-        {icon:'RE', name:'React Development'},
-        {icon:'NX', name:'Next.js Dev'},
-        {icon:'CL', name:'Cloud Deployment'},
-        {icon:'TR', name:'Trading Systems'},
-        {icon:'SC', name:'Web Scraping'},
-        {icon:'IN', name:'API Integrations'},
-        {icon:'DK', name:'Docker Infrastructure'}
-    ];
 
-    function mkPill(d){
-        var el = document.createElement('div');
-        el.className='svc-pill';
-        el.innerHTML='<span class="svc-pill-icon">'+d.icon+'</span>'
-                    +'<span class="svc-pill-name">'+d.name+'</span>';
-        /* spotlight follow */
-        el.addEventListener('mousemove',function(e){
-            var r=el.getBoundingClientRect();
-            el.style.setProperty('--px',((e.clientX-r.left)/r.width*100)+'%');
-            el.style.setProperty('--py',((e.clientY-r.top)/r.height*100)+'%');
-        });
-        return el;
-    }
-
-    function fillTrack(trackId, data, copies){
-        var track = document.getElementById(trackId);
-        if(!track) return;
-        copies = copies||3;
-        for(var c=0;c<copies;c++){
-            data.forEach(function(d){ track.appendChild(mkPill(d)); });
-        }
-    }
-
-    fillTrack('svc-track-1', ROW1, 3);
-    fillTrack('svc-track-2', ROW2, 3);
-
-    /* ── Particles canvas ── */
-    (function(){
-        var cv = document.getElementById('svc-particles');
-        if(!cv) return;
-        var ctx = cv.getContext('2d');
-        var W,H, pts=[];
-        function resize(){
-            W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight;
-        }
-        function initPts(){
-            pts=[];
-            var n=Math.floor(W*H/18000);
-            for(var i=0;i<n;i++){
-                pts.push({x:Math.random()*W,y:Math.random()*H,
-                    vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,
-                    r:Math.random()*1.4+.4});
-            }
-        }
-        function draw(){
-            ctx.clearRect(0,0,W,H);
-            pts.forEach(function(p){
-                p.x+=p.vx; p.y+=p.vy;
-                if(p.x<0)p.x=W; if(p.x>W)p.x=0;
-                if(p.y<0)p.y=H; if(p.y>H)p.y=0;
-                ctx.beginPath();
-                ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-                ctx.fillStyle='rgba(168,85,247,.18)';
-                ctx.fill();
-            });
-            /* connections */
-            for(var i=0;i<pts.length-1;i++){
-                for(var j=i+1;j<pts.length;j++){
-                    var dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
-                    var dist=Math.sqrt(dx*dx+dy*dy);
-                    if(dist<80){
-                        ctx.beginPath();
-                        ctx.moveTo(pts[i].x,pts[i].y);
-                        ctx.lineTo(pts[j].x,pts[j].y);
-                        ctx.strokeStyle='rgba(168,85,247,'+(0.06*(1-dist/80))+')';
-                        ctx.lineWidth=.6;
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(draw);
-        }
-        resize(); initPts(); draw();
-        window.addEventListener('resize',function(){resize();initPts();});
-    })();
-
-    })();
-    </script>
-
-    <!-- ═══════════════════════════════════════════
-         THREE.JS — FNAF SECURITY BREACH ENVIRONMENT
-         Static cinematic camera. No orbit. No movement.
-         Cyberpunk HQ feel — contact UI sits inside it.
-    ═══════════════════════════════════════════ -->
-    <script>
-    (function(){
-        var cv  = document.getElementById('mc-3d-canvas');
-        var sec = document.getElementById('contact');
-        if(!cv || typeof THREE === 'undefined') return;
-
-        var W = window.innerWidth;
-        var H = (sec ? sec.offsetHeight : 0) || window.innerHeight;
-
-        /* ── Renderer ── */
-        var renderer = new THREE.WebGLRenderer({canvas:cv, antialias:true, alpha:false});
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.4));
-        renderer.setSize(W, H);
-        renderer.outputEncoding     = THREE.sRGBEncoding;
-        renderer.toneMapping        = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.3;
-        renderer.setClearColor(0x00000a, 1);
-
-        /* ── Camera — set temporarily, locked after model loads ── */
-        var camera = new THREE.PerspectiveCamera(58, W/H, 0.1, 3000);
-        camera.position.set(0, 6, 24);
-        camera.lookAt(0, 3, 0);
-
-        /* ── Scene ── */
-        var scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x00000a);
-        scene.fog = new THREE.FogExp2(0x00000a, 0.012);
-
-        /* ── Lights — cinematic, let model emissives do the work ── */
-        scene.add(new THREE.AmbientLight(0x223355, 0.7));
-        var key = new THREE.DirectionalLight(0x6688cc, 0.5);
-        key.position.set(-8, 14, 12);
-        scene.add(key);
-        var rim = new THREE.DirectionalLight(0xff2266, 0.25);
-        rim.position.set(8, 4, -8);
-        scene.add(rim);
-        var fill = new THREE.PointLight(0x00aaff, 1.2, 60);
-        fill.position.set(0, 8, 0);
-        scene.add(fill);
-
-        /* ── Load FNAF GLB ── */
-        var mixer = null;
-        var clock  = new THREE.Clock();
-        var raf    = null;
-
-        new THREE.GLTFLoader().load(
-            'assets/imgs/fnaf_security_breach_teaser_map.glb',
-            function(gltf){
-                var model = gltf.scene;
-
-                /* Measure raw bounds */
-                var bbox = new THREE.Box3().setFromObject(model);
-                var size = bbox.getSize(new THREE.Vector3());
-                var ctr  = bbox.getCenter(new THREE.Vector3());
-
-                /* Scale so longest horizontal spans ~40 units */
-                var refDim = Math.max(size.x, size.z);
-                var scale  = 40 / (refDim || 1);
-                model.scale.setScalar(scale);
-
-                /* Re-center: X/Z at origin, Y floor at 0 */
-                bbox.setFromObject(model);
-                var ctr2 = bbox.getCenter(new THREE.Vector3());
-                model.position.set(-ctr2.x, -bbox.min.y, -ctr2.z);
-
-                scene.add(model);
-
-                /* Compute camera position from final bounds */
-                bbox.setFromObject(model);
-                var sz2  = bbox.getSize(new THREE.Vector3());
-                /* Front-facing elevated: Z = half depth + padding */
-                var camZ = sz2.z * 0.5 + sz2.x * 0.6;
-                var camY = sz2.y * 0.42;
-                var lookY = sz2.y * 0.28;
-
-                /* Lock camera — these are the ONLY values ever set */
-                camera.position.set(0, camY, camZ);
-                camera.lookAt(0, lookY, 0);
-                camera.updateProjectionMatrix();
-
-                console.log('[FNAF] loaded | sz:', sz2.x.toFixed(1), sz2.y.toFixed(1), sz2.z.toFixed(1),
-                    '| camZ:', camZ.toFixed(1), 'camY:', camY.toFixed(1));
-
-                /* Play built-in light/emissive animations only */
-                if(gltf.animations && gltf.animations.length){
-                    mixer = new THREE.AnimationMixer(model);
-                    gltf.animations.forEach(function(clip){
-                        mixer.clipAction(clip).play();
-                    });
-                    console.log('[FNAF] playing', gltf.animations.length, 'animation(s)');
-                }
-            },
-            null,
-            function(err){ console.error('[FNAF] load error:', err); }
-        );
-
-        /* ── Render loop — camera NEVER moves ── */
-        function tick(){
-            raf = requestAnimationFrame(tick);
-            if(mixer) mixer.update(clock.getDelta());
-            renderer.render(scene, camera);
-        }
-
-        var io = new IntersectionObserver(function(entries){
-            if(entries[0].isIntersecting){ if(!raf) tick(); }
-            else { cancelAnimationFrame(raf); raf = null; }
-        }, {threshold: 0.01});
-        io.observe(sec || cv.parentElement);
-
-        window.addEventListener('resize', function(){
-            var nW = window.innerWidth;
-            var nH = (sec ? sec.offsetHeight : 0) || window.innerHeight;
-            camera.aspect = nW / nH;
-            camera.updateProjectionMatrix();
-            renderer.setSize(nW, nH);
-        });
-
-    })();
-
-    /* ──────────────────────────────────────────────────────────
-       CONTACT — Floating cyber particles (layer z-index:2)
-       Small neon dots drift upward, never interact with cursor
-    ────────────────────────────────────────────────────────── */
-    (function(){
-        var cv  = document.getElementById('mc-particles');
-        if(!cv) return;
-        var ctx = cv.getContext('2d');
-        var W, H, pts = [], raf = null;
-
-        function resize(){
-            W = cv.width  = cv.offsetWidth  || window.innerWidth;
-            H = cv.height = cv.offsetHeight || window.innerHeight;
-        }
-
-        function init(){
-            pts = [];
-            var n = Math.floor(W * H / 14000);
-            for(var i=0;i<n;i++){
-                pts.push({
-                    x:  Math.random() * W,
-                    y:  Math.random() * H,
-                    vy: -(0.15 + Math.random() * 0.35), /* drift upward */
-                    vx: (Math.random() - .5) * 0.12,
-                    r:  Math.random() * 1.5 + 0.4,
-                    col: Math.random() < .5
-                        ? 'rgba(0,200,255,'
-                        : Math.random() < .6
-                            ? 'rgba(168,85,247,'
-                            : 'rgba(255,50,100,',
-                    a: Math.random() * .18 + .05
-                });
-            }
-        }
-
-        function draw(){
-            raf = requestAnimationFrame(draw);
-            ctx.clearRect(0,0,W,H);
-            pts.forEach(function(p){
-                p.x += p.vx; p.y += p.vy;
-                if(p.y < -4){ p.y = H + 4; p.x = Math.random()*W; }
-                if(p.x < 0) p.x = W; if(p.x > W) p.x = 0;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-                ctx.fillStyle = p.col + p.a + ')';
-                ctx.shadowBlur = 6; ctx.shadowColor = p.col + '.4)';
-                ctx.fill();
-                ctx.shadowBlur = 0;
-            });
-        }
-
-        var io = new IntersectionObserver(function(en){
-            if(en[0].isIntersecting){
-                resize(); init();
-                if(!raf) draw();
-            } else {
-                cancelAnimationFrame(raf); raf = null;
-            }
-        }, {threshold:.05});
-        var sec = document.getElementById('contact');
-        if(sec) io.observe(sec);
-
-        window.addEventListener('resize', function(){
-            if(raf){ resize(); init(); }
-        });
-    })();
-
-    /* ──────────────────────────────────────────────────────────
-       CONTACT — Scroll-reveal for UI cards (fade + slide-up)
-    ────────────────────────────────────────────────────────── */
-    (function(){
-        var sec = document.getElementById('contact');
-        if(!sec) return;
-        var items = sec.querySelectorAll(
-            '.mc-header, .mc-terminal, .mc-status-panel, .mc-connect-cards, .mc-universe-edge'
-        );
-        items.forEach(function(el){
-            el.style.opacity    = '0';
-            el.style.transform  = 'translateY(28px)';
-            el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)';
-        });
-        var obs = new IntersectionObserver(function(entries){
-            entries.forEach(function(e){
-                if(e.isIntersecting){
-                    e.target.style.opacity   = '1';
-                    e.target.style.transform = 'translateY(0)';
-                    obs.unobserve(e.target);
-                }
-            });
-        }, {threshold:.1, rootMargin:'0px 0px -60px 0px'});
-        /* stagger delays */
-        Array.from(items).forEach(function(el,i){
-            el.style.transitionDelay = (i * 90) + 'ms';
-            obs.observe(el);
-        });
-    })();
-
-    </script>
 
     <!-- ═══════════════════════════════════════════
          GITHUB MISSION CONTROL — v2
@@ -11755,7 +11067,7 @@ a, button, input, textarea, select,
         particles=particles.filter(function(p){return p.life>0;});
         particles.forEach(function(p){
             p.x+=p.vx;p.y+=p.vy;p.vx*=0.92;p.vy*=0.92;p.life-=0.022;
-            ctx.beginPath();ctx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);
+            ctx.beginPath();ctx.arc(p.x,p.y,Math.max(0,p.r*p.life),0,Math.PI*2);
             var h2=Math.round(p.life*200).toString(16).padStart(2,'0');
             ctx.fillStyle=p.col+h2;ctx.shadowBlur=5;ctx.shadowColor=p.col;
             ctx.fill();ctx.shadowBlur=0;
@@ -11869,7 +11181,6 @@ a, button, input, textarea, select,
         /* Select all cinematic section videos */
         var vids = [
             document.getElementById('ghcc-vid'),   /* GitHub MC      */
-            document.getElementById('svc-vid'),    /* Services Matrix */
             document.getElementById('mc-vid')      /* Contact CC      */
         ].filter(Boolean);
 
@@ -11916,6 +11227,277 @@ a, button, input, textarea, select,
         }
         /* About section: slow cinematic feel (0.7x) */
         applyRate(document.querySelector('#about .about-cmd-vid'), 0.7);
+    })();
+    </script>
+
+            <!-- ══ Case study modal (single shared dialog, populated from templates) ══ -->
+            <div class="case-modal-overlay" id="case-modal" hidden>
+                <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+                    <button type="button" class="case-modal-close" id="case-modal-close" aria-label="Close case study">&#10005;</button>
+                    <div id="case-modal-body"></div>
+                </div>
+            </div>
+
+            <template id="case-tpl-spendwise">
+                <h3 id="case-modal-title">SpendWise AI</h3>
+                <dl class="case-study-fields">
+                    <dt>Problem</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Context</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Solution</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Technical Decisions</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Engineering Challenges</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Scale</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Results</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                </dl>
+                <p class="case-study-arch-label">Architecture</p>
+                <svg class="case-study-arch" viewBox="0 0 720 90" role="img" aria-labelledby="arch-spendwise-title arch-spendwise-desc">
+                    <title id="arch-spendwise-title">SpendWise AI system architecture</title>
+                    <desc id="arch-spendwise-desc">Client connects to API, which reads through Cache to Database, and dispatches Workers that write to Storage.</desc>
+                    <g font-family="monospace" font-size="12" fill="#dff" stroke="#00c8ff" stroke-width="1.2">
+                        <rect x="10"  y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="60"  y="51" text-anchor="middle" stroke="none" fill="#dff">Client</text>
+                        <line x1="110" y1="47" x2="140" y2="47" marker-end="url(#arrowh)"/>
+                        <rect x="140" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="190" y="51" text-anchor="middle" stroke="none" fill="#dff">API</text>
+                        <line x1="240" y1="47" x2="270" y2="47" marker-end="url(#arrowh)"/>
+                        <rect x="270" y="30" width="100" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="320" y="51" text-anchor="middle" stroke="none" fill="#dff">Cache</text>
+                        <line x1="370" y1="47" x2="400" y2="47" marker-end="url(#arrowh)"/>
+                        <rect x="400" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="450" y="51" text-anchor="middle" stroke="none" fill="#dff">Database</text>
+                        <line x1="500" y1="47" x2="530" y2="47" marker-end="url(#arrowh)"/>
+                        <rect x="530" y="30" width="90" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="575" y="51" text-anchor="middle" stroke="none" fill="#dff">Workers</text>
+                        <line x1="620" y1="47" x2="650" y2="47" marker-end="url(#arrowh)"/>
+                        <rect x="650" y="30" width="60" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="680" y="51" text-anchor="middle" stroke="none" fill="#dff" font-size="10">Storage</text>
+                    </g>
+                    <defs><marker id="arrowh" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                <p class="case-study-stack"><strong>Tech stack:</strong> Groq AI</p>
+                <div class="case-study-links">
+                    <a href="https://spendwise-ai-dun.vercel.app/" target="_blank" rel="noopener" class="bento-view-btn">Demo →</a>
+                    <a href="https://github.com/prakhau143/ai_native" target="_blank" rel="noopener" class="bento-view-btn bento-view-btn-gh">GitHub →</a>
+                </div>
+            </template>
+
+            <template id="case-tpl-inventoryflow">
+                <h3 id="case-modal-title">InventoryFlow Pro</h3>
+                <dl class="case-study-fields">
+                    <dt>Problem</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Context</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Solution</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Technical Decisions</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Engineering Challenges</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Scale</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Results</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                </dl>
+                <p class="case-study-arch-label">Architecture</p>
+                <svg class="case-study-arch" viewBox="0 0 720 90" role="img" aria-labelledby="arch-inv-title arch-inv-desc">
+                    <title id="arch-inv-title">InventoryFlow Pro system architecture</title>
+                    <desc id="arch-inv-desc">Client connects to API, which reads through Cache to Database, and dispatches Workers that write to Storage.</desc>
+                    <g font-family="monospace" font-size="12" fill="#dff" stroke="#00c8ff" stroke-width="1.2">
+                        <rect x="10"  y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="60"  y="51" text-anchor="middle" stroke="none" fill="#dff">Client</text>
+                        <line x1="110" y1="47" x2="140" y2="47" marker-end="url(#arrowh2)"/>
+                        <rect x="140" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="190" y="51" text-anchor="middle" stroke="none" fill="#dff">API</text>
+                        <line x1="240" y1="47" x2="270" y2="47" marker-end="url(#arrowh2)"/>
+                        <rect x="270" y="30" width="100" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="320" y="51" text-anchor="middle" stroke="none" fill="#dff">Cache</text>
+                        <line x1="370" y1="47" x2="400" y2="47" marker-end="url(#arrowh2)"/>
+                        <rect x="400" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="450" y="51" text-anchor="middle" stroke="none" fill="#dff">Database</text>
+                        <line x1="500" y1="47" x2="530" y2="47" marker-end="url(#arrowh2)"/>
+                        <rect x="530" y="30" width="90" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="575" y="51" text-anchor="middle" stroke="none" fill="#dff">Workers</text>
+                        <line x1="620" y1="47" x2="650" y2="47" marker-end="url(#arrowh2)"/>
+                        <rect x="650" y="30" width="60" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="680" y="51" text-anchor="middle" stroke="none" fill="#dff" font-size="10">Storage</text>
+                    </g>
+                    <defs><marker id="arrowh2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                <p class="case-study-stack"><strong>Tech stack:</strong> FastAPI &middot; JWT &middot; Docker</p>
+                <div class="case-study-links">
+                    <a href="https://inventory-flow-pro.vercel.app/dashboard" target="_blank" rel="noopener" class="bento-view-btn">Demo →</a>
+                    <a href="https://github.com/prakhau143/InventoryFlow-Pro" target="_blank" rel="noopener" class="bento-view-btn bento-view-btn-gh">GitHub →</a>
+                </div>
+            </template>
+
+            <template id="case-tpl-kyc">
+                <h3 id="case-modal-title">KYC Verification Platform</h3>
+                <dl class="case-study-fields">
+                    <dt>Problem</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Context</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Solution</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Technical Decisions</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Engineering Challenges</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Scale</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Results</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                </dl>
+                <p class="case-study-arch-label">Architecture</p>
+                <svg class="case-study-arch" viewBox="0 0 720 90" role="img" aria-labelledby="arch-kyc-title arch-kyc-desc">
+                    <title id="arch-kyc-title">KYC Verification Platform system architecture</title>
+                    <desc id="arch-kyc-desc">Client connects to API, which reads through Cache to Database, and dispatches Workers that write to Storage.</desc>
+                    <g font-family="monospace" font-size="12" fill="#dff" stroke="#00c8ff" stroke-width="1.2">
+                        <rect x="10"  y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="60"  y="51" text-anchor="middle" stroke="none" fill="#dff">Client</text>
+                        <line x1="110" y1="47" x2="140" y2="47" marker-end="url(#arrowh3)"/>
+                        <rect x="140" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="190" y="51" text-anchor="middle" stroke="none" fill="#dff">API</text>
+                        <line x1="240" y1="47" x2="270" y2="47" marker-end="url(#arrowh3)"/>
+                        <rect x="270" y="30" width="100" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="320" y="51" text-anchor="middle" stroke="none" fill="#dff">Cache</text>
+                        <line x1="370" y1="47" x2="400" y2="47" marker-end="url(#arrowh3)"/>
+                        <rect x="400" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="450" y="51" text-anchor="middle" stroke="none" fill="#dff">Database</text>
+                        <line x1="500" y1="47" x2="530" y2="47" marker-end="url(#arrowh3)"/>
+                        <rect x="530" y="30" width="90" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="575" y="51" text-anchor="middle" stroke="none" fill="#dff">Workers</text>
+                        <line x1="620" y1="47" x2="650" y2="47" marker-end="url(#arrowh3)"/>
+                        <rect x="650" y="30" width="60" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="680" y="51" text-anchor="middle" stroke="none" fill="#dff" font-size="10">Storage</text>
+                    </g>
+                    <defs><marker id="arrowh3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                <p class="case-study-stack"><strong>Tech stack:</strong> <!-- TODO: PRAKHAR TO DRAFT --></p>
+                <div class="case-study-links">
+                    <a href="https://github.com/prakhau143" target="_blank" rel="noopener" class="bento-view-btn bento-view-btn-gh"><!-- TODO: PRAKHAR — link real repo -->GitHub →</a>
+                </div>
+            </template>
+
+            <template id="case-tpl-ainews">
+                <h3 id="case-modal-title">AI News Platform</h3>
+                <dl class="case-study-fields">
+                    <dt>Problem</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Context</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Solution</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Technical Decisions</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Engineering Challenges</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Scale</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Results</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                </dl>
+                <p class="case-study-arch-label">Architecture</p>
+                <svg class="case-study-arch" viewBox="0 0 720 90" role="img" aria-labelledby="arch-news-title arch-news-desc">
+                    <title id="arch-news-title">AI News Platform system architecture</title>
+                    <desc id="arch-news-desc">Client connects to API, which reads through Cache to Database, and dispatches Workers that write to Storage.</desc>
+                    <g font-family="monospace" font-size="12" fill="#dff" stroke="#00c8ff" stroke-width="1.2">
+                        <rect x="10"  y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="60"  y="51" text-anchor="middle" stroke="none" fill="#dff">Client</text>
+                        <line x1="110" y1="47" x2="140" y2="47" marker-end="url(#arrowh4)"/>
+                        <rect x="140" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="190" y="51" text-anchor="middle" stroke="none" fill="#dff">API</text>
+                        <line x1="240" y1="47" x2="270" y2="47" marker-end="url(#arrowh4)"/>
+                        <rect x="270" y="30" width="100" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="320" y="51" text-anchor="middle" stroke="none" fill="#dff">Cache</text>
+                        <line x1="370" y1="47" x2="400" y2="47" marker-end="url(#arrowh4)"/>
+                        <rect x="400" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="450" y="51" text-anchor="middle" stroke="none" fill="#dff">Database</text>
+                        <line x1="500" y1="47" x2="530" y2="47" marker-end="url(#arrowh4)"/>
+                        <rect x="530" y="30" width="90" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="575" y="51" text-anchor="middle" stroke="none" fill="#dff">Workers</text>
+                        <line x1="620" y1="47" x2="650" y2="47" marker-end="url(#arrowh4)"/>
+                        <rect x="650" y="30" width="60" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="680" y="51" text-anchor="middle" stroke="none" fill="#dff" font-size="10">Storage</text>
+                    </g>
+                    <defs><marker id="arrowh4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                <p class="case-study-stack"><strong>Tech stack:</strong> <!-- TODO: PRAKHAR TO DRAFT --></p>
+                <div class="case-study-links">
+                    <a href="https://github.com/prakhau143" target="_blank" rel="noopener" class="bento-view-btn bento-view-btn-gh"><!-- TODO: PRAKHAR — link real repo -->GitHub →</a>
+                </div>
+            </template>
+
+            <template id="case-tpl-binance">
+                <h3 id="case-modal-title">Binance Futures Bot</h3>
+                <dl class="case-study-fields">
+                    <dt>Problem</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Context</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Solution</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Technical Decisions</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Engineering Challenges</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Scale</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Results</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                </dl>
+                <p class="case-study-arch-label">Architecture</p>
+                <svg class="case-study-arch" viewBox="0 0 720 90" role="img" aria-labelledby="arch-binance-title arch-binance-desc">
+                    <title id="arch-binance-title">Binance Futures Bot system architecture</title>
+                    <desc id="arch-binance-desc">Client connects to API, which reads through Cache to Database, and dispatches Workers that write to Storage.</desc>
+                    <g font-family="monospace" font-size="12" fill="#dff" stroke="#00c8ff" stroke-width="1.2">
+                        <rect x="10"  y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="60"  y="51" text-anchor="middle" stroke="none" fill="#dff">Client</text>
+                        <line x1="110" y1="47" x2="140" y2="47" marker-end="url(#arrowh5)"/>
+                        <rect x="140" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="190" y="51" text-anchor="middle" stroke="none" fill="#dff">API</text>
+                        <line x1="240" y1="47" x2="270" y2="47" marker-end="url(#arrowh5)"/>
+                        <rect x="270" y="30" width="100" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="320" y="51" text-anchor="middle" stroke="none" fill="#dff">Cache</text>
+                        <line x1="370" y1="47" x2="400" y2="47" marker-end="url(#arrowh5)"/>
+                        <rect x="400" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="450" y="51" text-anchor="middle" stroke="none" fill="#dff">Database</text>
+                        <line x1="500" y1="47" x2="530" y2="47" marker-end="url(#arrowh5)"/>
+                        <rect x="530" y="30" width="90" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="575" y="51" text-anchor="middle" stroke="none" fill="#dff">Workers</text>
+                        <line x1="620" y1="47" x2="650" y2="47" marker-end="url(#arrowh5)"/>
+                        <rect x="650" y="30" width="60" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="680" y="51" text-anchor="middle" stroke="none" fill="#dff" font-size="10">Storage</text>
+                    </g>
+                    <defs><marker id="arrowh5" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                <p class="case-study-stack"><strong>Tech stack:</strong> SQLite</p>
+                <div class="case-study-links">
+                    <a href="https://github.com/prakhau143/Trading-bot-" target="_blank" rel="noopener" class="bento-view-btn bento-view-btn-gh">GitHub →</a>
+                </div>
+            </template>
+
+            <template id="case-tpl-dialer">
+                <h3 id="case-modal-title">AI Auto Dialer</h3>
+                <dl class="case-study-fields">
+                    <dt>Problem</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Context</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Solution</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Technical Decisions</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Engineering Challenges</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Scale</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                    <dt>Results</dt><dd><!-- TODO: PRAKHAR TO DRAFT --></dd>
+                </dl>
+                <p class="case-study-arch-label">Architecture</p>
+                <svg class="case-study-arch" viewBox="0 0 720 90" role="img" aria-labelledby="arch-dialer-title arch-dialer-desc">
+                    <title id="arch-dialer-title">AI Auto Dialer system architecture</title>
+                    <desc id="arch-dialer-desc">Client connects to API, which reads through Cache to Database, and dispatches Workers that write to Storage.</desc>
+                    <g font-family="monospace" font-size="12" fill="#dff" stroke="#00c8ff" stroke-width="1.2">
+                        <rect x="10"  y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="60"  y="51" text-anchor="middle" stroke="none" fill="#dff">Client</text>
+                        <line x1="110" y1="47" x2="140" y2="47" marker-end="url(#arrowh6)"/>
+                        <rect x="140" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="190" y="51" text-anchor="middle" stroke="none" fill="#dff">API</text>
+                        <line x1="240" y1="47" x2="270" y2="47" marker-end="url(#arrowh6)"/>
+                        <rect x="270" y="30" width="100" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="320" y="51" text-anchor="middle" stroke="none" fill="#dff">Cache</text>
+                        <line x1="370" y1="47" x2="400" y2="47" marker-end="url(#arrowh6)"/>
+                        <rect x="400" y="30" width="100" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="450" y="51" text-anchor="middle" stroke="none" fill="#dff">Database</text>
+                        <line x1="500" y1="47" x2="530" y2="47" marker-end="url(#arrowh6)"/>
+                        <rect x="530" y="30" width="90" height="34" rx="6" fill="rgba(168,85,247,0.1)"/><text x="575" y="51" text-anchor="middle" stroke="none" fill="#dff">Workers</text>
+                        <line x1="620" y1="47" x2="650" y2="47" marker-end="url(#arrowh6)"/>
+                        <rect x="650" y="30" width="60" height="34" rx="6" fill="rgba(0,200,255,0.08)"/><text x="680" y="51" text-anchor="middle" stroke="none" fill="#dff" font-size="10">Storage</text>
+                    </g>
+                    <defs><marker id="arrowh6" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00c8ff"/></marker></defs>
+                </svg>
+                <p class="case-study-stack"><strong>Tech stack:</strong> <!-- TODO: PRAKHAR TO DRAFT --></p>
+                <div class="case-study-links">
+                    <a href="https://github.com/prakhau143/auto-dialer.git" target="_blank" rel="noopener" class="bento-view-btn bento-view-btn-gh">GitHub →</a>
+                </div>
+            </template>
+
+    <!-- ═══ CASE STUDY MODAL ═══ -->
+    <script>
+    (function(){
+        var modal = document.getElementById('case-modal');
+        var body = document.getElementById('case-modal-body');
+        var closeBtn = document.getElementById('case-modal-close');
+        if(!modal || !body || !closeBtn) return;
+        var lastFocused = null;
+
+        function openCase(cardEl){
+            var key = cardEl.getAttribute('data-case');
+            var tpl = document.getElementById('case-tpl-' + key);
+            if(!tpl) return;
+            body.innerHTML = '';
+            body.appendChild(tpl.content.cloneNode(true));
+            lastFocused = cardEl;
+            modal.hidden = false;
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus({preventScroll: true});
+        }
+        function closeCase(){
+            modal.hidden = true;
+            document.body.style.overflow = '';
+            if(lastFocused) lastFocused.focus();
+        }
+
+        document.querySelectorAll('.case-study').forEach(function(card){
+            card.addEventListener('click', function(){ openCase(card); });
+            card.addEventListener('keydown', function(e){
+                if(e.key === 'Enter' || e.key === ' '){
+                    e.preventDefault();
+                    openCase(card);
+                }
+            });
+        });
+        closeBtn.addEventListener('click', closeCase);
+        modal.addEventListener('click', function(e){
+            if(e.target === modal) closeCase();
+        });
+        document.addEventListener('keydown', function(e){
+            if(e.key === 'Escape' && !modal.hidden) closeCase();
+        });
     })();
     </script>
 </body>
